@@ -8,7 +8,8 @@ session_start();
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Sistema PNP | Panel</title>
+  <title>DENMU</title>
+  <link rel="shortcut icon" href="_recursos/img/LogoCom.png">
   <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="_recursos/css/bootstrap.css" type="text/css" />
@@ -32,6 +33,7 @@ session_start();
    <link rel="stylesheet" href="_recursos/select2/dist/css/select2.min.css">
 </head>
 <body>
+  
   <input type="text" value="<?php echo $_SESSION['codigo_personal']; ?>"  hidden="true" id="txtcodigo_principal_usuario">
   <input type="text" value="<?php echo $_SESSION['nombre_usuario']; ?>" hidden="true" id="txtnombre_principal_usuario">
   <input type="text" value="<?php echo $_SESSION['codigo_usuario']; ?>" style="display: none" id="txtnombre_codigo_usuario">
@@ -237,10 +239,16 @@ session_start();
     <!-- / aside right -->
 
     <!-- footer -->
-    <div class="app-footer wrapper b-t bg-light">
-      <span class="pull-right">1.0.0 <a href="#app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
-      &copy; 2018 Copyright.
+    <center>
+    <div class="app-footer wrapper b-t">
+      <span class="pull-bottom">
+        <b>Dirección: </b> Jr. 5XC8+V77, Puno 21001 <br>
+        <b>Teléfono: </b> 945191118 <br> 
+        <strong>COMISARIA PNP HUASCAR PUNO</strong> &copy; Copyright 2021 
+        reservados.
+      </span>
     </div>
+    </center>
     <!-- / footer -->
   </div>
   <!-- jQuery -->
