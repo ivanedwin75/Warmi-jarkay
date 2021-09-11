@@ -36,7 +36,6 @@ session_start();
 				<h3>INICIAR SESIÓN</h3>
 			</div>
 			<div class="card-body">
-				<form>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -54,7 +53,6 @@ session_start();
 					<button onclick="VerificarUsuario()"  class="btn">INGRESAR</button>
 						</center>
 					
-				</form>
 			</div>
 		</div>
 	</div>

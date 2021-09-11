@@ -1,4 +1,7 @@
 <?php
+//Lineas comentadas para probar la conexion de la base de datos
+	//$MU = new Modelo_usuario();
+
 	class Modelo_usuario
 	{
 		private $conexion;
@@ -7,6 +10,7 @@
 			require_once('modelo_conexion.php');
 			$this->conexion = new conexion();
 			$this->conexion->conectar();
+			//echo $this->conexion->conectar();
 		}
 		function Verificar_usuario($usuario,$pass){
 			$sql = "call PA_VERIFICARUSUARIO('$usuario','$pass')";

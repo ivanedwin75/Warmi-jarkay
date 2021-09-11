@@ -8,8 +8,8 @@
 			$this->conexion = new conexion();
 			$this->conexion->conectar();
 		}
-		function Registrar_ciudadano($nombre,$apePat,$apeMat,$tipope,$telefo,$movil,$direcc,$fecnac,$dni,$email,$genero){
-			$sql = "call PA_REGISTRARCIUDADANO('$nombre','$apePat','$apeMat','$tipope','$telefo','$movil','$direcc','$fecnac','$dni','$email','$genero')";
+		function Registrar_victima($exp,$nombre,$apePat,$apeMat,$est_civil,$edad,$dni,$movil,$direcc,$fecha){
+			$sql = "call PA_REGISTRARVICTIMA('$nombre','$apePat','$apeMat','$tipope','$telefo','$movil','$direcc','$fecnac','$dni','$email','$genero')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}

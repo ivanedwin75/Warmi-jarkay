@@ -14,6 +14,14 @@
 		function conectar(){
 			$this->conexion = new mysqli($this->servidor,$this->usuario,$this->contrasena,$this->basedatos);
 			$this->conexion->set_charset("utf8");
+			/*
+			if ($this->conexion->connect_errno){
+				return "No conectado";
+			}
+			else {
+				return "Conectadooooooo";
+			}
+			*/
 		}
 		function cerrar(){
 			$this->conexion->close();	

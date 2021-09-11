@@ -19,7 +19,7 @@ function VerificarUsuario(){
 				resultado = 'Usuario y/o contrase\u00f1a no Valido';
 			    swal(resultado,"","warning");
 			}else{
-				 var data = JSON.parse(resp);
+				var data = JSON.parse(resp);
 				$.ajax({
 				url:'../controlador/usuario/controlador_iniciar_sesion.php',
 				type:'POST',
@@ -27,10 +27,9 @@ function VerificarUsuario(){
 					user:data[0][0],
 					pass:data[0][1],
 					nom:data[0][2],
-					img:data[0][4],
-					usuario:data[0][6],
-					codigo_personal:data[0][5],
-					idusuario:data[0][7]
+					usuario:data[0][3],
+					codigo_personal:data[0][4],
+					idusuario:data[0][5]
 				}
 				})
 				.done(function(resp){
