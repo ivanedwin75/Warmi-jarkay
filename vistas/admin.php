@@ -39,8 +39,8 @@ session_start();
   <input type="text" value="<?php echo $_SESSION['codigo_usuario']; ?>" style="display: none" id="txtnombre_codigo_usuario">
   <div class="app app-header-fixed" id="app" action="index.php">
     <div class="app-header navbar">
-      <div class="navbar-header bg-dark">
-        <button class="pull-right visible-xs dk" data-toggle="class:show" data-target=".navbar-collapse" style="color:#ffff;">
+      <div class="navbar-header bg-info">
+        <button class="pull-right visible-xs " data-toggle="class:show" data-target=".navbar-collapse">
           <i class="glyphicon glyphicon-cog"></i>
         </button>
         <button class="pull-right visible-xs" data-toggle="class:off-screen" data-target=".app-aside" ui-scroll="app"  style="color:#ecf0f1;">
@@ -48,7 +48,7 @@ session_start();
         </button>
         <a href="admin.php" class="navbar-brand text-lt">
           <!--<i class="glyphicon glyphicon-leaf icon text-success"></i>-->
-          <i class="fa fa-list icon text-success"></i>
+          <i class="fa "></i>
           <img src="_recursos/img/logo.png" alt="." class="hide">
           <span class="hidden-folded m-l-xs">DENMU</span>
         </a>
@@ -60,9 +60,7 @@ session_start();
             <i class="fa fa-dedent fa-fw text"></i>
             <i class="fa fa-indent fa-fw text-active"></i>
           </a>
-          <a href class="btn no-shadow navbar-btn" data-toggle="class:show" data-target="#aside-user">
-            <i class="icon-user fa-fw"></i>
-          </a>
+          
         </div>
 
         <ul class="nav navbar-nav navbar-right">
@@ -93,20 +91,20 @@ session_start();
         ?>
           <li class="dropdown"><!--style="width: 30px; height:40px "-->
             <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
-              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+              <!--<span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                 <div id="txtimagen1">
                   
                 </div>
                 
                 <i class="on md b-white bottom"></i>
-              </span>
+              </span>-->
               <span class="hidden-sm hidden-md">
                 <strong><?php echo $_SESSION['usu'] ?></strong> : <label id="txtnombre_usuario"></label></span>
               </span> <b class="caret"></b>
             </a>
             <!-- dropdown -->
             <ul class="dropdown-menu animated fadeInRight w hidden-folded" style="width:250px" >
-              <li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
+              <li class="wrapper b-b m-b-sm bg-info m-t-n-xs">
                 <div>
                   <p>Bienvenido</p>
                 </div>
@@ -114,7 +112,7 @@ session_start();
               </li>
               <li>
                 <a onclick="abrirModalusuario()">
-                  <span class="badge bg-danger pull-right">C</span>
+                  <!--<span class="badge bg-danger pull-right">C</span>-->
                   <span>Configuracion de Cuenta</span>
                 </a>
               </li>
@@ -167,6 +165,13 @@ session_start();
               <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                 <span translate="aside.nav.HEADER">PANEL ADMINISTRATIVO</span>
               </li>
+              <li> 
+            <!--<a href class="btn no-shadow navbar-btn" data-toggle="class:show" data-target="#aside-user">-->  
+              <a href class="" data-toggle="class:show" data-target="#aside-user">
+                <i class="icon-user fa-fw"></i>
+                <span class="font-bold" translate="aside.nav.Mantenimiento">PERFIL</span>
+              </a>
+              </li>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','Victima/vista_registrar_victima.php');">      
                 <a ui-sref="app.dashboard-v2" >
                   <i class="fa fa-laptop icon text-success"></i>
@@ -209,7 +214,7 @@ session_start();
           <div class="panel panel-default">
             <div class="panel-body">
               <div style="text-align: center;" align="center">
-              <img style="text-align: center;" align="center" src="_recursos/img/bienvenidos.png">
+              <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/bienvenidos.png">
             </div>
             </div>  
           </div>
