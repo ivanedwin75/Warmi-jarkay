@@ -17,7 +17,7 @@ session_start();
   <link rel="stylesheet" href="_recursos/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/font.css" type="text/css" />
-  <link rel="stylesheet" href="_recursos/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="_recursos/css/app1.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/js/sweetalert.css">
   <link href="_recursos/css/customs.css" rel="stylesheet">
   <script src="../vistas/Highcharts-6.1.1/code/highcharts.js"></script>
@@ -40,7 +40,7 @@ session_start();
   <div class="app app-header-fixed" id="app" action="index.php">
     <div class="app-header navbar">
       <div class="navbar-header bg-dark">
-        <button class="pull-right visible-xs dk" data-toggle="class:show" data-target=".navbar-collapse" style="color:#ecf0f1;">
+        <button class="pull-right visible-xs dk" data-toggle="class:show" data-target=".navbar-collapse" style="color:#ffff;">
           <i class="glyphicon glyphicon-cog"></i>
         </button>
         <button class="pull-right visible-xs" data-toggle="class:off-screen" data-target=".app-aside" ui-scroll="app"  style="color:#ecf0f1;">
@@ -209,7 +209,7 @@ session_start();
           <div class="panel panel-default">
             <div class="panel-body">
               <div style="text-align: center;" align="center">
-              <img style="text-align: center;" align="center" src="descarga.png">
+              <img style="text-align: center;" align="center" src="_recursos/img/bienvenidos.png">
             </div>
             </div>  
           </div>
