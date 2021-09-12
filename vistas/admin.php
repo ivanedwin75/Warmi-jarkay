@@ -33,6 +33,8 @@ session_start();
    <link rel="stylesheet" href="_recursos/select2/dist/css/select2.min.css">
 </head>
 <body>
+  <?php echo $_SESSION['usuario']; ?>
+  <?php echo $_SESSION['usu']; ?>
   
   <input type="text" value="<?php echo $_SESSION['codigo_personal']; ?>"  hidden="true" id="txtcodigo_principal_usuario">
   <input type="text" value="<?php echo $_SESSION['nombre_usuario']; ?>" hidden="true" id="txtnombre_principal_usuario">
@@ -64,6 +66,10 @@ session_start();
         </div>
 
         <ul class="nav navbar-nav navbar-right">
+        
+        
+        
+        
         <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
         ?>
           <li class="dropdown">
@@ -89,6 +95,9 @@ session_start();
         <?php
           }
         ?>
+
+
+
           <li class="dropdown"><!--style="width: 30px; height:40px "-->
             <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
               <!--<span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
@@ -172,22 +181,54 @@ session_start();
                 <span class="font-bold" translate="aside.nav.Mantenimiento">PERFIL</span>
               </a>
               </li>
+              
+              <?php if ($_SESSION['usu']=="VICTIMA") {        
+            ?>
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Victima/vista_registrar_victima.php');">      
+                <a ui-sref="app.dashboard-v2" >
+                  <i class="fa fa-laptop icon text-success"></i>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento">SEGUIMIENTO</span>
+                </a>
+              </li>
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Personal/vista_listar_personal.php');">
+                <a ui-sref="app.dashboard-v2"> 
+                  <i class="glyphicon glyphicon-user icon text-info-lter"></i>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento" >SOLICITAR COPIA GRATIS DE DENUNCIA</span>
+                </a>
+              </li>
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Ciudadano/vista_listar_ciudadano.php');">
+                <a ui-sref="app.dashboard-v2">
+                  <i class="fa fa-briefcase icon text-info-lter text-success"></i>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento">ASESORIA GRATUITA</span>
+                </a>
+              </li>
+              <li ui-sref-active="active"onclick="cargar_contenido('main-content','Institucion/vista_institucion_listar.php');">
+                  <a ui-sref="app.dashboard-v2">     
+                  <i class="fa fa-folder-open icon text-info-lter"></i>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento">BONTON DE PANICO</span>
+                  </a>
+              </li>
+
+              <?php }
+            ?>
+
+
+            
+            
+            <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
+            ?>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','Victima/vista_registrar_victima.php');">      
                 <a ui-sref="app.dashboard-v2" >
                   <i class="fa fa-laptop icon text-success"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">NUEVO REGISTRO</span>
                 </a>
               </li>
-            <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
-            ?>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','Personal/vista_listar_personal.php');">
                 <a ui-sref="app.dashboard-v2"> 
                   <i class="glyphicon glyphicon-user icon text-info-lter"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento" >EFECTIVOS PNP</span>
                 </a>
               </li>
-            <?php }
-            ?>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','Ciudadano/vista_listar_ciudadano.php');">
                 <a ui-sref="app.dashboard-v2">
                   <i class="fa fa-briefcase icon text-info-lter text-success"></i>
@@ -200,6 +241,10 @@ session_start();
                   <span class="font-bold" translate="aside.nav.Mantenimiento">BUSCAR</span>
                   </a>
               </li>
+            
+            
+            <?php }
+            ?>
               
           </nav>
           <!-- nav -->
