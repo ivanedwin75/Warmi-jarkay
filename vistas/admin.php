@@ -17,7 +17,7 @@ session_start();
   <link rel="stylesheet" href="_recursos/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/font.css" type="text/css" />
-  <link rel="stylesheet" href="_recursos/css/app1.css" type="text/css" />
+  <link rel="stylesheet" href="_recursos/css/app.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/js/sweetalert.css">
   <link href="_recursos/css/customs.css" rel="stylesheet">
   <script src="../vistas/Highcharts-6.1.1/code/highcharts.js"></script>
@@ -50,8 +50,9 @@ session_start();
         </button>
         <a href="admin.php" class="navbar-brand text-lt">
           <!--<i class="glyphicon glyphicon-leaf icon text-success"></i>-->
-          <i class="fa "></i>
-          <img src="_recursos/img/logo.png" alt="." class="hide">
+          <!--<i class="fa "></i>
+          <img src="_recursos/img/logo.png" alt="." class="hide">-->
+          <img class="img1" src="_recursos/img/LogoCom.png">  
           <span class="hidden-folded m-l-xs">DENMU</span>
         </a>
       </div>
@@ -62,7 +63,8 @@ session_start();
             <i class="fa fa-dedent fa-fw text"></i>
             <i class="fa fa-indent fa-fw text-active"></i>
           </a>
-          
+          <b class="l">COMISARIA PNP HUASCAR</b>
+
         </div>
 
         <ul class="nav navbar-nav navbar-right">
@@ -182,7 +184,7 @@ session_start();
               </a>
               </li>
               
-              <?php if ($_SESSION['usu']=="VICTIMA") {        
+            <?php if ($_SESSION['usu']=="VICTIMA") {        
             ?>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','Victima/vista_registrar_victima.php');">      
                 <a ui-sref="app.dashboard-v2" >
