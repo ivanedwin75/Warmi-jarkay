@@ -2,7 +2,7 @@
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2><b>REGISTRO DE NUEVA V&Iacute;CTIMA</b></h2>
+      <center><h3><b>REGISTRO DE NUEVA V&Iacute;CTIMA</b></h3></center>
     </div>
     <div class="panel-body">     
           <div class="col-md-12 col-lg-12 col-xs-12"> 
@@ -23,14 +23,14 @@
                 <input type="text" class="form-control" id="txtapellidomaterno" onkeypress="return soloLetras(event)" style="background-color: #FFFFFF" placeholder="Ingrese Apellido Materno">
                 <br>
             </div>
-            <div class="col-sm-12">
+            <div class="col-sm-6">
                 <label>Nombres</label>
                 <input id="txtnombre"  onkeypress="return soloLetras(event)"  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nombre de la persona" class="form-control" >
                 <br>
             </div>
             <div class="col-sm-6">
                 <label >Estado civil</label>
-                <br>
+                
                 <select id="txtestado_civil" class="form-control select2" name="txtGenero">
                   <option value="casado">Casado</option>
                   <option value="soltero">Soltero</option> 
@@ -52,7 +52,7 @@
                 <input type="text"class="form-control" id="txtmovil"  onkeypress="return soloNumeros(event)" placeholder="Ingrese nro movil" maxlength="9">
                 <br>
             </div>          
-            <div class="col-sm-12">
+            <div class="col-sm-6">
                 <label >Direcci&oacute;n</label>
                 <input type="text" class="form-control" id="txtdireccion" style="background-color: #FFFFFF" placeholder="Ingrese Direccion">
                 <br>

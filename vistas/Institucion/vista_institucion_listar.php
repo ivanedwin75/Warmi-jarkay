@@ -1,21 +1,26 @@
 <script type="text/javascript" src="_recursos/js/console_institucion.js"></script>
 <div class="contendor_kn">
   <div class="panel panel-default">
-    <div class="panel-heading">
-        <h2><b>INSTITUCIONES REGISTRADAS</b></h2>            
+    <div class="panel-heading"> 
+        <center><h3><b>BUSCAR EXPEDIENTES</b></h3></center>         
     </div>
     <div class="panel-body">
-        <div class="col-md-10"> 
+        <div class="col-md-6"> 
           <div class=" input-group">
-            <input id="txt_institucion_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el nombre de la Institucion a buscar ">
+            <input id="txt_institucion_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el DNI">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          </div>
+          <br>
+          <div class=" input-group">
+            <input id="txt_institucion_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese N° de expediente">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
           </div>
         </div>
         <div class="col-md-2">
-           <button class="btn btn-danger" onclick="cargar_contenido('main-content','Institucion/vista_institucion_registrar.php');"><i class="fa fa-file-text" ></i> &nbsp;&nbsp;<strong>Nuevo Registro</strong></button>  
+           <button class="btn btn-info" onclick="cargar_contenido('main-content','Institucion/vista_institucion_registrar.php');"><i class="fa fa-file-text" ></i> &nbsp;&nbsp;<strong>Nuevo Registro</strong></button>  
         </div>
         <div class="box-body table-responsive" style="text-align: center;">
-        	<label>LISTADO DE INSTITUCIONES</label>
+        	<label>BUSCAR EXPEDIENTES</label>
             <div id="listar_institucion_tabla" class=" icon-loading">
               <i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
               <div id="nodatos"></div>
@@ -39,13 +44,13 @@
     <div class="modal-content">
          <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-           <h4 class="modal-title" id="myModalLabel"><b>Editar Instituci&oacute;n</b></h4>
+           <h4 class="modal-title" id="myModalLabel"><b>Editar Expediente</b></h4>
          </div>
         <div class="modal-body">
       <div class="panel-body">
         <div class="col-sm-6">
           <input type="text" id="txtidinstitucion" hidden >
-          <label>Nombre de la Instituci&oacute;n </label>
+          <label>N° de Expediente </label>
           <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nombre del instituci&oacute;n" maxlength="150">
           <br>
         </div>
