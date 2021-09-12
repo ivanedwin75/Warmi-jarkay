@@ -14,7 +14,7 @@ session_start();
 	<meta name="keywords" content="Full Screen Enroll Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
 	<link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
 	</script>
-	<link rel="stylesheet" href="_plantilla/css/estilo.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="_plantilla/css/estilos.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="_plantilla/css/fontawesome-all.css">
 	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
 	
@@ -55,7 +55,16 @@ session_start();
 					
 			</div>
 		</div>
+		
 	</div>
+	
+		<div class="panel panel-default">
+            <div class="panel-body">
+              <div style="text-align: center;" align="center">
+              <img class="imagen" style="text-align: center;" align="center" src="_plantilla/images/index.png">
+            </div>
+            </div>  
+        </div>
 </div>
 
 

@@ -17,7 +17,7 @@ session_start();
   <link rel="stylesheet" href="_recursos/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/font.css" type="text/css" />
-  <link rel="stylesheet" href="_recursos/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="_recursos/css/app1.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/js/sweetalert.css">
   <link href="_recursos/css/customs.css" rel="stylesheet">
   <script src="../vistas/Highcharts-6.1.1/code/highcharts.js"></script>
@@ -204,7 +204,7 @@ session_start();
                   <span class="font-bold" translate="aside.nav.Mantenimiento">ASESORIA GRATUITA</span>
                 </a>
               </li>
-              <li ui-sref-active="active"onclick="cargar_contenido('main-content','UsuarioVictima/panico.php');">
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/bpanico.php');">
                   <a ui-sref="app.dashboard-v2">     
                   <i class="fa fa-folder-open icon text-info-lter"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">BONTON DE PANICO</span>
@@ -256,6 +256,8 @@ session_start();
     <!-- / menu -->
 
     <!-- content -->
+    <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
+    ?>
       <div class="app-content" id="main-content">
         <div class="contendor_kn">
           <div class="panel panel-default">
@@ -267,7 +269,28 @@ session_start();
           </div>
         </div>
       </div>
+      <?php }
+      ?>
 
+    <?php if ($_SESSION['usu']=="VICTIMA") {        
+    ?>
+      <div class="app-content" id="main-content">
+        <div class="contendor_kn">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');">Seguimiento</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/copia_denuncia.php');">Solicitar una copia gratis de Denuncia Simple</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');">Asesoría Gratuita</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/bpanico.php');">Botón de Pánico</button><br>
+            </div>  
+          </div>
+        </div>
+        <div style="text-align: center;" align="center">
+              <img class="imagen1" style="text-align: center;" align="center" src="_recursos/img/bien_us.png">
+            </div>
+      </div>
+      <?php }
+            ?>
     <!-- /content -->
     <!-- aside right -->
     <div class="app-aside-right pos-fix no-padder w-md w-auto-xs bg-white b-l animated fadeInRight hide">
@@ -289,6 +312,8 @@ session_start();
       </div>
     </div>
     <!-- / aside right -->
+    <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
+    ?>
 
     <!-- footer -->
     <center>
@@ -302,6 +327,9 @@ session_start();
     </div>
     </center>
     <!-- / footer -->
+    <?php }
+    ?>
+
   </div>
   <!-- jQuery -->
   
