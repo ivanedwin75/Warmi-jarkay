@@ -33,8 +33,8 @@ session_start();
    <link rel="stylesheet" href="_recursos/select2/dist/css/select2.min.css">
 </head>
 <body>
-  <?php echo $_SESSION['usuario']; ?>
-  <?php echo $_SESSION['usu']; ?>
+  <!-- <?php echo $_SESSION['usuario']; ?>-->
+  <!--<?php echo $_SESSION['usu']; ?>-->
   
   <input type="text" value="<?php echo $_SESSION['codigo_personal']; ?>"  hidden="true" id="txtcodigo_principal_usuario">
   <input type="text" value="<?php echo $_SESSION['nombre_usuario']; ?>" hidden="true" id="txtnombre_principal_usuario">
@@ -186,25 +186,25 @@ session_start();
               
             <?php if ($_SESSION['usu']=="VICTIMA") {        
             ?>
-              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Victima/vista_registrar_victima.php');">      
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');">      
                 <a ui-sref="app.dashboard-v2" >
                   <i class="fa fa-laptop icon text-success"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">SEGUIMIENTO</span>
                 </a>
               </li>
-              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Personal/vista_listar_personal.php');">
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/copia_denuncia.php');">
                 <a ui-sref="app.dashboard-v2"> 
                   <i class="glyphicon glyphicon-user icon text-info-lter"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento" >SOLICITAR COPIA GRATIS DE DENUNCIA</span>
                 </a>
               </li>
-              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Ciudadano/vista_listar_ciudadano.php');">
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');">
                 <a ui-sref="app.dashboard-v2">
                   <i class="fa fa-briefcase icon text-info-lter text-success"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">ASESORIA GRATUITA</span>
                 </a>
               </li>
-              <li ui-sref-active="active"onclick="cargar_contenido('main-content','Institucion/vista_institucion_listar.php');">
+              <li ui-sref-active="active"onclick="cargar_contenido('main-content','UsuarioVictima/panico.php');">
                   <a ui-sref="app.dashboard-v2">     
                   <i class="fa fa-folder-open icon text-info-lter"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">BONTON DE PANICO</span>
