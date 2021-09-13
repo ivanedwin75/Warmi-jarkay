@@ -71,7 +71,7 @@
                     
           <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
             <div class="col-md-12">
-              <br><button class="btn btn-success" onclick="revisar_dni_ciudadano()"><strong> Registrar Ciudadano</strong></button><br><br>
+              <br><button class="btn btn-success" onclick="revisar_dni_victima()"><strong> Registrar </strong></button><br><br>
             </div>
           </div>
     </div>

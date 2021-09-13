@@ -1,21 +1,14 @@
 function Limpieza_post_personal(){
-	$("#txtPersonaNombre").val("");
-	$("#txtApellidoPaterno").val("");
-	$("#txtApellidoMaterno").val("");
-	$("#txtDireccion").val("");	
-	$("#txtDNI").val("");
-	$("#txtGenero").val("");
-	$("#txtFechaNacimiento").val("");
-	$("#txtDistrito").val("");	
-	$("#txtProvincia").val("");	
-	$("#txtDepartamento").val("");
-	$("#txtDireccion").val("");
-	$("#txtTelefono").val("");
-	$("#txtEmail").val("");
-	$("#combo_TipoPersonal").val(1);
-	$('#id_archivo_Fotografia').fileinput('reset');
+	$("#txtapellidopaterno").val("");
+	$("#txtapellidomaterno").val("");
+	$("#txtnombre").val("");
+	$("#txtcargo").val("");
+	$("#txtdni").val("");
+	$("#txtmovil").val("");
+	$("#txtemail").val("");
 	$("#main-content").load("Personal/vista_listar_personal.php") 
 }
+
 function listar_personal_vista(valor,pagina){
 	var pagina = Number(pagina);
 	$.ajax({
@@ -231,39 +224,24 @@ function Editar_personal(){
 	})			
 }
 function revisar_dni_personal(){
-	var nombre    = $("#txtnombre").val();
-	var apepat    = $("#txtapellidopaterno").val();
-	var apemat    = $("#txtapellidomaterno").val();
-	var fecha     = $("#txtfecha").val();
-	var direccion = $("#txtdireccion").val();
-	var dni       = $("#txtdni").val();
-	var sexo      = $("#txtGenero").val();
-	var email     = $("#txtemail").val();
-	var telefono  = $("#txttelefono").val();
-	var movil     = $("#txtmovil").val();
-	var usuario   = $("#txtusuario").val();
-	var clave     = $("#txtclave").val();
-	var tipo      = $("#cmbTipousuario").val();
-	var puesto    = $("#txtpuesto").val();
+	var apepat		=	$("#txtapellidopaterno").val();
+	var apemat		=	$("#txtapellidomaterno").val();
+	var nombre		=	$("#txtnombre").val();
+	var cargo		=	$("#txtcargo").val();
+	var dni			=	$("#txtdni").val();
+	var movil		=	$("#txtmovil").val();
+	var correo		=	$("#txtemail").val();
 	
-	if (nombre.length>0  && apemat.length>0 && apepat.length>0 && fecha.length>0 && direccion.length>0 ) {
+	if (nombre.length>0  && apemat.length>0 && apepat.length>0 && cargo.length>0 && movil.length>0 && correo.length>0 ) {
 	}else{
 		return swal("Faltan Llenar Datos","","info");
 	}
 	if (dni.length==0 ) {
 		return swal("Faltan Llenar Su Documento de Identidad","","info");
 	}
-	if (usuario.length==0) {
-		return swal("Faltan Llenar Su usuario","","info");
-	}
-	if (clave.length==0) {
-		return swal("Faltan Llenar Su Clave","","info");
-	}
-	if (tipo=='otro') {
-		return swal("Falta Seleccionar el Tipo de usuario","","error");
-	}
+	
 	$.ajax({
-		url:'../controlador/ciudadano/controlador_verificar_existencia_dni.php',
+		url:'../controlador/victima/controlador_verificar_existencia_dni.php',
 		type:'POST',
 		data:{
 			dni:dni
@@ -280,50 +258,34 @@ function revisar_dni_personal(){
 	})
 }
 function Registrar_personal(){
-	var nombre    = $("#txtnombre").val();
-	var apepat    = $("#txtapellidopaterno").val();
-	var apemat    = $("#txtapellidomaterno").val();
-	var fecha     = $("#txtfecha").val();
-	var direccion = $("#txtdireccion").val();
-	var dni       = $("#txtdni").val();
-	var sexo      = $("#txtGenero").val();
-	var email     = $("#txtemail").val();
-	var telefono  = $("#txttelefono").val();
-	var movil     = $("#txtmovil").val();
-	var usuario   = $("#txtusuario").val();
-	var clave     = $("#txtclave").val();
-	var tipo      = $("#cmbTipousuario").val();
-	var puesto    = $("#txtpuesto").val();
-	if (tipo=='otro') {
-		return swal("Falta Seleccionar el Tipo de usuario","","error");
-	}
+	var apepat		=	$("#txtapellidopaterno").val();
+	var apemat		=	$("#txtapellidomaterno").val();
+	var nombre		=	$("#txtnombre").val();
+	var cargo		=	$("#txtcargo").val();
+	var dni			=	$("#txtdni").val();
+	var movil		=	$("#txtmovil").val();
+	var correo		=	$("#txtemail").val();
+	
 	$.ajax({
 		url:'../controlador/personal/controlador_registrar_personal.php',
 		type:'POST',
 		data:{
-			nombre:nombre,
 			apepat:apepat,		
 			apemat:apemat,
-			telefono:telefono,	
+			nombre:nombre,
+			cargo:cargo,	
+			dni:dni,
 			movil:movil,
-			direccion:direccion,
-			fecha:fecha,
-			nrodocume:dni,
-			email:email,
-			sexo:sexo,
-			usuario:usuario,
-			clave:clave,
-			tipo:tipo,
-			puesto:puesto
+			correo:correo
 		}
 	})
 	.done(function(resp){
 		if (resp > 0) {
 			 swal("Datos Registrados!", "", "success")
+			 Limpieza_post_personal()
 			 .then ( ( value ) =>  { 
 				  $("#main-content").load("Personal/vista_listar_personal.php"); 
-			});
-			
+			});		
 		}
 		else{
 			swal("! Registro no completado!", "", "error");	

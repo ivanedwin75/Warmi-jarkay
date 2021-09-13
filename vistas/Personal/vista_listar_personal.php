@@ -4,7 +4,7 @@
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h2><b>PERSONAL REGISTRADO</b></h2>            
+        <h2><b>EFECTIVO POLICIAL</b></h2>            
     </div>
     <div class="panel-body">
 	    <br>
@@ -19,7 +19,7 @@
         <div class="col-md-12">
             <div class="table-responsive" style="text-align: center;">
             	<br>
-            	<label>LISTADO DEL PERSONAL ADMINISTRATIVO</label>
+            	<label>LISTADO DEL PERSONAL POLICIAL</label>
                 <div id="lista_personal_tabla" class="icon-loading">
                 </div>
                 <p id="paginador_personal_tabla" style="text-align:right" class="mi_paginador"></p>

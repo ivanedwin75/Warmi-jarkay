@@ -1,20 +1,15 @@
 <?php
-	$nombre = strtoupper($_POST["nombre"]);
-	$apePat = strtoupper($_POST["apepat"]);
-	$apeMat = strtoupper($_POST["apemat"]);
-	$telefo = $_POST["telefono"];
+	
+	$apepat = $_POST["apepat"];
+	$apemat = $_POST["apemat"];
+	$nombre = $_POST["nombre"];
+	$cargo  = $_POST["cargo"];
+	$dni    = $_POST["dni"];
 	$movil  = $_POST["movil"];
-	$direcc = strtoupper($_POST["direccion"]);
-	$fecnac = $_POST["fecha"];
-	$dni    = $_POST["nrodocume"];
-	$email  = $_POST["email"];
-	$genero = $_POST["sexo"];
-	$usuario= $_POST["usuario"];
-	$clave  = $_POST["clave"];
-	$tipo   = $_POST["tipo"];
-	$puesto = $_POST["puesto"];
+	$correo = $_POST["correo"];
+	
 	include '../../modelo/modelo_personal.php';
 	$MC = new Modelo_personal();
-	$consulta = $MC->Registrar_personal($nombre,$apePat,$apeMat,$telefo,$movil,$direcc,$fecnac,$dni,$email,$genero,$usuario,$clave,$tipo,$puesto);
+	$consulta = $MC->Registrar_personal($nombre,$apepat,$apemat,$cargo,$dni,$movil,$correo);
 	echo $consulta;
 ?>

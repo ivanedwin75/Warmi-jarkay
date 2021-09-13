@@ -1,5 +1,5 @@
 <?php
-	class Modelo_ciuadano
+	class Modelo_victima
 	{
 		private $conexion;
 		function __construct()
@@ -9,7 +9,7 @@
 			$this->conexion->conectar();
 		}
 		function Registrar_victima($exp,$nombre,$apePat,$apeMat,$est_civil,$edad,$dni,$movil,$direcc,$fecha){
-			$sql = "call PA_REGISTRARVICTIMA('$nombre','$apePat','$apeMat','$tipope','$telefo','$movil','$direcc','$fecnac','$dni','$email','$genero')";
+			$sql = "call PA_REGISTRARVICTIMA('$exp','$nombre','$apePat','$apeMat','$edad','$est_civil','$dni','$direcc','$movil','$fecha')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}
@@ -43,7 +43,7 @@
 			$this->conexion->cerrar();	
  		}
  		function buscar_dni($dni){
-			$sql = "SELECT * from ciudadano where ciud_dni = '$dni'";			
+			$sql = "SELECT * from victima where Dni = '$dni'";		
 			$arreglo = array();
 			if ($consulta = $this->conexion->conexion->query($sql)) {
 				while ($consulta_VU = mysqli_fetch_array($consulta)) {

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="_recursos/js/consola_ciudadano.js"></script>
+<script type="text/javascript" src="_recursos/js/consola_victima.js"></script>
 <link type="text/css" rel="stylesheet" href="_recursos/input-file/css/diseño_input_2.css">
 <script src="_recursos/input-file/js/bootstrap-uploader/file-upload.js"></script>
 <div class="contendor_kn">
@@ -15,7 +15,7 @@
 	        </div>
 	    </div>
 	    <div class="col-md-2">
-	       <button style="width:100%" class="btn btn-danger" onclick="cargar_contenido('main-content','Ciudadano/vista_registrar_ciudadano.php')"><i class="fa fa-plus-square"></i>&nbsp;<b>Nuevo Registro</b></button></div>
+	       <button style="width:100%" class="btn btn-danger" onclick="cargar_contenido('main-content','victima/vista_registrar_victima.php')"><i class="fa fa-plus-square"></i>&nbsp;<b>Nuevo Registro</b></button></div>
         <div class="col-md-12">
             <div class="table-responsive" style="text-align: center;">
             	<br>
@@ -34,7 +34,7 @@
     <div class="modal-content">
          <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-           <h4 class="modal-title" id="myModalLabel"><b>Editar Ciudadano</b></h4>
+           <h4 class="modal-title" id="myModalLabel"><b>Editar Victima</b></h4>
          </div>
       	<div class="modal-body">
 			<div class="panel-body">
@@ -97,7 +97,7 @@
 			</div>         
         </div> 
         <div class="modal-footer">
-        	<button  class="btn btn-success" onclick="Editar_ciudadano()"><i class="fa fa-check"></i>&nbsp;<b>Modificar Ciudadano</b></button>&nbsp;&nbsp;&nbsp;
+        	<button  class="btn btn-success" onclick="Editar_victima()"><i class="fa fa-check"></i>&nbsp;<b>Modificar Ciudadano</b></button>&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>
         </div> 
     </div>
