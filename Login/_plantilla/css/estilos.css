@@ -98,7 +98,7 @@ header{
     
 }
 h2.l{
-    font-size: 130%;
+    font-size: 100%;
     background: #024A28;
     font-weight: bold;
 }
@@ -269,7 +269,10 @@ img.img1{
     float: left;
     background: #024A28;
 }
-
+img.imagen{
+    max-width: 100%;
+    position: center bottom; 
+  }
 /*end reset*/
 
 

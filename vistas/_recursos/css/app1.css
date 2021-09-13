@@ -477,6 +477,7 @@ a.list-group-item.hover {
   border-color: rgba(165, 207, 187, 0.55);
   background-color: rgba(165, 207, 187, 0.55);
   height: 100%;
+  color: #000;
 }
 
 .panel-default > .panel-heading,
@@ -900,6 +901,31 @@ body {
   border: none;
 }
 
+
+button.btn1{
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding: 2%;
+  font-size: 16px;
+}
+button.btn1:hover{
+background-color: #0b804a;
+color:gray;
+}
+
+button.btn2{
+  width: 80%;
+  height: 100px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 20px 20px 0 rgba(0,0,0,0.19);
+  padding: 2%;
+  font-size: 16px;
+}
+
 .navbar-brand {
   display: inline-block;
   float: none;
@@ -1104,7 +1130,8 @@ b.l{
 }
 
 html {
-  background-color:black;
+  background-image: url("../img/fondo.png");
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -4819,6 +4846,16 @@ a.text-#000000:hover {
 img.imagen{
   max-width: 100%;
 }
+img.imagen1{
+  max-width: 100%;
+  position: center bottom;
+}
+
+img.imagen0{
+  max-width: 100%;
+  position: center bottom;
+}
+
 img.img1{
   max-width: 300px;
   
