@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="en">
+ 
   <link rel="stylesheet" href="../_recursos/css/bootstrap.css">	               
 	<link rel="stylesheet" href="estilos.css">
  
@@ -5,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">                             
-             <div id="myTable" class="table table-dark"></div>                
+             <table id="myTable" class="table table-dark"></table>                
             </div>                                        
         </div>                  
     </div>
@@ -17,3 +20,4 @@
     <!--  Plugin DynamicTable -->
     <script src="plugins/dynamicTable/jquery.dynamicTable-1.0.0.js"></script>
     <script src="codigo.js"></script>
+</html>

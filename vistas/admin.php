@@ -20,10 +20,7 @@ session_start();
   <link rel="stylesheet" href="_recursos/css/app1.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/js/sweetalert.css">
   <link href="_recursos/css/customs.css" rel="stylesheet">
-  <script src="../vistas/Highcharts-6.1.1/code/highcharts.js"></script>
-  <script src="../vistas/Highcharts-6.1.1/code/highcharts-3d.js"></script>
-  <script src="../vistas/Highcharts-6.1.1/code/modules/exporting.js"></script>
-  <script src="../vistas/Highcharts-6.1.1/code/modules/export-data.js"></script>
+
   <script src="_recursos/js/jquery.min.js"></script>
   
   <script type="text/javascript" src="_recursos/js/consola_usuario.js"></script>

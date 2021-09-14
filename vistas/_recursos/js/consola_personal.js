@@ -10,6 +10,7 @@ function Limpieza_post_personal(){
 }
 
 function listar_personal_vista(valor,pagina){
+
 	var pagina = Number(pagina);
 	$.ajax({
 		url:'../controlador/personal/controlador_ListarBuscar_personal.php',
@@ -29,35 +30,37 @@ function listar_personal_vista(valor,pagina){
 				cadena += "<table  class='table table-condensed jambo_table'>";
 				cadena += "<thead  class=''>";
 				cadena += "<tr >";
-				cadena += "<th style = 'text-align: center' hidden='true' >ID</th>";
-				cadena += "<th style = 'text-align: center'>NOMBRE Y APELLIDOS</th>";
+				cadena += "<th style = 'text-align: center'>ID</th>";
+				cadena += "<th style = 'text-align: center'>CARGO</th>";
+				cadena += "<th style = 'text-align: center'>APELLIDO PATERNO</th>";
+				cadena += "<th style = 'text-align: center'>APELLIDO MATERNO</th>";
+				cadena += "<th style = 'text-align: center'>NOMBRES</th>";
 				cadena += "<th style = 'text-align: center'>DNI</th>";
-				cadena += "<th style = 'text-align: center'>SEXO</th>";
-				cadena += "<th style = 'text-align: center'>FECHA NACIMIENTO</th>";
-				cadena += "<th style = 'text-align: center'>PUESTO</th>";
-				cadena += "<th style = 'text-align: center'>USUARIO</th>";
-				cadena += "<th style = 'text-align: center'>ESTADO</th>";
-				cadena += "<th>ACCI&Oacute;N</th>";
+				cadena += "<th style = 'text-align: center'>CELULAR</th>";
+				cadena += "<th style = 'text-align: center'>E-MAIL</th>";
 				cadena += "</tr>";
 				cadena += "</thead>";
 				cadena += "<tbody>";
 				for(var i = 0 ; i<valores.length; i++){
 					cadena += "<tr>";			
-					cadena += "<td align='center' hidden>"+valores[i][0]+"</td>";
-					cadena += "<td>"+valores[i][1]+" "+valores[i][2]+" "+valores[i][3]+"</td>";
+					cadena += "<td align='center'>"+valores[i][0]+"</td>";
+					cadena += "<td>"+valores[i][1]+"</td>";
+					cadena += "<td align='center'>"+valores[i][2]+"</td>";
+					cadena += "<td align='center'>"+valores[i][3]+"</td>";
 					cadena += "<td align='center'>"+valores[i][4]+"</td>";
-					cadena += "<td align='center'>"+valores[i][5]+"</td>";
-					cadena += "<td align='center'>"+valores[i][6]+"</td>";
-					cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold;'>"+valores[i][14]+"</td>";
-					cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold;'>"+valores[i][13]+"</td>";
-					if (valores[i][12]=="INACTIVO") {
+					cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold;'>"+valores[i][5]+"</td>";
+					cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold;'>"+valores[i][6]+"</td>";
+					cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold;'>"+valores[i][7]+"</td>";
+
+					/*if (valores[i][12]=="INACTIVO") {
 						cadena += "<td style = 'text-align: center'> <span class='badge bg-danger' style='color:White;'>"+valores[i][12]+"</span> </td>";
 					}else{
 						cadena += "<td  style = 'text-align: center'> <span class='badge bg-success' style='color:White;'>"+valores[i][12]+"</span> </td>";
 					}
 					cadena += "<td><button name='"+valores[i][0]+"*"+valores[i][1]+"*"+valores[i][2]+"*"+valores[i][3]+"*"+valores[i][4]+"*"+valores[i][5]+"*"+valores[i][6]+"*"+valores[i][7]+"*"+valores[i][8]+"*"+valores[i][9]+"*"+valores[i][10]+"*"+valores[i][11]+"*"+valores[i][12]+"*"+valores[i][13]+"*"+valores[i][14]+"' class='btn btn-primary' onclick='AbrirModalEditarPersonal(this)'><span class='glyphicon glyphicon-pencil'></span>";
 					cadena += "</button></td> ";
-					cadena += "</tr>";
+					cadena += "</tr>";*/ 
+					//Utilizar inner Join con la actividad de usuario
 				}
 				cadena += "</tbody>";
 				cadena += "</table>";
@@ -102,18 +105,19 @@ function listar_personal_vista(valor,pagina){
 				paginar += "</ul>";
 				$("#paginador_personal_tabla").html(paginar);
 			}else{
+
 				var cadena = "";
 				cadena += "<table  class='table table-condensed jambo_table'>";
 				cadena += "<thead  class=''>";
 				cadena += "<tr >";
-				cadena += "<th style = 'text-align: center' hidden='true' >ID</th>";
-				cadena += "<th style = 'text-align: center'>NOMBRE Y APELLIDOS</th>";
+				cadena += "<th style = 'text-align: center'>ID</th>";
+				cadena += "<th style = 'text-align: center'>CARGO</th>";
+				cadena += "<th style = 'text-align: center'>APELLIDO PATERNO</th>";
+				cadena += "<th style = 'text-align: center'>APELLIDO MATERNO</th>";
+				cadena += "<th style = 'text-align: center'>NOMBRES</th>";
 				cadena += "<th style = 'text-align: center'>DNI</th>";
-				cadena += "<th style = 'text-align: center'>SEXO</th>";
-				cadena += "<th style = 'text-align: center'>FECHA NACIMIENTO</th>";
-				cadena += "<th style = 'text-align: center'>USUARIO</th>";
-				cadena += "<th style = 'text-align: center'>ESTADO</th>";
-				cadena += "<th>ACCI&Oacute;N</th>";
+				cadena += "<th style = 'text-align: center'>CELULAR</th>";
+				cadena += "<th style = 'text-align: center'>E-MAIL</th>";
 				cadena += "</tr>";
 				cadena += "</thead>";
 				cadena += "<tbody>";
@@ -129,6 +133,8 @@ function listar_personal_vista(valor,pagina){
 		}
 	});
 }
+
+
 function AbrirModalEditarPersonal(control){
 	var datos = control.name;
 	var datos_split = datos.split("*");
