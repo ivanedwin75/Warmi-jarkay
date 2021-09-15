@@ -7,7 +7,8 @@ function Limpieza_post_personal(){
 	$("#txtmovil").val("");
 	$("#txtemail").val("");
 	$("#main-content").load("Personal/vista_listar_personal.php") 
-}
+} 
+
 
 function listar_personal_vista(valor,pagina){
 
@@ -27,7 +28,7 @@ function listar_personal_vista(valor,pagina){
 			var valores = eval(datos[0]); 
 			if(valores.length>0){
 				var cadena = "";
-				cadena += "<table  class='table table-condensed jambo_table'>";
+				cadena += "<table  id='data_table' class='table table-striped'>"; //class='table table-condensed jambo_table
 				cadena += "<thead  class=''>";
 				cadena += "<tr >";
 				cadena += "<th style = 'text-align: center'>ID</th>";
@@ -52,19 +53,15 @@ function listar_personal_vista(valor,pagina){
 					cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold;'>"+valores[i][6]+"</td>";
 					cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold;'>"+valores[i][7]+"</td>";
 
-					/*if (valores[i][12]=="INACTIVO") {
-						cadena += "<td style = 'text-align: center'> <span class='badge bg-danger' style='color:White;'>"+valores[i][12]+"</span> </td>";
-					}else{
-						cadena += "<td  style = 'text-align: center'> <span class='badge bg-success' style='color:White;'>"+valores[i][12]+"</span> </td>";
-					}
 					cadena += "<td><button name='"+valores[i][0]+"*"+valores[i][1]+"*"+valores[i][2]+"*"+valores[i][3]+"*"+valores[i][4]+"*"+valores[i][5]+"*"+valores[i][6]+"*"+valores[i][7]+"*"+valores[i][8]+"*"+valores[i][9]+"*"+valores[i][10]+"*"+valores[i][11]+"*"+valores[i][12]+"*"+valores[i][13]+"*"+valores[i][14]+"' class='btn btn-primary' onclick='AbrirModalEditarPersonal(this)'><span class='glyphicon glyphicon-pencil'></span>";
 					cadena += "</button></td> ";
-					cadena += "</tr>";*/ 
+					cadena += "</tr>";
 					//Utilizar inner Join con la actividad de usuario
 				}
 				cadena += "</tbody>";
 				cadena += "</table>";
 				$("#lista_personal_tabla").html(cadena);
+				
 				var totaldatos = datos[1];
 				var numero_paginas = Math.ceil(totaldatos/5); 
 				var paginar = "<ul class='pagination'>";
@@ -140,31 +137,27 @@ function AbrirModalEditarPersonal(control){
 	var datos_split = datos.split("*");
 	$('#modal_editar_personal').modal({backdrop: 'static', keyboard: false})
 	$('#modal_editar_personal').modal('show');
-	$('#txtidciudadano').val(datos_split[0]);
-	$('#txtnombre_alimentos').val(datos_split[1]);
+	$('#txtid_personal').val(datos_split[0]);
+	$('#txtcargo').val(datos_split[1]);
 	$('#txtapellidopaterno').val(datos_split[2]);
 	$('#txtapellidomaterno').val(datos_split[3]);
-	$('#txtemail_modal').val(datos_split[10]);
-	$('#txtnrodocumento').val(datos_split[4]);
-	$('#txttelefono_modal').val(datos_split[8]);
-	$('#txtmovil_modal').val(datos_split[9]);
-	$('#txtdireccion_modal').val(datos_split[7]);
-	$('#txtfecha_modal').val(datos_split[6]);	
-	$('#cmb_estadopersonal').val(datos_split[12]).trigger("change");	
+	$('#txtnombre').val(datos_split[4]);
+	$('#txtdni_modal').val(datos_split[5]);
+	$('#txtmovil_modal').val(datos_split[6]);
+	$('#txtemail_modal').val(datos_split[7]);	
 }
 function Editar_personal(){
-	var codigo    = $("#txtidciudadano").val();
-	var nombre    = $("#txtnombre_alimentos").val();
-	var apepat    = $("#txtapellidopaterno").val();
-	var apemat    = $("#txtapellidomaterno").val();
-	var telefono  = $("#txttelefono_modal").val();
-	var movil     = $("#txtmovil_modal").val();
-	var direccion = $("#txtdireccion_modal").val();
-	var fecha     = $("#txtfecha_modal").val();
-	var nrodocume = $("#txtnrodocumento").val();
-	var email     = $("#txtemail_modal").val();
-	var estado    = $('#cmb_estadopersonal').val();
-	if(nombre.length>0 && apepat.length>0 && apemat.length>0 && direccion.length>0 && nrodocume.length>0 && email.length>0 ){
+
+	var id_personal		=$('#txtid_personal').val();
+	var cargo			=$('#txtcargo').val();
+	var apepat			=$('#txtapellidopaterno').val();
+	var apemat			=$('#txtapellidomaterno').val();
+	var nombre			=$('#txtnombre').val();
+	var dni				=$('#txtdni_modal').val();
+	var movil			=$('#txtmovil_modal').val();
+	var email			=$('#txtemail_modal').val();	
+	
+	if(id_personal.length>0 && cargo.length>0 && apepat.length>0 && apemat.length>0 && nombre.length>0 && dni.length>0 && movil.length>0 && email.length>0 ){
 	}
 	else{
 		return swal("Falta Llenar Datos", "", "info");	
@@ -173,17 +166,14 @@ function Editar_personal(){
 		url:'../controlador/personal/controlador_editar_personal.php',
 		type:'POST',
 		data:{
-		codigo:codigo,
-		nombre:nombre,
+		id_personal:id_personal,
+		cargo:cargo,
 		apepat:apepat,		
 		apemat:apemat,
-		telefono:telefono,	
+		nombre:nombre,
+		dni:dni,	
 		movil:movil,
-		direccion:direccion,
-		fecha:fecha,
-		nrodocume:nrodocume,
-		email:email,
-		estado:estado
+		email:email
 		}
 	})
 	.done(function(resp){

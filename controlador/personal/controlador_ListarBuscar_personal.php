@@ -1,5 +1,6 @@
 <?php
 	  include '../../modelo/modelo_personal.php';
+    
     $boton = $_POST['boton'];
     if($boton==='buscar'){
       $inicio = 0;
@@ -15,4 +16,6 @@
       $c = $instancia->listar_personal($valor,$inicio,$limite);
       echo json_encode($c)."*".$b;
     }
+        
+    
 ?>

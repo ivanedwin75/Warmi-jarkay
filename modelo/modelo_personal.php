@@ -18,8 +18,8 @@
 			}
 			$this->conexion->Cerrar_Conexion();
 		}
-		function Editar_personal($codigo,$nombre,$apePat,$apeMat,$telefo,$movil,$direc,$fecha,$nrodocume,$email,$estado){
-			$sql = "call PA_EDITARPERSONALTODOS('$codigo','$nombre','$apePat','$apeMat','$telefo','$movil','$direc','$fecha','$nrodocume','$email','$estado')";
+		function Editar_personal($id_personal,$cargo,$apePat,$apeMat,$nombre,$dni,$movil,$email){
+			$sql = "call PA_EDITARPERSONAL('$id_personal','$cargo','$apePat','$apeMat','$nombre','$dni','$movil','$email')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}
@@ -34,7 +34,7 @@
 			}else{
 			    $sql = "SELECT efectivos.id_efectivos, efectivos.Cargo, efectivos.Ap_paterno, efectivos.Ap_materno, efectivos.Nombres, efectivos.Dni, efectivos.Cel, efectivos.Correo FROM efectivos where efectivos.Dni like '".$valor."%' ORDER BY efectivos.id_efectivos DESC";
 			}
-			
+
 			$resultado =  $this->conexion->conexion->query($sql);
 			$arreglo = array();
 			while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
@@ -44,7 +44,7 @@
 			$this->conexion->cerrar();	
  		}
  		function buscar_dni($dni){
-				$sql = "SELECT * from personal where pers_dni = '$dni'";
+				$sql = "SELECT * from efectivos where efectivos.Dni = '$dni'";
 				
 				$arreglo = array();
 				if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -56,6 +56,7 @@
 					$this->conexion->cerrar();	
 				}
 		}
+		//borrrrrrrrrrrrrarrrrrr
 		function listar_combotipousuario(){
 				$sql = "SELECT * from tipo_usuario where tipusu_estado = 'ACTIVO'";
 				

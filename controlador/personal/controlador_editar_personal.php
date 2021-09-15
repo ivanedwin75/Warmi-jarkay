@@ -1,17 +1,14 @@
 <?php
-	$codigo       = $_POST["codigo"];
-	$nombre       = strtoupper($_POST["nombre"]);
+	$id_personal  = $_POST["id_personal"];
+	$cargo     	  = $_POST["cargo"];
 	$apePat       = strtoupper($_POST["apepat"]);
 	$apeMat       = strtoupper($_POST["apemat"]);
-	$telefo       = $_POST["telefono"];
+	$nombre       = strtoupper($_POST["nombre"]);
+	$dni 		  = $_POST["dni"];
 	$movil        = $_POST["movil"];
-	$direc        = strtoupper($_POST["direccion"]);
-	$fecha        = $_POST["fecha"];
-	$nrodocume    = $_POST["nrodocume"];
 	$email        = $_POST["email"];
-	$estado       = $_POST["estado"];
 	require '../../modelo/modelo_personal.php';
 	$MC = new Modelo_personal();
-	$consulta = $MC->Editar_personal($codigo,$nombre,$apePat,$apeMat,$telefo,$movil,$direc,$fecha,$nrodocume,$email,$estado);
+	$consulta = $MC->Editar_personal($id_personal,$cargo,$apePat,$apeMat,$nombre,$dni,$movil,$email);
 	echo $consulta;
 ?>

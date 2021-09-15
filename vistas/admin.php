@@ -228,13 +228,13 @@ session_start();
                   <span class="font-bold" translate="aside.nav.Mantenimiento" >EFECTIVOS PNP</span>
                 </a>
               </li>
-              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Ciudadano/vista_listar_ciudadano.php');">
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','Area/vista_area_listar.php');">
                 <a ui-sref="app.dashboard-v2">
                   <i class="fa fa-briefcase icon text-info-lter text-success"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">DIRECTORIO</span>
                 </a>
               </li>
-              <li ui-sref-active="active"onclick="cargar_contenido('main-content','Institucion/vista_institucion_listar.php');">
+              <li ui-sref-active="active"onclick="cargar_contenido('main-content','Institucion/vista_victima_listar.php');">
                   <a ui-sref="app.dashboard-v2">     
                   <i class="fa fa-folder-open icon text-info-lter"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">BUSCAR</span>

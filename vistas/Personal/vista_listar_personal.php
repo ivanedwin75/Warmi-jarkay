@@ -1,6 +1,8 @@
 <script type="text/javascript" src="_recursos/js/consola_personal.js"></script>
 <link type="text/css" rel="stylesheet" href="_recursos/input-file/css/diseño_input_2.css">
 <script src="_recursos/input-file/js/bootstrap-uploader/file-upload.js"></script>
+
+
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -38,10 +40,11 @@
          </div>
       	<div class="modal-body">
 			<div class="panel-body">
-	                    <div class="col-sm-12">
-	                        <input type="text" id="txtidciudadano" hidden >
-	                        <label>Nombres </label>
-	                        <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtnombre_alimentos" placeholder="Ingrese Nombres" maxlength="">
+						
+						<div class="col-sm-6">
+	                        <input type="text" id="txtid_personal" hidden >
+	                        <label>Cargo </label>
+	                        <input type="text" class="form-control" id="txtcargo" placeholder="Ingrese Cargo" maxlength="10">
 	                        <br>
 	                    </div>
 	                    <div class="col-md-6">
@@ -49,50 +52,32 @@
 	                        <input type="text" class="form-control"onkeypress="return soloLetras(event)"id="txtapellidopaterno" placeholder="Ingrese Apellido Paterno" maxlength="">
 	                       <br>
 	                    </div>
+
 	                    <div class="col-md-6">
 	                        <label >Apellido Materno </label>
 	                        <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtapellidomaterno" placeholder="Ingrese Apelido Materno" maxlength="">
 	                        <br>
 	                    </div> 
 	                    <div class="col-sm-6">
-	                        <label >Tel&eacute;fono </label>
-	                        <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txttelefono_modal" placeholder="Ingrese nro telefóno" maxlength="9">
+	                        <label>Nombres </label>
+	                        <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtnombre" placeholder="Ingrese Nombres" maxlength="">
+	                        <br>
+	                    </div>
+						
+						<div class="col-sm-6">
+	                        <label >DNI </label>
+	                        <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtdni_modal" placeholder="Ingrese nro DNI" maxlength="8">
 	                        <br>
 	                    </div>        
 	                    <div class="col-md-6">
-	                        <label>Movil </label>
+	                        <label>Celular </label>
 	                        <input type="text"class="form-control" id="txtmovil_modal"  onkeypress="return soloNumeros(event)" placeholder="Ingrese nro movil" maxlength="9">
 	                            <br>
 	                    </div> 
-	                    <div class="col-md-8">
-	                        <label>Direcci&oacute;n </label>
-	                        <input type="text"  class="form-control" id="txtdireccion_modal" placeholder="Ingrese dirección" maxlength="200">
-	                        <br>
-	                    </div> 
-	                    <div class="col-sm-4">
-	                        <label>Fecha Nacimiento</label>
-	                        <div class=" input-group">
-	                          <div class="input-group-addon">
-	                            <i class="fa fa-calendar"></i>
-	                          </div>
-	                          <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtfecha_modal"  class="form-control"  >
-	                        </div><br>
-	                    </div>
-	                    <div class="col-md-4">
-	                        <label>Nro Documento</label>
-	                        <input type="text"  class="form-control"  onkeypress="return soloNumeros(event)" id="txtnrodocumento" style="width: 100%;" placeholder="Ingrese nro Documento" maxlength="8">
-	                    </div>
-	                    <div class="col-sm-4">
+	                    <div class="col-sm-6">
 	                        <label>Email</label>
-	                        <input type="text"  class="form-control" id="txtemail_modal" style="width: 100%;" placeholder="Ingrese nro Documento" maxlength="80">
+	                        <input type="text"  class="form-control" id="txtemail_modal" style="width: 100%;" placeholder="Ingrese correo" maxlength="80">
 	                    </div> 
-	                    <div class="col-md-4">
-	                    	<label>Estado</label>
-					        <select id="cmb_estadopersonal" style="width: 100%" class="form-control select2">
-					           <option value="ACTIVO">ACTIVO</option>
-					           <option value="INACTIVO">INACTIVO</option>
-					        </select>
-	                    </div>  
 			</div>         
         </div> 
         <div class="modal-footer">
