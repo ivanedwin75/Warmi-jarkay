@@ -204,7 +204,7 @@ session_start();
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/bpanico.php');">
                   <a ui-sref="app.dashboard-v2">     
                   <i class="fa fa-folder-open icon text-info-lter"></i>
-                  <span class="font-bold" translate="aside.nav.Mantenimiento">BONTON DE PANICO</span>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento">BOTON DE PANICO</span>
                   </a>
               </li>
 

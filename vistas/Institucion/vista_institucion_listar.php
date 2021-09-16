@@ -5,22 +5,25 @@
         <center><h3><b>BUSCAR EXPEDIENTES</b></h3></center>         
     </div>
     <div class="panel-body">
-        <div class="col-md-6"> 
+        <div class="col-md-12"> 
           <div class=" input-group">
-            <input id="txt_institucion_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el DNI">
+            <input id="txt_institucion_vista" type="text" class="form-control" onkeypress="return soloNumeros(event)"  placeholder="Ingrese el DNI">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
           </div>
           <br>
+          <!--
           <div class=" input-group">
-            <input id="txt_institucion_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese N° de expediente">
+            <input id="txt_institucion_vista_exp" type="text" class="form-control" placeholder="Ingrese N° de expediente">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
           </div>
         </div>
+        
         <div class="col-md-2">
            <button class="btn btn-info" onclick="cargar_contenido('main-content','Institucion/vista_institucion_registrar.php');"><i class="fa fa-file-text" ></i> &nbsp;&nbsp;<strong>Nuevo Registro</strong></button>  
         </div>
+-->
         <div class="box-body table-responsive" style="text-align: center;">
-        	<label>BUSCAR EXPEDIENTES</label>
+        	
             <div id="listar_institucion_tabla" class=" icon-loading">
               <i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
               <div id="nodatos"></div>
@@ -30,6 +33,8 @@
     </div>
   </div>
 </div>
+
+
 <!-- INICIO MODAL -->
 <script type="text/javascript">listar_institucion_vista("","1");</script>
 <!--Fin Modal-->
@@ -44,7 +49,8 @@
     <div class="modal-content">
          <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-           <h4 class="modal-title" id="myModalLabel"><b>Editar Expediente</b></h4>
+           <h4 class="modal-title" id="myModalLabel"><b>Datos de la denuncia</b></h4>
+           <label styke>COMISARIA / DENUNCIA</label>
          </div>
         <div class="modal-body">
       <div class="panel-body">
@@ -67,10 +73,12 @@
             <option value="INACTIVO">INACTIVO</option>
           </select>
         </div>   
-      </div>         
+      </div> 
+      
+      
         </div> 
         <div class="modal-footer">
-          <button  class="btn btn-success" onclick="Editar_institucion()"><i class="fa fa-check"></i>&nbsp;<b>Modificar Instituci&oacute;n</b></button>&nbsp;&nbsp;&nbsp;
+          <button  class="btn btn-success" onclick="Editar_institucion()"><i class="fa fa-check"></i>&nbsp;<b>Guardar</b></button>&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>
         </div> 
     </div>
@@ -79,7 +87,11 @@
 <script type="text/javascript">
 	$("#txt_institucion_vista").keyup(function(){
 		var dato_buscar = $("#txt_institucion_vista").val();
-		listar_institucion_vista(dato_buscar,'1');
+		listar_institucion_vista(dato_buscar,'1',0);
+	});
+  $("#txt_institucion_vista_exp").keyup(function(){
+		var dato_buscar = $("#txt_institucion_vista_exp").val();
+		listar_institucion_vista(dato_buscar,'1',1);
 	});
 </script>
 <script>

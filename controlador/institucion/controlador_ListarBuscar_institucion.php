@@ -8,6 +8,7 @@
         $pagina = $_POST['pagina'];
         $inicio = ($pagina -1) * $limite;
       }
+      //$ident = $_POST['ident'];
       $valor = $_POST['valor'];
       $instancia = new Modelo_institucion();
       $a = $instancia->listar_institucion($valor);
