@@ -183,7 +183,7 @@ session_start();
               
             <?php if ($_SESSION['usu']=="VICTIMA") {        
             ?>
-              <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');">      
+              <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento2.php');">      
                 <a ui-sref="app.dashboard-v2" >
                   <i class="fa fa-laptop icon text-success"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">SEGUIMIENTO</span>
