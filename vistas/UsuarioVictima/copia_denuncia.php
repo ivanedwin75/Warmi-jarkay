@@ -63,7 +63,7 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <div style="text-align: center;" align="center">
-                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/mapa.png">
+                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/mapah.jpg">
                 </div>
               </div>         
             </div>
