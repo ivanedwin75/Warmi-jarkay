@@ -112,8 +112,8 @@ function listar_institucion_vista(valor, pagina, ident) {
 function AbrirModalInstitucion(control) {
     var datos = control.name;
     var datos_split = datos.split("*");
-    $('#modal_editar_institucion').modal({ backdrop: 'static', keyboard: false })
-    $('#modal_editar_institucion').modal('show');
+    $('#modal_editar_denuncia').modal({ backdrop: 'static', keyboard: false })
+    $('#modal_editar_denuncia').modal('show');
     $('#txtid_denuncia').val(datos_split[0]);
     $('#txtexpediente').val(datos_split[1]);
     $('#txtdni').val(datos_split[2]);
@@ -143,7 +143,7 @@ function Editar_institucion() {
         })
         .done(function(resp) {
             if (resp > 0) {
-                $('#modal_editar_institucion').modal('hide');
+                $('#modal_editar_denuncia').modal('hide');
                 swal("Datos Actualizados!", "", "success");
                 var dato_buscar = $("#txt_institucion_vista").val();
                 listar_institucion_vista(dato_buscar, '1');

@@ -44,39 +44,147 @@
 		padding: 10px;
 	}
 </style>
-<div class="modal fade bs-example-modal-lg" id="modal_editar_institucion">
+<div class="modal fade bs-example-modal-lg" id="modal_editar_denuncia">
   <div class="modal-dialog modal-lg">
+
     <div class="modal-content">
-         <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-           <h4 class="modal-title" id="myModalLabel"><b>Datos de la denuncia</b></h4>
-           <label styke>COMISARIA / DENUNCIA</label>
-         </div>
-        <div class="modal-body">
-      <div class="panel-body">
-        <div class="col-sm-6">
-          <input type="text" id="txtidinstitucion" hidden >
-          <label>N° de Expediente </label>
-          <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nombre del instituci&oacute;n" maxlength="150">
-          <br>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style = "text-align:center; color: black;"><b>DATOS DE LA DENUNCIA</b></h4>
+      </div>
+      <div class="modal-body">
+        <label style = "color: black">COMISARIA / DENUNCIA</label>
+        <div class="panel-body">
+          <div class="col-sm-3">
+            <input type="text" id="txtidinstitucion" hidden >
+            <br>
+            <label style = "color: black">Instructor a cargo </label>
+            <label style = "color: black">Nro de Oficio a Juzgado </label>
+            <label style = "color: black">Nro de Oficio a fiscalia </label>
+          </div>
+
+          <div class="col-sm-3">
+            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese DNI del efectivo" maxlength="8">
+            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofijuzgado" placeholder="Ingrese Nro de oficio a Juzgado" maxlength="35">
+            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+          </div>
+
+          <div class="col-sm-3">
+            <label style = "color: black">Nivel de riesgo </label>
+            <label style = "color: black">Cargar copia simple de denuncia </label>
+          </div>
+          <div class="col-sm-3">
+            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
+              <option value="1" style="color:black">1</option>
+              <option value="2" style="color:black">2</option>
+              <option value="3" style="color:black">3</option>
+              <option value="4" style="color:black">4</option>
+              <option value="5" style="color:black">5</option>
+            </select>
+            
+            <div class="row">
+              <div class="col-6 col-md-6"><input type="file" name="id_archivo" class="file-upload-default"></div>
+              <div class="col-6 col-md-6"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+            </div>
+            
+            <input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento">
+          </div>
         </div>
-        <div class="col-sm-6">
-          <input type="text" id="txtidarea" hidden >
-          <label>Tipo Instituci&oacute;n </label>
-          <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txttipoinstitucion_modal" placeholder="Ingrese tipo de Institucion" maxlength="50">
-          <br>
+      
+
+
+        <label style = "color: black">FISCALIA</label>
+        <div class="panel-body">
+          <div class="col-sm-3">
+            <label style = "color: black">Fiscal a cargo </label>
+          </div>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+          </div>
+
+          <div class="col-sm-3">
+            <label style = "color: black">Nro de Expediente </label>
+          </div>
+
+          <div class="col-sm-3">
+            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
+          </div>
+
+          <div class="col-sm-3">
+            <label style = "color: black">Fiscalia</label>
+          </div>
+
+          <div class="col-sm-3">
+            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
+              <option value="1" style="color:black">!era FPPC - Puno</option>
+              <option value="2" style="color:black">2da FPPC - Puno</option>
+            </select>
+          </div>
         </div>
-        <div class="col-sm-12">
-          <label>Estado</label>
-          <select id="cmb_estado" style="width: 100%" class="form-control select2">
-            <option value="ACTIVO">ACTIVO</option>
-            <option value="INACTIVO">INACTIVO</option>
-          </select>
-        </div>   
-      </div> 
-      
-      
-        </div> 
+
+        <label style = "color: black">JUZGADO</label>
+        <div class="panel-body">
+          <div class="col-sm-3">
+            <label style = "color: black">Juez a cargo </label>
+          </div>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+          </div>
+
+          <div class="col-sm-3">
+            <label style = "color: black">Nro de Expediente </label>
+          </div>
+
+          <div class="col-sm-3">
+            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
+          </div>
+
+          <div class="col-sm-3">
+            <label style = "color: black; text-align=right;">Juzgado</label>
+          </div>
+
+          <div class="col-sm-3">
+            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
+              <option value="1" style="color:black">!er Juzgado de familia</option>
+              <option value="2" style="color:black">2do Juzgado de familia</option>
+            </select>
+          </div>
+        </div>  
+
+        <label style = "color: black">PERICIAS</label>
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-3"><label style = "color: black">Pericia Psicologica</label></div>
+              <div class="col-sm-3"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
+              <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
+              <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+            </div>
+          </div>
+        </div>
+
+
+        <label style = "color: black">MEDIDAS</label>
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-3"><label style = "color: black">Medidas de proteccion</label></div>
+              <div class="col-sm-3"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
+              <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
+              <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+
+    </div> 
         <div class="modal-footer">
           <button  class="btn btn-success" onclick="Editar_institucion()"><i class="fa fa-check"></i>&nbsp;<b>Guardar</b></button>&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>

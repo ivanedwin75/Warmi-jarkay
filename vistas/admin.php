@@ -220,6 +220,7 @@ session_start();
                 <a ui-sref="app.dashboard-v2" >
                   <i class="fa fa-laptop icon text-success"></i>
                   <span class="font-bold" translate="aside.nav.Mantenimiento">NUEVO REGISTRO</span>
+                  
                 </a>
               </li>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','Personal/vista_listar_personal.php');">
@@ -366,6 +367,7 @@ session_start();
       font-weight:bold;
     }
     .select2{
+      text-color:black;
       font-weight:bold;
       text-align-last:center;
     }
