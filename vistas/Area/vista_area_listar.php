@@ -2,12 +2,12 @@
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h2><b>&Aacute;REAS REGISTRADAS</b></h2>
+        <h2><b>DIRECTORIO</b></h2>
     </div>
     <div class="panel-body">
         <div class="col-md-10"> 
           <div class=" input-group">
-            <input id="txt_area_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el nombre del área a buscar ">
+            <input id="txt_area_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el nombre del apellido paterno a buscar ">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
           </div>
         </div>
@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-12">
           <div class="box-body table-responsive" style="text-align: center;"><br>
-          	<label>LISTADO DE AREAS</label>
+          	<label>LISTADO DE ASESORES</label>
               <div id="listar_areas_tabla" class=" icon-loading">
                 <i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
                 <div id="nodatos"></div>
@@ -45,19 +45,40 @@
          </div>
         <div class="modal-body">
       <div class="panel-body">
+        
                       <div class="col-sm-6">
-                          <input type="text" id="txtidarea" hidden >
-                          <label>Nombre &aacute;rea </label>
-                          <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtarea_modal" placeholder="Ingrese Nombre del area" maxlength="">
-                          <br>
-                      </div>
-                      <div class="col-sm-6">
-                          <label>Estado</label>
-                          <select id="cmb_estado" style="width: 100%" class="form-control select2">
-                            <option value="ACTIVO">ACTIVO</option>
-                            <option value="INACTIVO">INACTIVO</option>
+                          <input type="text" id="txtid_asesor" hidden >
+                          <label >PROFESION</label>
+                          <select id="txtprofesion" class="form-control select2">
+                            <option value="Abogado">Abogad@</option>
+                            <option value="Psicologo">Psicolog@</option> 
                           </select>
-                      </div>   
+                      </div>
+	                    <div class="col-md-6">
+	                        <label>APELLIDO PATERNO </label>
+	                        <input type="text" class="form-control"onkeypress="return soloLetras(event)"id="txtapellidopaterno" placeholder="Ingrese Apellido Paterno" maxlength="35">
+	                       <br>
+	                    </div>
+
+	                    <div class="col-md-6">
+	                        <label >APELLIDO MATERNO </label>
+	                        <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtapellidomaterno" placeholder="Ingrese Apelido Materno" maxlength="35">
+	                        <br>
+	                    </div> 
+	                    <div class="col-sm-6">
+	                        <label>NOMBRES </label>
+	                        <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtnombre" placeholder="Ingrese Nombres" maxlength="40">
+	                        <br>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <label>Email</label>
+	                        <input type="text"  class="form-control" id="txtemail_modal" style="width: 100%;" placeholder="Ingrese correo" maxlength="40">
+	                    </div>
+                      <div class="col-md-6">
+	                        <label>CELULAR </label>
+	                        <input type="text"class="form-control" id="txtmovil_modal"  onkeypress="return soloNumeros(event)" placeholder="Ingrese nro movil" maxlength="9">
+	                            <br>
+	                    </div>  
       </div>         
         </div> 
         <div class="modal-footer">

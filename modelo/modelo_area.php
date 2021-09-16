@@ -8,8 +8,8 @@
 			$this->conexion = new conexion();
 			$this->conexion->conectar();
 		}
-		function Registrar_areas($area){
-			$sql = "call PA_REGISTRARAREA('$area')";
+		function Registrar_areas($idasesor,$profesion,$apepat,$apemat,$nombre,$email,$movil){
+			$sql = "call PA_REGISTRARAREA('$idasesor','$profesion','$apepat','$apemat','$nombre','$email','$movil')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}
@@ -18,8 +18,8 @@
 			}
 			$this->conexion->Cerrar_Conexion();
 		}
-		function Editar_areas($codigo,$area,$estado){
-			$sql = "call PA_EDITARAREA('$codigo','$area','$estado')";
+		function Editar_areas($idasesor,$profesion,$apepat,$apemat,$nombre,$email,$movil){
+			$sql = "call PA_EDITARAREA('$idasesor','$profesion','$apepat','$apemat','$nombre','$email','$movil')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}
@@ -30,9 +30,9 @@
 		}
 		function listar_areas($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {
-			    $sql = "SELECT * FROM area where area_nombre like '".$valor."%' ORDER BY area_cod DESC LIMIT $inicio,$limite";
+			    $sql = "SELECT * FROM Asesor where Asesor.Ap_paterno like '".$valor."%' ORDER BY id_Asesor DESC LIMIT $inicio,$limite";
 			}else{
-			    $sql = "SELECT * FROM area where area_nombre like '".$valor."%' ORDER BY area_cod DESC";
+			    $sql = "SELECT * FROM Asesor where Asesor.Ap_paterno like '".$valor."%' ORDER BY id_Asesor DESC";
 			}
 			$resultado =  $this->conexion->conexion->query($sql);
 			$arreglo = array();

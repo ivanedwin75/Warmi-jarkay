@@ -32,8 +32,8 @@
                 <label >Estado civil</label>
                 
                 <select id="txtestado_civil" class="form-control select2" name="txtGenero">
-                  <option value="casado">Casado</option>
-                  <option value="soltero">Soltero</option> 
+                  <option value="casado">Casad@</option>
+                  <option value="soltero">Solter@</option> 
                 </select>
             </div>
             <div class="col-sm-6">

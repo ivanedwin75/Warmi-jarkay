@@ -3,21 +3,46 @@
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h2><b>REGISTRO DE &Aacute;REAS</b></h2>            
+        <h2><b>REGISTRAR ASESOR</b></h2>            
     </div>
     <div class="panel-body">
-        <div class="col-sm-6"><br>
-          <label>Nombre &aacute;rea </label>
-          <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtarea_modal" placeholder="Ingrese Nombre del area" maxlength="">
-          <br>
-        </div>
-        <div class="col-md-6"><br>
-          <label>ESTADO:</label>
-          <input class="form-control" readonly value="ACTIVO" type="text" style="color: rgb(25,25,51); background-color: rgb(255,255,255);solid 5px;color:#9B0000; text-align:center;font-weight: bold;" id="txtestado">
-        </div>
+                      <div class="col-sm-6">
+                          <input type="text" id="txtid_asesor" hidden >
+                          <label >PROFESION</label>
+                          <select id="txtprofesion" class="form-control select2">
+                            <option value="Abogado">Abogad@</option>
+                            <option value="Psicologo">Psicolog@</option> 
+                          </select>
+                      </div>
+
+	                    <div class="col-md-6">
+	                        <label>APELLIDO PATERNO </label>
+	                        <input type="text" class="form-control"onkeypress="return soloLetras(event)"id="txtapellidopaterno" placeholder="Ingrese Apellido Paterno" maxlength="">
+	                       <br>
+	                    </div>
+
+	                    <div class="col-md-6">
+	                        <label >APELLIDO MATERNO </label>
+	                        <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtapellidomaterno" placeholder="Ingrese Apelido Materno" maxlength="">
+	                        <br>
+	                    </div> 
+	                    <div class="col-sm-6">
+	                        <label>NOMBRES </label>
+	                        <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtnombre" placeholder="Ingrese Nombres" maxlength="">
+	                        <br>
+	                    </div>
+	                    <div class="col-sm-6">
+	                        <label>Email</label>
+	                        <input type="text"  class="form-control" id="txtemail_modal" style="width: 100%;" placeholder="Ingrese correo" maxlength="40">
+	                    </div>
+                      <div class="col-md-6">
+	                        <label>CELULAR </label>
+	                        <input type="text"class="form-control" id="txtmovil_modal"  onkeypress="return soloNumeros(event)" placeholder="Ingrese nro movil" maxlength="9">
+	                            <br>
+	                    </div>  
         <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
           <div class="col-md-12">
-            <br><button class="btn btn-success" onclick="registrar_area()"><strong> Registrar &Aacute;rea</strong></button><br><br>
+            <br><button class="btn btn-success" onclick="registrar_area()"><strong> Registrar Asesor</strong></button><br><br>
           </div>
         </div>
     </div>
