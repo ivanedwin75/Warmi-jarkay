@@ -104,7 +104,9 @@ h2.l{
 }
 
 body{
-    background-image: url("../images/fondo.png");
+    background-image: url("../images/fondo_v2.jpg");
+    /*background-image: url("../images/fondo_v1.png");
+    background-image: url("../images/fondo.png");*/
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
