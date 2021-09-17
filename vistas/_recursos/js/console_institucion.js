@@ -42,7 +42,7 @@ function listar_institucion_vista(valor, pagina) {
                         cadena += "<td  style = 'text-align: center'> <span class='badge bg-success' style='color:White;'>" + valores[i][3] + "</span> </td>";
                     }
 					*/
-                    cadena += "<td><button name='" + valores[i][0] + "*" + valores[i][1] + "*" + valores[i][4] + "' class='btn btn-primary' onclick='AbrirModalInstitucion(this)'><span class='glyphicon glyphicon-pencil'></span>";
+                    cadena += "<td><button name='" + valores[i][0] + "' class='btn btn-primary' onclick='AbrirModalInstitucion(this)'><span class='glyphicon glyphicon-pencil'></span>";
                     cadena += "</button></td> ";
                     cadena += "</tr>";
                 }
@@ -111,16 +111,54 @@ function listar_institucion_vista(valor, pagina) {
 }
 
 function AbrirModalInstitucion(control) {
-    var datos = control.name;
-    var datos_split = datos.split("*");
+
     $('#modal_editar_denuncia').modal({ backdrop: 'static', keyboard: false })
     $('#modal_editar_denuncia').modal('show');
-    $('#txtid_denuncia').val(datos_split[0]);
-    $('#txtexpediente').val(datos_split[1]);
-    $('#txtfecha').val(datos_split[4]);
+    $('#txtid_denuncia').val(control);
 
-    //$('#cmb_estado').val(datos_split[3]).trigger("change");
+    var id_denuncia = control;
+    $.ajax({
+            url: '../controlador/institucion/controlador_get_denuncia.php',
+            type: 'POST',
+            data: {
+                id_denuncia: id_denuncia
+            }
+        })
+        .done(function(resp) {
+            var id_denuncia = $("#txtid_denuncia").val();
+            $("#txtofifiscalia").val(resp[2]);
+            $("#txtofijuzgado").val(resp[3]);
+            $("#niv_riesgo").val(resp[4]);
+
+            $("#txtexp_fiscalia").val(resp[5]);
+            $("#txtfiscalia").val(resp[6]);
+            $("#txtfiscal").val(resp[7]);
+            $("#txtf_fiscalia").val(resp[8]);
+
+            $("#txtexp_juzgado").val(resp[9]);
+            $("#txtjuzgado").val(resp[10]);
+            $("#txtjuez").val(resp[11]);
+            $("#txtf_juzgado").val(resp[12]);
+
+            $("#txtden_scan").val(resp[13]);
+            $("#txtdem_elec").val(resp[14]);
+            $("#txtmed_prot").val(resp[15]);
+
+            $("#txtinstructor").val(resp[16]);
+
+            if (resp > 0) {
+                //$('#modal_editar_denuncia').modal('hide');
+                swal("Datos Actualizados!", "", "success");
+                //var dato_buscar = $("#txt_institucion_vista").val();
+                //listar_institucion_vista(dato_buscar, '1');
+            } else {
+                swal("! Lo sentimos no pudimos completar los datos", "", "error");
+            }
+        })
 }
+
+
+//$('#cmb_estado').val(datos_split[3]).trigger("change");
 
 function Editar_denuncia() {
     var id_denuncia = $("#txtid_denuncia").val();
