@@ -85,7 +85,6 @@
                 
                 <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
                   <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
-                  <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
                 </div>
         
                 <input  id="txtden_scan" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento">
@@ -100,41 +99,41 @@
             <div class="panel-body">
               <div class="col-sm-3">
                 <label style = "padding-top: 7px;">Fiscal a cargo </label>
+                <label style = "padding-top: 7px;">N° de Expediente </label>
+                <label style = "padding-top: 7px;">Fecha Registro</label>
               </div>
-
+              
               <div class="col-sm-9">
                 <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtfiscal" placeholder="Ingrese Nombre completo de fiscal" maxlength="100">
               </div>
-
-              <div class="col-sm-3">
-                <label style = "padding-top: 7px;">Nro de Expediente </label>
-              </div>
-
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <input type="text" class="form-control" id="txtexp_fiscalia" placeholder="Ingrese Nro Expediente" maxlength="8">
-              </div>
-
-              <div class="col-sm-1">
-                <label style = "padding-top: 7px;">Fiscalia</label>
-              </div>
-
-              <div class="col-sm-3" style = "padding-top: 3px;">
-                <select id="txtfiscalia" style="width: 100%" class="form-control select2">
-                  <option value="Primera Fiscalía Provincial Civil y Familia de Puno" >!era FPPC - Puno</option>
-                  <option value="Segunda Fiscalía Provincial Penal Corporativa de Puno" >2da FPPC - Puno</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-                <label>Fecha Registro</label>
                 <div class=" input-group">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
                   <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_fiscalia"  class="form-control"  >
-                </div><br>
+                </div>
+              </div>
+
+              <div class="col-sm-2">
+                <label style = "padding-top: 7px;">Fiscalia</label>
+                <label style = "padding-top: 7px;">Cargar copia</label>
+              </div>
+              <div class="col-sm-3" style = "padding-top: 3px;">
+                <select id="txtfiscalia" style="width: 100%" class="form-control select2">
+                  <option value="Primera Fiscalía Provincial Civil y Familia de Puno" >1era FPPC - Puno</option>
+                  <option value="Segunda Fiscalía Provincial Penal Corporativa de Puno" >2da FPPC - Puno</option>
+                </select>
+
+                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
+                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                </div>
+              </div>
+
+              
             </div>
+          </div>
         </div>
 
         <label >JUZGADO</label>
@@ -143,31 +142,14 @@
             <div class="panel-body">
               <div class="col-sm-3">
                 <label style = "padding-top: 7px;">Juez a cargo </label>
+                <label style = "padding-top: 7px;">Nro de Expediente </label>
+                <label style = "padding-top: 7px;">Fecha Registro</label>
               </div>
               <div class="col-sm-8">
                 <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
               </div>
-
-              <div class="col-sm-3">
-                <label style = "padding-top: 7px;">Nro de Expediente </label>
-              </div>
-
               <div class="col-sm-4">
                 <input type="text" class="form-control" id="txtexp_juzgado" placeholder="Ingrese Nro Expediente" maxlength="8">
-              </div>
-
-              <div class="col-sm-1">
-                <label style = "padding-top: 7px;">Juzgado</label>
-              </div>
-
-              <div class="col-sm-3" style = "padding-top: 3px;">
-                <select id="txtjuzgado" style="width: 100%" class="form-control select2">
-                  <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO">!er Juzgado de familia</option>
-                  <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" style="color:black">2do Juzgado de familia</option>
-                </select>
-              </div>
-              <div class="col-sm-6">
-                <label>Fecha Registro</label>
                 <div class=" input-group">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
@@ -175,6 +157,23 @@
                   <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado"  class="form-control"  >
                 </div>
               </div>
+
+              <div class="col-sm-2">
+                <label style = "padding-top: 7px;">Juzgado</label>
+                <label style = "padding-top: 7px;">Cargar copia</label>
+              </div>
+
+              <div class="col-sm-3" style = "padding-top: 3px;">
+                <select id="txtjuzgado" style="width: 100%" class="form-control select2">
+                  <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO">1er Juzgado de familia</option>
+                  <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" style="color:black">2do Juzgado de familia</option>
+                </select>
+
+                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
+                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                </div>
+              </div>
+              
             </div>  
           </div>
         </div>
@@ -188,7 +187,7 @@
                   <div class="col-sm-3"><label style = "padding-top: 7px;">Pericia Psicologica</label></div>
                   <div class="col-sm-4"><input id="txtdem_elec" type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
                   <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
-                  <div class="col-sm-2"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+                  <!--<div class="col-sm-2"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
                 </div>
               </div>
             </div>
@@ -204,7 +203,7 @@
                   <div class="col-sm-3"><label style = "padding-top: 7px;">Medidas de proteccion</label></div>
                   <div class="col-sm-4"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
                   <div class="col-sm-3"><input id="txtmed_prot" type="file" name="id_archivo" class="file-upload-default"></div>
-                  <div class="col-sm-2"><button id="btn_cargar_medidas" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+                  <!--<div class="col-sm-2"><button id="btn_cargar_medidas" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
                 </div>
               </div>
             </div>
