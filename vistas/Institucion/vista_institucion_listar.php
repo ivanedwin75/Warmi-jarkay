@@ -72,7 +72,7 @@
 
               <div class="col-sm-2">
                 <label style = "padding-top: 7px;">Nivel de riesgo </label>
-                <label style = "padding-top: 7px;">Cargar copia simple de denuncia </label>
+                <label style = "padding-top: 7px;">Acta de denuncia Verbal </label>
               </div>
               <div class="col-sm-3">
                 <select id="niv_riesgo" style="width: 100%" class="form-control select2">

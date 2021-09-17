@@ -42,7 +42,7 @@ function listar_institucion_vista(valor, pagina) {
                         cadena += "<td  style = 'text-align: center'> <span class='badge bg-success' style='color:White;'>" + valores[i][3] + "</span> </td>";
                     }
 					*/
-                    cadena += "<td><button name='" + valores[i][0] + "' class='btn btn-primary' onclick='AbrirModalInstitucion(this)'><span class='glyphicon glyphicon-pencil'></span>";
+                    cadena += "<td><button name='" + valores[i][0] + '*' + valores[i][1] + "' class='btn btn-primary' onclick='AbrirModalInstitucion(this)'><span class='glyphicon glyphicon-pencil'></span>";
                     cadena += "</button></td> ";
                     cadena += "</tr>";
                 }
@@ -111,12 +111,13 @@ function listar_institucion_vista(valor, pagina) {
 }
 
 function AbrirModalInstitucion(control) {
-
+    var datos = control.name;
+    var datos_split = datos.split("*");
     $('#modal_editar_denuncia').modal({ backdrop: 'static', keyboard: false })
     $('#modal_editar_denuncia').modal('show');
-    $('#txtid_denuncia').val(control);
+    $('#txtid_denuncia').val(datos_split[0]);
 
-    var id_denuncia = control;
+    var id_denuncia = datos_split[0];
     $.ajax({
             url: '../controlador/institucion/controlador_get_denuncia.php',
             type: 'POST',
@@ -125,26 +126,27 @@ function AbrirModalInstitucion(control) {
             }
         })
         .done(function(resp) {
-            var id_denuncia = $("#txtid_denuncia").val();
-            $("#txtofifiscalia").val(resp[2]);
-            $("#txtofijuzgado").val(resp[3]);
-            $("#niv_riesgo").val(resp[4]);
+            var data = JSON.parse(resp);
+            //var id_denuncia = $("#txtid_denuncia").val();
+            $("#txtofifiscalia").val(data[2]);
+            $("#txtofijuzgado").val(data[3]);
+            $("#niv_riesgo").val(data[4]);
 
-            $("#txtexp_fiscalia").val(resp[5]);
-            $("#txtfiscalia").val(resp[6]);
-            $("#txtfiscal").val(resp[7]);
-            $("#txtf_fiscalia").val(resp[8]);
+            $("#txtexp_fiscalia").val(data[5]);
+            $("#txtfiscalia").val(data[6]);
+            $("#txtfiscal").val(data[7]);
+            $("#txtf_fiscalia").val(data[8]);
 
-            $("#txtexp_juzgado").val(resp[9]);
-            $("#txtjuzgado").val(resp[10]);
-            $("#txtjuez").val(resp[11]);
-            $("#txtf_juzgado").val(resp[12]);
+            $("#txtexp_juzgado").val(data[9]);
+            $("#txtjuzgado").val(data[10]);
+            $("#txtjuez").val(data[11]);
+            $("#txtf_juzgado").val(data[12]);
 
-            $("#txtden_scan").val(resp[13]);
-            $("#txtdem_elec").val(resp[14]);
-            $("#txtmed_prot").val(resp[15]);
+            $("#txtden_scan").val(data[13]);
+            $("#txtdem_elec").val(data[14]);
+            $("#txtmed_prot").val(data[15]);
 
-            $("#txtinstructor").val(resp[16]);
+            $("#txtinstructor").val(data[16]);
 
             if (resp > 0) {
                 //$('#modal_editar_denuncia').modal('hide');
