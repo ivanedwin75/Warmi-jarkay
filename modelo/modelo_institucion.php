@@ -8,8 +8,11 @@
 			$this->conexion = new conexion();
 			$this->conexion->conectar();
 		}
-		function Registrar_institucion($institucion,$tipo){
-			$sql = "call PA_REGISTRARINSTITUCION('$institucion','$tipo')";
+		function Registrar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$exp_fiscalia,$fiscalia,$fiscal,$f_fiscalia,
+		$exp_juzgado,$juzgado,$juez,$f_juzgado,$den_scan,$dem_elec,$med_prot,$instructor){
+
+			$sql = "call PA_REGISTRARDENUNCIA('$id_denuncia','$ofi_fiscalia','$ofi_juzgado','$niv_riesgo','$exp_fiscalia','$fiscalia','$fiscal','$f_fiscalia',
+			'$exp_juzgado','$juzgado','$juez','$f_juzgado','$den_scan','$dem_elec','$med_prot','$instructor')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}
@@ -18,8 +21,10 @@
 			}
 			$this->conexion->Cerrar_Conexion();
 		}
-		function Editar_institucion($codigo,$institucion,$tipo,$estado){
-			$sql = "call PA_EDITARINSTITUCION('$codigo','$institucion','$tipo','$estado')";
+		function Editar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$exp_fiscalia,$fiscalia,$fiscal,$f_fiscalia,
+		$exp_juzgado,$juzgado,$juez,$f_juzgado,$den_scan,$dem_elec,$med_prot,$instructor){
+			$sql = "call PA_REGISTRARDENUNCIA('$id_denuncia','$ofi_fiscalia','$ofi_juzgado','$niv_riesgo','$exp_fiscalia','$fiscalia','$fiscal','$f_fiscalia',
+			'$exp_juzgado','$juzgado','$juez','$f_juzgado','$den_scan','$dem_elec','$med_prot','$instructor')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}

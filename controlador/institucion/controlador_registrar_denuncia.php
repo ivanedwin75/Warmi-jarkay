@@ -21,8 +21,7 @@
 
 	require '../../modelo/modelo_institucion.php';
 	$MC = new Modelo_institucion();
-	$consulta = $MC->Editar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$exp_fiscalia,$fiscalia,$fiscal,$f_fiscalia,
+	$consulta = $MC->Registrar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$exp_fiscalia,$fiscalia,$fiscal,$f_fiscalia,
 	$exp_juzgado,$juzgado,$juez,$f_juzgado,$den_scan,$dem_elec,$med_prot,$instructor);
 	echo $consulta;
-
 ?>

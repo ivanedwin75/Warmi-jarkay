@@ -1,3 +1,4 @@
+
 <script type="text/javascript" src="_recursos/js/console_institucion.js"></script>
 <div class="contendor_kn">
   <div class="panel panel-default">
@@ -56,7 +57,7 @@
         <label style = "color: black">COMISARIA / DENUNCIA</label>
         <div class="panel-body">
           <div class="col-sm-3">
-            <input type="text" id="txtidinstitucion" hidden >
+            <input type="text" id="txtid_denuncia" hidden >
             <br>
             <label style = "color: black">Instructor a cargo </label>
             <label style = "color: black">Nro de Oficio a Juzgado </label>
@@ -65,8 +66,8 @@
 
           <div class="col-sm-3">
             <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese DNI del efectivo" maxlength="8">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofijuzgado" placeholder="Ingrese Nro de oficio a Juzgado" maxlength="35">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+            <input type="text" class="form-control" id="txtofijuzgado" placeholder="Ingrese Nro de oficio a Juzgado" maxlength="35">
+            <input type="text" class="form-control" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
           </div>
 
           <div class="col-sm-3">
@@ -84,10 +85,10 @@
             
             <div class="row">
               <div class="col-6 col-md-6"><input type="file" name="id_archivo" class="file-upload-default"></div>
-              <div class="col-6 col-md-6"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+              <div class="col-6 col-md-6"><button id="btn_cargardenuncia" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
             </div>
             
-            <input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento">
+            <input id="txtden_scan" type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento">
           </div>
         </div>
       
@@ -100,7 +101,7 @@
           </div>
 
           <div class="col-sm-9">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtfiscal" placeholder="Ingrese Nombre completo de fiscal" maxlength="100">
           </div>
 
           <div class="col-sm-3">
@@ -108,7 +109,7 @@
           </div>
 
           <div class="col-sm-3">
-            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
+            <input type="text" class="form-control" id="txtexp_fiscalia" placeholder="Ingrese Nro Expediente" maxlength="8">
           </div>
 
           <div class="col-sm-3">
@@ -116,11 +117,20 @@
           </div>
 
           <div class="col-sm-3">
-            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
-              <option value="1" style="color:black">!era FPPC - Puno</option>
-              <option value="2" style="color:black">2da FPPC - Puno</option>
+            <select id="txtfiscalia" style="width: 100%" class="form-control select2">
+              <option value="Primera Fiscalía Provincial Civil y Familia de Puno" style="color:black">!era FPPC - Puno</option>
+              <option value="Segunda Fiscalía Provincial Penal Corporativa de Puno" style="color:black">2da FPPC - Puno</option>
             </select>
           </div>
+          <div class="col-sm-6">
+                <label>Fecha Registro</label>
+                <div class=" input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_fiscalia"  class="form-control"  >
+                </div><br>
+            </div>
         </div>
 
         <label style = "color: black">JUZGADO</label>
@@ -130,7 +140,7 @@
           </div>
 
           <div class="col-sm-9">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
           </div>
 
           <div class="col-sm-3">
@@ -138,7 +148,7 @@
           </div>
 
           <div class="col-sm-3">
-            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
+            <input type="text" class="form-control" id="txtexp_juzgado" placeholder="Ingrese Nro Expediente" maxlength="8">
           </div>
 
           <div class="col-sm-3">
@@ -146,11 +156,20 @@
           </div>
 
           <div class="col-sm-3">
-            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
-              <option value="1" style="color:black">!er Juzgado de familia</option>
-              <option value="2" style="color:black">2do Juzgado de familia</option>
+            <select id="txtjuzgado" style="width: 100%" class="form-control select2">
+              <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO" style="color:black">!er Juzgado de familia</option>
+              <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" style="color:black">2do Juzgado de familia</option>
             </select>
           </div>
+          <div class="col-sm-6">
+                <label>Fecha Registro</label>
+                <div class=" input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado"  class="form-control"  >
+                </div><br>
+            </div>
         </div>  
 
         <label style = "color: black">PERICIAS</label>
@@ -158,9 +177,9 @@
           <div class="col-sm-12">
             <div class="row">
               <div class="col-sm-3"><label style = "color: black">Pericia Psicologica</label></div>
-              <div class="col-sm-3"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
+              <div class="col-sm-3"><input id="txtdem_elec" type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
               <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
-              <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+              <div class="col-sm-3"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
             </div>
           </div>
         </div>
@@ -172,21 +191,15 @@
             <div class="row">
               <div class="col-sm-3"><label style = "color: black">Medidas de proteccion</label></div>
               <div class="col-sm-3"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
-              <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
-              <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+              <div class="col-sm-3"><input id="txtmed_prot" type="file" name="id_archivo" class="file-upload-default"></div>
+              <div class="col-sm-3"><button id="btn_cargar_medidas" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
             </div>
           </div>
 
         </div>
-
-
-
-
-
-
     </div> 
         <div class="modal-footer">
-          <button  class="btn btn-success" onclick="Editar_institucion()"><i class="fa fa-check"></i>&nbsp;<b>Guardar</b></button>&nbsp;&nbsp;&nbsp;
+          <button  class="btn btn-success" onclick="Editar_denuncia()"><i class="fa fa-check"></i>&nbsp;<b>Guardar</b></button>&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>
         </div> 
     </div>
@@ -195,12 +208,9 @@
 <script type="text/javascript">
 	$("#txt_institucion_vista").keyup(function(){
 		var dato_buscar = $("#txt_institucion_vista").val();
-		listar_institucion_vista(dato_buscar,'1',0);
+		listar_institucion_vista(dato_buscar,'1');
 	});
-  $("#txt_institucion_vista_exp").keyup(function(){
-		var dato_buscar = $("#txt_institucion_vista_exp").val();
-		listar_institucion_vista(dato_buscar,'1',1);
-	});
+
 </script>
 <script>
     $(function () {

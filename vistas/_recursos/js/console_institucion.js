@@ -1,9 +1,9 @@
-function listar_institucion_vista(valor, pagina, ident) {
+function listar_institucion_vista(valor, pagina) {
     var pagina = Number(pagina);
     $.ajax({
         url: '../controlador/institucion/controlador_ListarBuscar_institucion.php',
         type: 'POST',
-        data: 'ident=' + ident + '&valor=' + valor + '&pagina=' + pagina + '&boton=buscar',
+        data: 'valor=' + valor + '&pagina=' + pagina + '&boton=buscar',
         beforeSend: function() {
             $("#loading_almacen").addClass("fa fa-refresh fa-spin fa-3x fa-fw");
         },
@@ -41,7 +41,7 @@ function listar_institucion_vista(valor, pagina, ident) {
                         cadena += "<td  style = 'text-align: center'> <span class='badge bg-success' style='color:White;'>" + valores[i][3] + "</span> </td>";
                     }
 					*/
-                    cadena += "<td><button name='" + valores[i][0] + "*" + valores[i][1] + "*" + valores[i][2] + "*" + valores[i][3] + "*" + valores[i][4] + "' class='btn btn-primary' onclick='AbrirModalInstitucion(this)'><span class='glyphicon glyphicon-pencil'></span>";
+                    cadena += "<td><button name='" + valores[i][0] + "*" + valores[i][1] + "*" + valores[i][4] + "' class='btn btn-primary' onclick='AbrirModalInstitucion(this)'><span class='glyphicon glyphicon-pencil'></span>";
                     cadena += "</button></td> ";
                     cadena += "</tr>";
                 }
@@ -116,29 +116,58 @@ function AbrirModalInstitucion(control) {
     $('#modal_editar_denuncia').modal('show');
     $('#txtid_denuncia').val(datos_split[0]);
     $('#txtexpediente').val(datos_split[1]);
-    $('#txtdni').val(datos_split[2]);
-    $('#txtnombre').val(datos_split[3]);
     $('#txtfecha').val(datos_split[4]);
 
     //$('#cmb_estado').val(datos_split[3]).trigger("change");
 }
 
-function Editar_institucion() {
-    var codigo = $("#txtidinstitucion").val();
-    var institucion = $("#txtinstitucion_modal").val();
-    var tipo = $("#txttipoinstitucion_modal").val();
-    var estado = $("#cmb_estado").val();
+function Editar_denuncia() {
+    var id_denuncia = $("#txtid_denuncia").val();
+    var ofi_fiscalia = $("#txtofifiscalia").val();
+    var ofi_juzgado = $("#txtofijuzgado").val();
+    var niv_riesgo = $("#niv_riesgo").val();
+
+
+    var exp_fiscalia = $("#txtexp_fiscalia").val();
+    var fiscalia = $("#txtfiscalia").val();
+    var fiscal = $("#txtfiscal").val();
+    var f_fiscalia = $("#txtf_fiscalia").val();
+
+    var exp_juzgado = $("#txtexp_juzgado").val();
+    var juzgado = $("#txtjuzgado").val();
+    var juez = $("#txtjuez").val();
+    var f_juzgado = $("#txtf_juzgado").val();
+
+    var den_scan = $("#txtden_scan").val();
+    var dem_elec = $("#txtdem_elec").val();
+    var med_prot = $("#txtmed_prot").val();
+
+    var instructor = $("#txtinstructor").val();
+    /*
     if (institucion.length > 0 && tipo.length > 0) {} else {
         return swal("Falta Llenar Datos", "", "info");
     }
+    */
     $.ajax({
             url: '../controlador/institucion/controlador_editar_institucion.php',
             type: 'POST',
             data: {
-                codigo: codigo,
-                institucion: institucion,
-                tipo: tipo,
-                estado: estado
+                id_denuncia: id_denuncia,
+                ofi_fiscalia: ofi_fiscalia,
+                ofi_juzgado: ofi_juzgado,
+                niv_riesgo: niv_riesgo,
+                exp_fiscalia: exp_fiscalia,
+                fiscalia: fiscalia,
+                fiscal: fiscal,
+                f_fiscalia: f_fiscalia,
+                exp_juzgado: exp_juzgado,
+                juzgado: juzgado,
+                juez: juez,
+                f_juzgado: f_juzgado,
+                den_scan: den_scan,
+                dem_elec: dem_elec,
+                med_prot: med_prot,
+                instructor: instructor
             }
         })
         .done(function(resp) {
@@ -184,18 +213,56 @@ function Editar_institucion() {
         })
 }
 
-function Registrar_institucion() {
-    var institucion = $("#txtinstitucion").val();
-    var tipo = $("#txttipoinstitucion").val();
+function Registrar_denuncia() {
+
+    var id_denuncia = $("#txtid_denuncia").val();
+    var ofi_fiscalia = $("#txtofifiscalia").val();
+    var ofi_juzgado = $("#txtofijuzgado").val();
+    var niv_riesgo = $("#txtniv_riesgo").val();
+
+
+    var exp_fiscalia = $("#txtexp_fiscalia").val();
+    var fiscalia = $("#txtfiscalia").val();
+    var fiscal = $("#txtfiscal").val();
+    var f_fiscalia = $("#txtf_fiscalia").val();
+
+    var exp_juzgado = $("#txtexp_juzgado").val();
+    var juzgado = $("#txtjuzgado").val();
+    var juez = $("#txtjuez").val();
+    var f_juzgado = $("#txtf_juzgado").val();
+
+    var den_scan = $("#txtden_scan").val();
+    var dem_elec = $("#txtdem_elec").val();
+    var med_prot = $("#txtmed_prot").val();
+
+    var instructor = $("#txtinstructor").val();
+
+    /*
     if (institucion.length > 0 && tipo.length > 0) {} else {
         return swal("Falta Llenar Datos", "", "info");
     }
+*/
+
     $.ajax({
-            url: '../controlador/institucion/controlador_registrar_institucion.php',
+            url: '../controlador/institucion/controlador_registrar_denuncia.php',
             type: 'POST',
             data: {
-                institucion: institucion,
-                tipo: tipo
+                id_denuncia: id_denuncia,
+                ofi_fiscalia: ofi_fiscalia,
+                ofi_juzgado: ofi_juzgado,
+                niv_riesgo: niv_riesgo,
+                exp_fiscalia: exp_fiscalia,
+                fiscalia: fiscalia,
+                fiscal: fiscal,
+                f_fiscalia: f_fiscalia,
+                exp_juzgado: exp_juzgado,
+                juzgado: juzgado,
+                juez: juez,
+                f_juzgado: f_juzgado,
+                den_scan: den_scan,
+                dem_elec: dem_elec,
+                med_prot: med_prot,
+                instructor: instructor
             }
         })
         .done(function(resp) {
