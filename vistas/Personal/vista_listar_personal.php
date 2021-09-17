@@ -1,15 +1,13 @@
 <script type="text/javascript" src="_recursos/js/consola_personal.js"></script>
-<link type="text/css" rel="stylesheet" href="_recursos/input-file/css/diseño_input_2.css">
-<script src="_recursos/input-file/js/bootstrap-uploader/file-upload.js"></script>
+
 
 
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h2><b>EFECTIVO POLICIAL</b></h2>            
+		<center><h3><b>EFECTIVO POLICIAL</b></h3></center>            
     </div>
-    <div class="panel-body">
-	    <br>
+    <div class="panel-body"><br>
 	    <div class="col-md-10"> 
 	        <div class=" input-group">
 	          	<input type="text" class="form-control" placeholder="Ingrese el documento de identidad nacional" id="txtbuscar_personal"  onkeypress="return soloNumeros(event)"  >
@@ -17,20 +15,29 @@
 	        </div>
 	    </div>
 	    <div class="col-md-2">
-	       <button style="width:100%" class="btn btn-danger" onclick="cargar_contenido('main-content','Personal/vista_registrar_personal.php')"><i class="fa fa-plus-square"></i>&nbsp;<b>Nuevo Registro</b></button></div>
+	       <button style="width:100%" class="btn btn-danger" onclick="cargar_contenido('main-content','Personal/vista_registrar_personal.php')"><i class="fa fa-plus-square"></i>&nbsp;<b>Nuevo Registro</b></button>
+		</div>
         <div class="col-md-12">
-            <div class="table-responsive" style="text-align: center;">
-            	<br>
+            <div class="box-body table-responsive" style="text-align: center;"><br>
             	<label>LISTADO DEL PERSONAL POLICIAL</label>
                 <div id="lista_personal_tabla" class="icon-loading">
+					<i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
+                  <div id="nodatos"></div>
                 </div>
                 <p id="paginador_personal_tabla" style="text-align:right" class="mi_paginador"></p>
-              </div>
-         </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>
 <!-- INICIO MODAL -->
+<script type="text/javascript">listar_personal_vista('','1');</script>
+<style type="text/css">
+	.contendor_kn{
+		padding: 10px;
+	}
+</style> 
+
 <div class="modal fade bs-example-modal-lg" id="modal_editar_personal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -87,12 +94,7 @@
     </div>
   </div> 
 </div>
-<style type="text/css">
-	.contendor_kn{
-		padding: 10px;
-	}
-</style> 
-<script type="text/javascript">listar_personal_vista('','1');</script>
+
 <script type="text/javascript">
   $("#txtbuscar_personal").keyup(function(){
     var dato_buscar = $("#txtbuscar_personal").val();

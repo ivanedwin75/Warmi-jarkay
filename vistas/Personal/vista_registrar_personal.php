@@ -2,7 +2,7 @@
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2><b>REGISTRO DEL PERSONAL</b></h2>
+      <center><h3><b>REGISTRO DEL PERSONAL</b></h3></center>   
     </div>
     <div class="panel-body">     
           <div class="col-md-12 col-lg-12 col-xs-12"> 
