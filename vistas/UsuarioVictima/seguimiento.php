@@ -35,10 +35,12 @@
 						<ol>
 							<li class="selected" data-date="16/01/2014">
 								<h3><b>COMISARÍA</b></h3>
-								<div class="panel3"> 
-									<h5><b>Expediente N°: </b> 21024</h5>
+								<div class="panel3">
 									<h5><b>Instructor: </b> Leonidas Quispe Luque</h5>
 									<h5><b>Grado: </b> Sub Oficial de Tercera</h5>
+									<h5><b>N° de Oficio a Juzgado: </b> 21024</h5>
+									<h5><b>N° de Oficio a Fiscalía: </b> 21024</h5>
+									<h5><b>Nivel de Riesgo: </b> 2</h5>
 									<center>
 									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
 									</center>
@@ -46,10 +48,11 @@
 							</li>
 
 							<li data-date="16/02/2014">
-								<h3><b>MINISTERIO PÚBLICO</b></h3>
+								<h3><b>FISCALÍA</b></h3>
 								<div class="panel3"> 
-									<h5><b>Oficio de Fiscalía: </b> 429-2021</h5>
 									<h5><b>Fiscal: </b> Leonidas Quispe Luque</h5>
+									<h5><b>N° DE Expediente: </b> 429-2021</h5>
+									<h5><b>Fiscalía: </b> 1era FPPC - Puno</h5>
 									<center>
 									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
 									</center>
@@ -59,9 +62,9 @@
 							<li data-date="16/03/2014">
 								<h3><b>JUZGADO</b></h3>
 								<div class="panel3"> 
-									<h5><b>Expediente N°: </b> 21024	</h5>
 									<h5><b>Juez: </b> Leonidas Quispe Luque</h5>
-									<h5><b>Grado: </b> Sub Oficial de Tercera</h5>
+									<h5><b>N° de Expediente : </b> 21024	</h5>
+									<h5><b>Juzgado: </b> Sub Oficial de Tercera</h5>
 									<center>
 									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
 									</center>
@@ -71,9 +74,8 @@
 							<li data-date="16/04/2014">
 								<h3><b>PSICOLOGÍA</b></h3>
 								<div class="panel3"> 
-									<h5><b>Expediente N°: </b> 21024	</h5>
 									<h5><b>Especialista: </b> Leonidas Quispe Luque</h5>
-									<h5><b>Grado: </b> Sub Oficial de Tercera</h5>
+									<h5><b>Expediente N°: </b> 21024	</h5>
 									<center>
 									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
 									</center>
