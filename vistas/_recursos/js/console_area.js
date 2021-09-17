@@ -15,8 +15,8 @@ function listar_area_vista(valor, pagina) {
             var valores = eval(datos[0]);
             if (valores.length > 0) {
                 var cadena = "";
-                cadena += "<table  class='table table-condensed jambo_table'>";
-                cadena += "<thead  class=''>";
+                cadena += "<table  class='table table-condensed jambo_table' >";
+                cadena += "<thead  class='' >";
                 cadena += "<tr >";
                 cadena += "<th style = 'text-align: center' hidden='true' >ID</th>";
                 cadena += "<th style = 'text-align: center'>PROFESION</th>";
@@ -25,19 +25,19 @@ function listar_area_vista(valor, pagina) {
                 cadena += "<th style = 'text-align: center'>NOMBRES</th>";
                 cadena += "<th style = 'text-align: center'>E-MAIL</th>";
                 cadena += "<th style = 'text-align: center'>CELULAR</th>";
-
+				cadena += "<th style = 'text-align: center'>OPCIONES</th>";
                 cadena += "</tr>";
                 cadena += "</thead>";
-                cadena += "<tbody>";
+                cadena += "<tbody style='background-color:white'>";
                 for (var i = 0; i < valores.length; i++) {
                     cadena += "<tr>";
-                    cadena += "<td align='center' hidden>" + valores[i][0] + "</td>";
-                    cadena += "<td align='center'>" + valores[i][1] + "</td>";
-                    cadena += "<td align='center'>" + valores[i][2] + "</td>";
-                    cadena += "<td align='center'>" + valores[i][3] + "</td>";
-                    cadena += "<td align='center'>" + valores[i][4] + "</td>";
-                    cadena += "<td align='center'>" + valores[i][5] + "</td>";
-                    cadena += "<td align='center'>" + valores[i][6] + "</td>";
+                    cadena += "<td align='center'  hidden>" + valores[i][0] + "</td>";
+                    cadena += "<td align='center' >" + valores[i][1] + "</td>";
+                    cadena += "<td align='center' >" + valores[i][2] + "</td>";
+                    cadena += "<td align='center' >" + valores[i][3] + "</td>";
+                    cadena += "<td align='center' >" + valores[i][4] + "</td>";
+                    cadena += "<td align='center' >" + valores[i][5] + "</td>";
+                    cadena += "<td align='center' >" + valores[i][6] + "</td>";
 
                     /*
                                         if (valores[i][3] == "INACTIVO") {
@@ -47,7 +47,7 @@ function listar_area_vista(valor, pagina) {
                                         }
                     				*/
 
-                    cadena += "<td><button name='" + valores[i][0] + "*" + valores[i][1] + "*" + valores[i][2] + "*" + valores[i][3] + "*" + valores[i][4] + "*" + valores[i][5] + "*" + valores[i][6] + "' class='btn btn-primary' onclick='AbrirModalArea(this)'><span class='glyphicon glyphicon-pencil'></span>";
+                    cadena += "<td ><button name='" + valores[i][0] + "*" + valores[i][1] + "*" + valores[i][2] + "*" + valores[i][3] + "*" + valores[i][4] + "*" + valores[i][5] + "*" + valores[i][6] + "' class='btn btn-primary' onclick='AbrirModalArea(this)'><span class='glyphicon glyphicon-pencil'></span>";
                     cadena += "</button></td> ";
                     cadena += "</tr>";
                 }

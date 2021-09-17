@@ -3,7 +3,7 @@
 <div class="contendor_kn">
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h2><b>REGISTRAR ASESOR</b></h2>            
+        <center><h3><b>REGISTRAR ASESOR</b></h3></center>         
     </div>
     <div class="panel-body">
                       <div class="col-sm-6">

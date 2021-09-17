@@ -23,9 +23,10 @@ function listar_institucion_vista(valor, pagina) {
                 cadena += "<th style = 'text-align: center'>DNI</th>";
                 cadena += "<th style = 'text-align: center'>DENUNCIANTE</th>";
                 cadena += "<th style = 'text-align: center'>FECHA DE REGISTRO</th>";
+                cadena += "<th style = 'text-align: center'>OPCIONES</th>";
                 cadena += "</tr>";
                 cadena += "</thead>";
-                cadena += "<tbody>";
+                cadena += "<tbody style='background-color:white'>";
                 for (var i = 0; i < valores.length; i++) {
                     cadena += "<tr>";
                     cadena += "<td align='center' hidden>" + valores[i][0] + "</td>";

@@ -1,31 +1,31 @@
 <script type="text/javascript" src="_recursos/js/console_area.js"></script>
 <div class="contendor_kn">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-        <h2><b>DIRECTORIO</b></h2>
-    </div>
-    <div class="panel-body">
-        <div class="col-md-10"> 
-          <div class=" input-group">
-            <input id="txt_area_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el nombre del apellido paterno a buscar ">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <center><h3><b>DIRECTORIO</b></h3></center>
+      </div>
+      <div class="panel-body">
+          <div class="col-md-10"> 
+            <div class=" input-group">
+              <input id="txt_area_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el nombre del apellido paterno a buscar ">
+              <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <button class="btn btn-danger" onclick="cargar_contenido('main-content','Area/vista_area_registrar.php');"><i class="fa fa-file-text" ></i> &nbsp;&nbsp;<strong>Nuevo Registro</strong></button>    
-        </div>
-        <div class="col-md-12">
-          <div class="box-body table-responsive" style="text-align: center;"><br>
-          	<label>LISTADO DE ASESORES</label>
-              <div id="listar_areas_tabla" class=" icon-loading">
-                <i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
-                <div id="nodatos"></div>
+          <div class="col-md-2">
+            <button class="btn btn-danger" onclick="cargar_contenido('main-content','Area/vista_area_registrar.php');"><i class="fa fa-file-text" ></i> &nbsp;&nbsp;<strong>Nuevo Registro</strong></button>    
+          </div>
+          <div class="col-md-12">
+              <div class="box-body table-responsive" style="text-align: center;"><br>
+                <label>LISTADO DE ASESORES</label>
+                <div id="listar_areas_tabla" class=" icon-loading">
+                  <i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
+                  <div id="nodatos"></div>
+                </div>
+                <p id="paginador_area_tabla" style="text-align:right" class="mi_paginador"></p>
               </div>
-              <p id="paginador_area_tabla" style="text-align:right" class="mi_paginador"></p>
           </div>
       </div>
     </div>
-  </div>
 </div>
 <!-- INICIO MODAL -->
 <script type="text/javascript">listar_area_vista("","1");</script>

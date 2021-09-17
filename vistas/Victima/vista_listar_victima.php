@@ -3,8 +3,8 @@
 <script src="_recursos/input-file/js/bootstrap-uploader/file-upload.js"></script>
 <div class="contendor_kn">
   <div class="panel panel-default">
-    <div class="panel-heading">
-        <h2><b>CIUDADANO REGISTRADO</b></h2>            
+    <div class="panel-heading"> 
+		<center><h3><b>CIUDADANO REGISTRADO</b></h3></center>           
     </div>
     <div class="panel-body">
 	    <br>
