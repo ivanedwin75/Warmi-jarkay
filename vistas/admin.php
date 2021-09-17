@@ -17,7 +17,7 @@ session_start();
   <link rel="stylesheet" href="_recursos/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/css/font.css" type="text/css" />
-  <link rel="stylesheet" href="_recursos/css/app1.css" type="text/css" />
+  <link rel="stylesheet" href="_recursos/css/app.css" type="text/css" />
   <link rel="stylesheet" href="_recursos/js/sweetalert.css">
   <link href="_recursos/css/customs.css" rel="stylesheet">
 
@@ -60,7 +60,7 @@ session_start();
             <i class="fa fa-dedent fa-fw text"></i>
             <i class="fa fa-indent fa-fw text-active"></i>
           </a>
-          <b class="l">COMISARIA PNP HUASCAR</b>
+          <b class="l" style="color:white;">COMISARIA PNP HUASCAR</b>
 
         </div>
 

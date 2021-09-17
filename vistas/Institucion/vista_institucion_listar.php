@@ -50,139 +50,144 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" style = "text-align:center; color: black;"><b>DATOS DE LA DENUNCIA</b></h4>
+        <h4 class="modal-title" id="myModalLabel" style = "text-align:center;"><b>DATOS DE LA DENUNCIA</b></h4>
       </div>
       <div class="modal-body">
-        <label style = "color: black">COMISARIA / DENUNCIA</label>
-        <div class="panel-body">
-          <div class="col-sm-3">
-            <input type="text" id="txtidinstitucion" hidden >
-            <br>
-            <label style = "color: black">Instructor a cargo </label>
-            <label style = "color: black">Nro de Oficio a Juzgado </label>
-            <label style = "color: black">Nro de Oficio a fiscalia </label>
-          </div>
+        <label>COMISARIA / DENUNCIA</label>
+        <div class="contendor_kn">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-sm-3" >
+                <input type="text" id="txtidinstitucion" hidden >
+                <label style = "padding-top: 7px;">Instructor a cargo </label>
+                <label style = "padding-top: 7px;">Nro de Oficio a Juzgado </label>
+                <label style = "padding-top: 7px;">Nro de Oficio a fiscalia </label>
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese DNI del efectivo" maxlength="8">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofijuzgado" placeholder="Ingrese Nro de oficio a Juzgado" maxlength="35">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+              </div>
 
-          <div class="col-sm-3">
-            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese DNI del efectivo" maxlength="8">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofijuzgado" placeholder="Ingrese Nro de oficio a Juzgado" maxlength="35">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
-          </div>
-
-          <div class="col-sm-3">
-            <label style = "color: black">Nivel de riesgo </label>
-            <label style = "color: black">Cargar copia simple de denuncia </label>
-          </div>
-          <div class="col-sm-3">
-            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
-              <option value="1" style="color:black">1</option>
-              <option value="2" style="color:black">2</option>
-              <option value="3" style="color:black">3</option>
-              <option value="4" style="color:black">4</option>
-              <option value="5" style="color:black">5</option>
-            </select>
-            
-            <div class="row">
-              <div class="col-6 col-md-6"><input type="file" name="id_archivo" class="file-upload-default"></div>
-              <div class="col-6 col-md-6"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+              <div class="col-sm-2">
+                <label style = "padding-top: 7px;">Nivel de riesgo </label>
+                <label style = "padding-top: 7px;">Cargar copia simple de denuncia </label>
+              </div>
+              <div class="col-sm-3">
+                <select id="niv_riesgo" style="width: 100%" class="form-control select2">
+                  <option value="1" >1</option>
+                  <option value="2" >2</option>
+                  <option value="3" >3</option>
+                  <option value="4" >4</option>
+                  <option value="5" >5</option>
+                </select>
+                
+                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
+                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                  <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+                </div>
+        
+                <input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento">
+              </div>
             </div>
-            
-            <input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento">
           </div>
         </div>
       
+        <label >FISCALIA</label>
+        <div class="contendor_kn">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-sm-3">
+                <label style = "padding-top: 7px;">Fiscal a cargo </label>
+              </div>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+              </div>
 
+              <div class="col-sm-3">
+                <label style = "padding-top: 7px;">Nro de Expediente </label>
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
+              </div>
 
-        <label style = "color: black">FISCALIA</label>
-        <div class="panel-body">
-          <div class="col-sm-3">
-            <label style = "color: black">Fiscal a cargo </label>
-          </div>
-
-          <div class="col-sm-9">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
-          </div>
-
-          <div class="col-sm-3">
-            <label style = "color: black">Nro de Expediente </label>
-          </div>
-
-          <div class="col-sm-3">
-            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
-          </div>
-
-          <div class="col-sm-3">
-            <label style = "color: black">Fiscalia</label>
-          </div>
-
-          <div class="col-sm-3">
-            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
-              <option value="1" style="color:black">!era FPPC - Puno</option>
-              <option value="2" style="color:black">2da FPPC - Puno</option>
-            </select>
-          </div>
-        </div>
-
-        <label style = "color: black">JUZGADO</label>
-        <div class="panel-body">
-          <div class="col-sm-3">
-            <label style = "color: black">Juez a cargo </label>
-          </div>
-
-          <div class="col-sm-9">
-            <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
-          </div>
-
-          <div class="col-sm-3">
-            <label style = "color: black">Nro de Expediente </label>
-          </div>
-
-          <div class="col-sm-3">
-            <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
-          </div>
-
-          <div class="col-sm-3">
-            <label style = "color: black; text-align=right;">Juzgado</label>
-          </div>
-
-          <div class="col-sm-3">
-            <select id="niv_riesgo" style="width: 100%" class="form-control select2">
-              <option value="1" style="color:black">!er Juzgado de familia</option>
-              <option value="2" style="color:black">2do Juzgado de familia</option>
-            </select>
-          </div>
-        </div>  
-
-        <label style = "color: black">PERICIAS</label>
-        <div class="panel-body">
-          <div class="col-sm-12">
-            <div class="row">
-              <div class="col-sm-3"><label style = "color: black">Pericia Psicologica</label></div>
-              <div class="col-sm-3"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
-              <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
-              <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+              <div class="col-sm-1">
+                <label style = "padding-top: 7px;">Fiscalia</label>
+              </div>
+              <div class="col-sm-3" style = "padding-top: 3px;">
+                <select id="niv_riesgo" style="width: 100%" class="form-control select2">
+                  <option value="1" >1era FPPC - Puno</option>
+                  <option value="2" >2da FPPC - Puno</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
 
+        <label >JUZGADO</label>
+        <div class="contendor_kn">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-sm-3">
+                <label style = "padding-top: 7px;">Juez a cargo </label>
+              </div>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+              </div>
+
+              <div class="col-sm-3">
+                <label style = "padding-top: 7px;">Nro de Expediente </label>
+              </div>
+
+              <div class="col-sm-4">
+                <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstitucion_modal" placeholder="Ingrese Nro Expediente" maxlength="8">
+              </div>
+
+              <div class="col-sm-1">
+                <label style = "padding-top: 7px;">Juzgado</label>
+              </div>
+
+              <div class="col-sm-3" style = "padding-top: 3px;">
+                <select id="niv_riesgo" style="width: 100%" class="form-control select2">
+                  <option value="1" >1er Juzgado de familia</option>
+                  <option value="2" >2do Juzgado de familia</option>
+                </select>
+              </div>
+            </div>  
+          </div>
+        </div>
+
+        <label >PERICIAS</label>
+        <div class="contendor_kn">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-sm-12">
+                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
+                  <div class="col-sm-3"><label style = "padding-top: 7px;">Pericia Psicologica</label></div>
+                  <div class="col-sm-4"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
+                  <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                  <div class="col-sm-2"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <label style = "color: black">MEDIDAS</label>
-        <div class="panel-body">
-          <div class="col-sm-12">
-            <div class="row">
-              <div class="col-sm-3"><label style = "color: black">Medidas de proteccion</label></div>
-              <div class="col-sm-3"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
-              <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
-              <div class="col-sm-3"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+        <div class="contendor_kn">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-sm-12">
+                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
+                  <div class="col-sm-3"><label style = "padding-top: 7px;">Medidas de proteccion</label></div>
+                  <div class="col-sm-4"><input type="text" class="form-control file-upload-info" disabled placeholder="Seleccionar Documento"></div>
+                  <div class="col-sm-3"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                  <div class="col-sm-2"><button type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
-
-
-
-
-
 
     </div> 
         <div class="modal-footer">
