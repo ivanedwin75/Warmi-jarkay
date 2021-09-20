@@ -36,7 +36,7 @@ function listar_personal_vista(valor,pagina){
 				cadena += "<th style = 'text-align: center'>APELLIDO PATERNO</th>";
 				cadena += "<th style = 'text-align: center'>APELLIDO MATERNO</th>";
 				cadena += "<th style = 'text-align: center'>NOMBRES</th>";
-				cadena += "<th style = 'text-align: center'>DNI</th>";
+				cadena += "<th style = 'text-align: center'>CPI</th>";
 				cadena += "<th style = 'text-align: center'>CELULAR</th>";
 				cadena += "<th style = 'text-align: center'>E-MAIL</th>";
 				cadena += "<th style = 'text-align: center'>OPCIONES</th>";
@@ -113,7 +113,7 @@ function listar_personal_vista(valor,pagina){
 				cadena += "<th style = 'text-align: center'>APELLIDO PATERNO</th>";
 				cadena += "<th style = 'text-align: center'>APELLIDO MATERNO</th>";
 				cadena += "<th style = 'text-align: center'>NOMBRES</th>";
-				cadena += "<th style = 'text-align: center'>DNI</th>";
+				cadena += "<th style = 'text-align: center'>CPI</th>";
 				cadena += "<th style = 'text-align: center'>CELULAR</th>";
 				cadena += "<th style = 'text-align: center'>E-MAIL</th>";
 				cadena += "</tr>";
