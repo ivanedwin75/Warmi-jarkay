@@ -117,16 +117,31 @@ function AbrirModalInstitucion(control) {
     $('#modal_editar_denuncia').modal('show');
     $('#txtid_denuncia').val(datos_split[0]);
 
-    var id_denuncia = datos_split[0];
+    var id_denuncia = eval(datos_split[0]);
+    //console.log("id_denuncia");
     $.ajax({
-            url: '../controlador/institucion/controlador_get_denuncia.php',
-            type: 'POST',
-            data: {
-                id_denuncia: id_denuncia
-            }
-        })
-        .done(function(resp) {
+        url: '../controlador/institucion/controlador_get_denuncia.php',
+        type: 'POST',
+        data: 'valor=' + id_denuncia,
+        beforeSend: function() {
+            $("#loading_almacen").addClass("fa fa-refresh fa-spin fa-3x fa-fw");
+        },
+        complete: function() {
+            $("#loading_almacen").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
+        },
+
+        success: function(resp) {
+            //var datos = resp.split("*");
+            //var data = eval(resp);
+            //var data = resp;
+            //data[0] = 15;
             var data = JSON.parse(resp);
+            var cade = "";
+            for (let i = 0; i < 20; i++) {
+                cade += data[i] + '\n';
+            }
+
+            alert(cade);
             //var id_denuncia = $("#txtid_denuncia").val();
             $("#txtofifiscalia").val(data[2]);
             $("#txtofijuzgado").val(data[3]);
@@ -156,8 +171,59 @@ function AbrirModalInstitucion(control) {
             } else {
                 swal("! Lo sentimos no pudimos completar los datos", "", "error");
             }
+
+        }
+    });
+    /*
+    $.ajax({
+            url: '../controlador/institucion/controlador_get_denuncia.php',
+            type: 'POST',
+            data: {
+                id_denuncia: '1'
+            }
         })
+        .success(function(resp) {
+            var data = resp;
+            //data[0] = 15;
+            //var data = JSON.parse(resp);
+            var cade = "";
+            for (let i = 0; i < 20; i++) {
+                cade += resp[i] + '\n';
+            }
+
+            alert(cade);
+            //var id_denuncia = $("#txtid_denuncia").val();
+            $("#txtofifiscalia").val(data[2]);
+            $("#txtofijuzgado").val(data[3]);
+            $("#niv_riesgo").val(data[4]);
+
+            $("#txtexp_fiscalia").val(data[5]);
+            $("#txtfiscalia").val(data[6]);
+            $("#txtfiscal").val(data[7]);
+            $("#txtf_fiscalia").val(data[8]);
+
+            $("#txtexp_juzgado").val(data[9]);
+            $("#txtjuzgado").val(data[10]);
+            $("#txtjuez").val(data[11]);
+            $("#txtf_juzgado").val(data[12]);
+
+            $("#txtden_scan").val(data[13]);
+            $("#txtdem_elec").val(data[14]);
+            $("#txtmed_prot").val(data[15]);
+
+            $("#txtinstructor").val(data[16]);
+
+            if (resp > 0) {
+                //$('#modal_editar_denuncia').modal('hide');
+                swal("Datos Actualizados!", "", "success");
+                //var dato_buscar = $("#txt_institucion_vista").val();
+                //listar_institucion_vista(dato_buscar, '1');
+            } else {
+                swal("! Lo sentimos no pudimos completar los datos", "", "error");
+            }
+        })*/
 }
+
 
 
 //$('#cmb_estado').val(datos_split[3]).trigger("change");

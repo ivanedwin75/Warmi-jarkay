@@ -1,8 +1,10 @@
 <?php
-	$id_denuncia = $_POST["#txtid_denuncia"];
-	
+	$id_denuncia = $_POST["id_denuncia"];
+	//$id_denuncia = '1';
 	require '../../modelo/modelo_institucion.php';
 	$MC = new Modelo_institucion();
 	$consulta = $MC->get_denuncia($id_denuncia);
-	echo $consulta;
+	//$data = json_encode($consulta);
+
+	echo json_encode($consulta);
 ?>

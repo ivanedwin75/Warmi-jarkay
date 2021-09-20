@@ -57,12 +57,16 @@
 			$sql = "SELECT * FROM denuncia where id_denuncia = $denuncia";
 			$resultado = $this->conexion->conexion->query($sql);
 			$arreglo = array();
-			while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
-			    $arreglo[] = $consulta_VU;
-			}
-			return $arreglo;
+			$consulta_VU=mysqli_fetch_array($resultado);
+			//while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+			//	$arreglo[] = $consulta_VU;
+			//}
+			//echo "<script language='javascript'>alert('goooo');</script>";
+			return $consulta_VU;
+			
 			$this->conexion->cerrar();
 		}
+
  		function listar_institucionremitente($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {
 			    $sql = "SELECT * FROM institucion where inst_estado = 'ACTIVO' AND inst_nombre like '".$valor."%' ORDER BY inst_nombre DESC LIMIT $inicio,$limite";

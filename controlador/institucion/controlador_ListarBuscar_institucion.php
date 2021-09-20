@@ -1,6 +1,7 @@
 <?php
 	  include '../../modelo/modelo_institucion.php';
     $boton = $_POST['boton'];
+    $boton = 'buscar';
     if($boton==='buscar'){
       $inicio = 0;
       $limite = 5;
