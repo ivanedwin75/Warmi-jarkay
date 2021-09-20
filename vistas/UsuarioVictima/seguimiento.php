@@ -19,6 +19,7 @@
 									<li><a href="#0" data-date="16/02/2014"></a></li>
 									<li><a href="#0" data-date="16/03/2014"></a></li>
 									<li><a href="#0" data-date="16/04/2014"></a></li>
+									<li><a href="#0" data-date="16/05/2014"></a></li>
 								</ol>
 
 								<span class="filling-line" aria-hidden="true"></span>
@@ -51,8 +52,8 @@
 								<h3><b>FISCALÍA</b></h3>
 								<div class="panel3"> 
 									<h5><b>Fiscal: </b> Leonidas Quispe Luque</h5>
-									<h5><b>N° DE Expediente: </b> 429-2021</h5>
 									<h5><b>Fiscalía: </b> 1era FPPC - Puno</h5>
+									<h5><b>Fecha de Registro: </b> 17/09/2021</h5>
 									<center>
 									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
 									</center>
@@ -63,8 +64,8 @@
 								<h3><b>JUZGADO</b></h3>
 								<div class="panel3"> 
 									<h5><b>Juez: </b> Leonidas Quispe Luque</h5>
-									<h5><b>N° de Expediente : </b> 21024	</h5>
 									<h5><b>Juzgado: </b> Sub Oficial de Tercera</h5>
+									<h5><b>Fecha de Registro: </b> 17/09/2021</h5>
 									<center>
 									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
 									</center>
@@ -72,13 +73,24 @@
 							</li>
 
 							<li data-date="16/04/2014">
-								<h3><b>PSICOLOGÍA</b></h3>
+								<h3><b>PERICIAS</b></h3>
 								<div class="panel3"> 
 									<h5><b>Especialista: </b> Leonidas Quispe Luque</h5>
-									<h5><b>Expediente N°: </b> 21024	</h5>
-									<center>
-									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
-									</center>
+									<h5><b>Pericia Psicologica:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<h5><b>Especialista: </b> Leonidas Quispe Luque</h5>
+									<h5><b>Pericia Psicologica:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<h5><b>Especialista: </b> Leonidas Quispe Luque</h5>
+									<h5><b>Pericia Psicologica:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<h5><b>Especialista: </b> Leonidas Quispe Luque</h5>
+									<h5><b>Pericia Psicologica:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									
+								</div>
+							</li>
+							<li data-date="16/05/2014">
+								<h3><b>MEDIDAS</b></h3>
+								<div class="panel3"> 
+									<h5><b>Especialista: </b> Leonidas Quispe Luque</h5>
+									<h5><b>Medidas de protección:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
 								</div>
 							</li>
 						</ol>

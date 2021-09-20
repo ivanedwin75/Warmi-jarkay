@@ -72,8 +72,8 @@
 	                    </div>
 						
 						<div class="col-sm-6">
-	                        <label >DNI </label>
-	                        <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtdni_modal" placeholder="Ingrese nro DNI" maxlength="8">
+	                        <label >CIP </label>
+	                        <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtdni_modal" placeholder="Ingrese nro CPI" maxlength="8">
 	                        <br>
 	                    </div>        
 	                    <div class="col-md-6">
