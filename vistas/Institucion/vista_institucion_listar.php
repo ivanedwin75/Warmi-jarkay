@@ -70,17 +70,17 @@
                 <input type="text" class="form-control" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
               </div>
 
-              <div class="col-sm-2" style="text-align: right;">
+              <div class="col-sm-3" style="text-align: right;">
                 <label style = "padding-top: 7px;">Nivel de riesgo </label>
-                <label style = "padding-top: 7px;">Cargar copia simple de denuncia </label>
+                <label style = "padding-top: 7px;">Cargar copia de Acta de Denuncia Verbal / Acta de Intervención Policial </label>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                 <select id="niv_riesgo" style="width: 100%" class="form-control select2">
-                  <option value="1" >1</option>
-                  <option value="2" >2</option>
-                  <option value="3" >3</option>
-                  <option value="4" >4</option>
-                  <option value="5" >5</option>
+                  <option value="1" >Leve</option>
+                  <option value="2" >Moderado</option>
+                  <option value="3" >Severo 1</option>
+                  <option value="4" >Severo 2</option>
+                  <option value="5" >Severo 3</option>
                 </select>
                 
                 <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
