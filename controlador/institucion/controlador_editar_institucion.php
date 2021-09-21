@@ -16,7 +16,7 @@
 	
 	$den_scan = $_POST("txtden_scan");
 	$dem_elec = $_POST("txtdem_elec");
-	$med_prot = $_POST("txtdem_prot");
+	$med_prot = $_POST("txtmed_prot");
 	$instructor = $_POST["#txtinstructor"];
 
 	require '../../modelo/modelo_institucion.php';

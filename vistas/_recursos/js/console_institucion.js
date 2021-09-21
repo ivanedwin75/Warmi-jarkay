@@ -312,27 +312,6 @@ function Editar_denuncia() {
             }
         })
 
-    var formulario = document.getElementById('frm_datos');
-
-    formulario.addEventListener('submit', (ev) => {
-        ev.preventDefault();
-        if (archivo.files.length == 0 || document.getElementById('nombre').value == "") {
-            console.log("Verifica que ninguno de los campos este vacio");
-            return
-        }
-        var dataform = new FormData(formulario);
-        dataform.append('imagen', archivo.files[0]);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'server.php');
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                console.log("se enviaron dtos");
-            } else {
-                console.log("Ocurrio un error al enviar los datos" + xhr.status);
-            }
-        }
-        xhr.send(dataform);
-    })
 
 }
 
@@ -453,6 +432,31 @@ function ValidarImagen() {
             archivo.value = "";
         }
     }
+
+
+
+    var formulario = document.getElementById('frm_datos');
+
+    formulario.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        if (archivo.files.length == 0 || document.getElementById('nombre').value == "") {
+            console.log("Verifica que ninguno de los campos este vacio");
+            return
+        }
+        var dataform = new FormData(formulario);
+        dataform.append('imagen', archivo.files[0]);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'server.php');
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                console.log("se enviaron dtos");
+            } else {
+                console.log("Ocurrio un error al enviar los datos" + xhr.status);
+            }
+        }
+        xhr.send(dataform);
+    })
+
 
 }
 

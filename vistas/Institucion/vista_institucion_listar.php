@@ -90,7 +90,7 @@
                   Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                   </span>
                   </label>
-                  <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                  <input class="form-control" id="txtden_scan" readonly="readonly" name="banner_captura" type="text" value="">
                 </div>
                 
               </div>
@@ -122,7 +122,7 @@
 
               <div class="col-sm-2" style="text-align: right;">
                 <label style = "padding-top: 12px;">Fecha Registro</label>
-                <label style = "padding-top: 12px;">Cargar copia</label>
+                <label style = "padding-top: 12px;">Cargar demanda electronica</label>
               </div>
 
               <div class="col-sm-4" style = "padding-top: 3px;">
@@ -139,7 +139,7 @@
                   Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                   </span>
                   </label>
-                  <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                  <input class="form-control" id="txtdem_elec" readonly="readonly" name="banner_captura" type="text" value="">
                 </div>
               
             </div>  
@@ -208,7 +208,7 @@
                         Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
-                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="Per_psico" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                     <div class="input-group">
                       <label class="input-group-btn">
@@ -216,7 +216,7 @@
                         Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
-                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="certi_med" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                     <div class="input-group">
                       <label class="input-group-btn">
@@ -224,7 +224,7 @@
                         Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
-                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="CEM" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                     <div class="input-group">
                       <label class="input-group-btn">
@@ -232,7 +232,7 @@
                         Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
-                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                     <div class="input-group">
                       <label class="input-group-btn">
@@ -240,7 +240,7 @@
                         Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
-                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="Social_CEM" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                   </div>
                   <!--<div class="col-sm-2"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
@@ -266,9 +266,8 @@
                         Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
-                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="txtmed_prot" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
-                    <input  id="txtmed_prot" class="form-control file-upload-default"  placeholder="Seleccionar Documento">
                   </div>
                   
                   <!--<div class="col-sm-2"><button id="btn_cargar_medidas" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
