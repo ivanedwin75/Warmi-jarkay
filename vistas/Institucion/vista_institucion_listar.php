@@ -55,14 +55,14 @@
       </div>
       <div class="modal-body">
         <label>COMISARIA / DENUNCIA</label>
-        <div class="contendor_kn">
+        <div class="contendor_kn" style = "padding: 1px 1px 1px 0px; ">
           <div class="panel panel-default">
             <div class="panel-body">
-              <div class="col-sm-3" style="text-align: right;" >
+              <div class="col-sm-2" style="text-align: right;" >
                 <input type="text" id="txtid_denuncia" hidden >
                 <label style = "padding-top: 7px; ">Instructor a cargo </label>
-                <label style = "padding-top: 7px;">Nro de Oficio a Juzgado </label>
-                <label style = "padding-top: 7px;">Nro de Oficio a fiscalia </label>
+                <label style = "padding-top: 7px; font-size:13px">N° de Oficio a Juzgado </label>
+                <label style = "padding-top: 7px;">N° de Oficio a fiscalia </label>
               </div>
               <div class="col-sm-4">
                 <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese CIP del efectivo" maxlength="8">
@@ -74,7 +74,7 @@
                 <label style = "padding-top: 7px;">Nivel de riesgo </label>
                 <label style = "padding-top: 7px;">Cargar copia de Acta de Denuncia Verbal / Intervención Policial </label>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <select id="niv_riesgo" style="width: 100%" class="form-control select2">
                   <option value="Sin Riesgo" >Sin Riesgo</option>
                   <option value="Leve" >Leve</option>
@@ -87,7 +87,7 @@
                 <div class="input-group" style="padding-top:15px">
                   <label class="input-group-btn">
                   <span class="btn btn-info btn-file">
-                  Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                  <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                   </span>
                   </label>
                   <input class="form-control" id="txtden_scan" readonly="readonly" name="banner_captura" type="text" value="">
@@ -99,30 +99,30 @@
         </div>
 
         <label >JUZGADO</label>
-        <div class="contendor_kn">
+        <div class="contendor_kn" style = "padding: 1px 1px 1px 0px; ">
           <div class="panel panel-default" >
             <div class="panel-body">
-              <div class="col-sm-3" style="text-align: right;">
+              <div class="col-sm-2" style="text-align: right;">
                 <label style = "padding-top: 7px;">Juez a cargo </label><br>
                 <label style = "padding-top: 7px;">Juzgado</label><br>
                 <label style = "padding-top: 7px;">N° de Expediente</label>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-10">
                 <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
               </div>
 
-              <div class="col-sm-3" style = "padding-top: 3px;">
+              <div class="col-sm-4" style = "padding-top: 6px;">
                 <select id="txtjuzgado" style="width: 100%" class="form-control select2">
                   <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO">1er Juzgado de familia</option>
-                  <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" style="color:black">2do Juzgado de familia</option>
+                  <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" >2do Juzgado de familia</option>
                 </select>
 
-                <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Expediente">
+                <input type="text"  class="form-control" id="" placeholder="Ingrese Nro de Expediente">
               </div>
 
               <div class="col-sm-2" style="text-align: right;">
                 <label style = "padding-top: 12px;">Fecha Registro</label>
-                <label style = "padding-top: 12px;">Cargar demanda electronica</label>
+                <label style = "padding-top: 10px;">Cargar demanda electrónica</label>
               </div>
 
               <div class="col-sm-4" style = "padding-top: 3px;">
@@ -133,10 +133,10 @@
                     <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado"  class="form-control"  >
                 </div>
                 
-                <div class="input-group">
+                <div class="input-group" style="padding-top:10px">
                   <label class="input-group-btn">
                   <span class="btn btn-info btn-file">
-                  Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                  <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                   </span>
                   </label>
                   <input class="form-control" id="txtdem_elec" readonly="readonly" name="banner_captura" type="text" value="">
@@ -147,16 +147,16 @@
         </div>
       
         <label >FISCALIA</label>
-        <div class="contendor_kn">
+        <div class="contendor_kn" style = "padding: 1px 1px 1px 0px; ">
           <div class="panel panel-default">
             <div class="panel-body">
-              <div class="col-sm-3" style="text-align: right;">
+              <div class="col-sm-2" style="text-align: right;">
                 <label style = "padding-top: 7px;">Fiscal a cargo </label><br>
                 <label style = "padding-top: 7px;">Fiscalia</label><br>
                 <label style = "padding-top: 7px;">Fecha Registro</label>
               </div>
               
-              <div class="col-sm-9">
+              <div class="col-sm-10">
                 <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtfiscal" placeholder="Ingrese Nombre completo de fiscal" maxlength="100">
               </div>
               <div class="col-sm-4" style = "padding-top: 3px;">
@@ -180,7 +180,7 @@
 
 
         <label >PERICIAS</label>
-        <div class="contendor_kn">
+        <div class="contendor_kn" style = "padding: 1px 1px 1px 0px; ">
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="col-sm-12" style="text-align: right;">
@@ -205,7 +205,7 @@
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
                       <input class="form-control" id="Per_psico" readonly="readonly" name="banner_captura" type="text" value="">
@@ -213,7 +213,7 @@
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
                       <input class="form-control" id="certi_med" readonly="readonly" name="banner_captura" type="text" value="">
@@ -221,7 +221,7 @@
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
                       <input class="form-control" id="CEM" readonly="readonly" name="banner_captura" type="text" value="">
@@ -229,7 +229,7 @@
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
                       <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
@@ -237,7 +237,7 @@
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
                       <input class="form-control" id="Social_CEM" readonly="readonly" name="banner_captura" type="text" value="">
@@ -263,7 +263,7 @@
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
                       <input class="form-control" id="txtmed_prot" readonly="readonly" name="banner_captura" type="text" value="">
