@@ -118,31 +118,23 @@ function AbrirModalInstitucion(control) {
     $('#txtid_denuncia').val(datos_split[0]);
 
     var id_denuncia = eval(datos_split[0]);
-    //console.log("id_denuncia");
+    //alert(id_denuncia);
     $.ajax({
         url: '../controlador/institucion/controlador_get_denuncia.php',
         type: 'POST',
-        data: 'valor=' + id_denuncia,
+        data: {
+            id_denuncia: id_denuncia,
+        },
         beforeSend: function() {
             $("#loading_almacen").addClass("fa fa-refresh fa-spin fa-3x fa-fw");
         },
         complete: function() {
             $("#loading_almacen").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
         },
-
         success: function(resp) {
-            //var datos = resp.split("*");
-            //var data = eval(resp);
-            //var data = resp;
-            //data[0] = 15;
             var data = JSON.parse(resp);
-            var cade = "";
-            for (let i = 0; i < 20; i++) {
-                cade += data[i] + '\n';
-            }
 
-            alert(cade);
-            //var id_denuncia = $("#txtid_denuncia").val();
+            //alert(data);
             $("#txtofifiscalia").val(data[2]);
             $("#txtofijuzgado").val(data[3]);
             $("#niv_riesgo").val(data[4]);
@@ -160,6 +152,7 @@ function AbrirModalInstitucion(control) {
             $("#txtden_scan").val(data[13]);
             $("#txtdem_elec").val(data[14]);
             $("#txtmed_prot").val(data[15]);
+            alert(data[13]);
 
             $("#txtinstructor").val(data[16]);
 
@@ -169,7 +162,7 @@ function AbrirModalInstitucion(control) {
                 //var dato_buscar = $("#txt_institucion_vista").val();
                 //listar_institucion_vista(dato_buscar, '1');
             } else {
-                swal("! Lo sentimos no pudimos completar los datos", "", "error");
+                swal("Esta denuncia posee información incompleta", "", "info");
             }
 
         }
@@ -234,7 +227,6 @@ function Editar_denuncia() {
     var ofi_juzgado = $("#txtofijuzgado").val();
     var niv_riesgo = $("#niv_riesgo").val();
 
-
     var exp_fiscalia = $("#txtexp_fiscalia").val();
     var fiscalia = $("#txtfiscalia").val();
     var fiscal = $("#txtfiscal").val();
@@ -255,6 +247,7 @@ function Editar_denuncia() {
         return swal("Falta Llenar Datos", "", "info");
     }
     */
+
     $.ajax({
             url: '../controlador/institucion/controlador_editar_institucion.php',
             type: 'POST',
@@ -318,7 +311,31 @@ function Editar_denuncia() {
 
             }
         })
+
+    var formulario = document.getElementById('frm_datos');
+
+    formulario.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        if (archivo.files.length == 0 || document.getElementById('nombre').value == "") {
+            console.log("Verifica que ninguno de los campos este vacio");
+            return
+        }
+        var dataform = new FormData(formulario);
+        dataform.append('imagen', archivo.files[0]);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'server.php');
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                console.log("se enviaron dtos");
+            } else {
+                console.log("Ocurrio un error al enviar los datos" + xhr.status);
+            }
+        }
+        xhr.send(dataform);
+    })
+
 }
+
 
 function Registrar_denuncia() {
 
@@ -413,4 +430,54 @@ function Registrar_denuncia() {
 
             }
         })
+}
+
+function ValidarImagen() {
+    var archivo = document.getElementById('archivo');
+    archivo.onchange = (ev) => {
+        var file = ev.target.files[0];
+        var extenciones_p = ['pdf'];
+        var tamano_m = function(mega) {
+            return Math.pow(2, 20) * mega;
+        }
+        var extencion = file.type.split('/').pop();
+        if (extenciones_p.indexOf(extencion) != -1) {
+            if (file.size <= tamano_m(1)) {
+                subirImg(file);
+            } else {
+                console.log("El archivo es muy grande solo se admiten archivos maximo de 1mb");
+                archivo.value = "";
+            }
+        } else {
+            console.log("no se encontro la extencion, extenciones validas: " + extenciones_p.toString());
+            archivo.value = "";
+        }
+    }
+
+}
+
+function subirImg(file) {
+    var file_r = new FileReader();
+    var progress = document.getElementById('progreso');
+    var preview = document.getElementById('muestra');
+    var etiqueta = document.getElementById('etiqueta');
+
+    file_r.onloadstart = (ev) => {
+        console.log("comenzando");
+        console.log("se cargo: " + ev.loaded);
+    }
+    file_r.onloadend = (ev) => {
+        console.log("termino");
+        console.log("se cargo: " + ev.loaded);
+    }
+    file_r.onprogress = (ev) => {
+        progress.value = (ev.loaded * 100) / ev.total;
+        etiqueta.innerHTML = Math.round(progress.value) + "%";
+        // total =>  100%
+        // loaded => ?
+    }
+    file_r.onload = (ev) => {
+        preview.src = file_r.result;
+    }
+    file_r.readAsDataURL(file);
 }

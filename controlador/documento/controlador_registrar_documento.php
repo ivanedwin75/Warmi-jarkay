@@ -1,11 +1,11 @@
 <?php
 	$cont=0;
 	if ($_FILES["id_archivo"]['tmp_name']!="") {
-    $imagen=uniqid()."-".$_FILES['id_archivo']['name'];
-	$ruta1=$_FILES['id_archivo']['tmp_name'];
-	$destinoImagen='Archivo/'.$imagen;
-	copy($ruta1, $destinoImagen); 
-	$cont=1;
+		$imagen=uniqid()."-".$_FILES['id_archivo']['name'];
+		$ruta1=$_FILES['id_archivo']['tmp_name'];
+		$destinoImagen='Archivo/'.$imagen;
+		copy($ruta1, $destinoImagen); 
+		$cont=1;
 	}else{  
 	$destinoImagen="";
 	}

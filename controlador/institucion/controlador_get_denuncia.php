@@ -4,7 +4,6 @@
 	require '../../modelo/modelo_institucion.php';
 	$MC = new Modelo_institucion();
 	$consulta = $MC->get_denuncia($id_denuncia);
-	//$data = json_encode($consulta);
-
-	echo json_encode($consulta);
+	$data = json_encode($consulta);
+	echo $data;
 ?>

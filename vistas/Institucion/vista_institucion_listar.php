@@ -187,8 +187,11 @@
 
               <div class="col-sm-3" style = "padding-top: 3px;">
                 <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
-                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                  <div class="col-sm-9">
+                    <input type="file" id="archivo" class="file-upload-default">
+                  </div>
                 </div>
+                <input  id="txtdem_elec" class="form-control file-upload-default"  placeholder="Seleccionar Documento">
               </div>
             </div>
           </div>
@@ -227,6 +230,7 @@
                 <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
                   <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                 </div>
+                <input  id=" " class="form-control file-upload-default"  placeholder="Seleccionar Documento">
               </div>
               
             </div>  
@@ -249,15 +253,23 @@
                     <div class="row" style = "padding-top: 9px;">
                       <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                     </div>
+                    <input  id=" " class="form-control file-upload-default"  placeholder="Seleccionar Documento">
+
                     <div class="row" style = "padding-top: 9px;">
                       <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                     </div>
+                    <input  id=" " class="form-control file-upload-default"  placeholder="Seleccionar Documento">
+
                     <div class="row" style = "padding-top: 9px;">
                       <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                     </div>
+                    <input  id=" " class="form-control file-upload-default"  placeholder="Seleccionar Documento">
+
                     <div class="row" style = "padding-top: 9px;">
                       <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                     </div>
+                    <input  id=" " class="form-control file-upload-default"  placeholder="Seleccionar Documento">
+
                   </div>
                   <!--<div class="col-sm-2"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
                 </div>
@@ -279,6 +291,7 @@
                     <div class="row" style = "padding-top: 9px;">
                       <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                     </div>
+                    <input  id="txtmed_prot" class="form-control file-upload-default"  placeholder="Seleccionar Documento">
                   </div>
                   
                   <!--<div class="col-sm-2"><button id="btn_cargar_medidas" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
@@ -289,8 +302,11 @@
         </div>
     </div> 
         <div class="modal-footer">
-          <button  class="btn btn-success" onclick="Editar_denuncia()"><i class="fa fa-check"></i>&nbsp;<b>Guardar</b></button>&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>
+          <!--<progress value="0" max="100" class="progress" id="progreso">0%</progress>
+          <label for="" id="etiqueta">0%</label><br>
+                -->
+          <button type="submit" class="btn btn-success" onclick="Editar_denuncia()"><i class="fa fa-check"></i>&nbsp;<b>Guardar</b></button>&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>
         </div> 
     </div>
   </div> 
