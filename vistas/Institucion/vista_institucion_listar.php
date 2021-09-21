@@ -65,7 +65,7 @@
                 <label style = "padding-top: 7px;">Nro de Oficio a fiscalia </label>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese DNI del efectivo" maxlength="8">
+                <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese CIP del efectivo" maxlength="8">
                 <input type="text" class="form-control" id="txtofijuzgado" placeholder="Ingrese Nro de oficio a Juzgado" maxlength="35">
                 <input type="text" class="form-control" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
               </div>
@@ -76,81 +76,63 @@
               </div>
               <div class="col-sm-2">
                 <select id="niv_riesgo" style="width: 100%" class="form-control select2">
-                  <option value="1" >Leve</option>
-                  <option value="2" >Moderado</option>
-                  <option value="3" >Severo 1</option>
-                  <option value="4" >Severo 2</option>
-                  <option value="5" >Severo 3</option>
+                  <option value="Sin Riesgo" >Sin Riesgo</option>
+                  <option value="Leve" >Leve</option>
+                  <option value="Moderado" >Moderado</option>
+                  <option value="Severo 1" >Severo 1</option>
+                  <option value="Severo 2" >Severo 2</option>
+                  <option value="Severo 3" >Severo 3</option>
                 </select>
                 
                 <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
                   <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                 </div>
-                <input  id="txtden_scan" class="form-control file-upload-default"  placeholder="Seleccionar Documento">
-                <!--<div class="input-group image-preview">
-                                <input placeholder="" type="text" class="form-control carga-archivo-filename">
-                                <span class="input-group-btn"> 
-                                    <div class="btn btn-default carga-archivo-input"> 
-                                        <span class="glyphicon glyphicon-folder-open"></span>
-                                        <span class="carga-archivo-input-title">Seleccionar archivo</span>
-                                        <input type="file"  name="id_archivo" />ss
-                                    </div>
-                                </span>
-                            </div>
-                <style>
-                  .archivo-ubicacion{
-    overflow:hidden;
-    height:35px;
-}
-.archivo-ubicacion div{
-    height:100%;
-    line-height:35px;
-}
-
-.archivo-ubicacion-label{
-    font-weight:bold;
-    font-size:15px;
-}
-
-.archivo-ubicacion-data{
-    border:1px solid #ddd;
-    border-left:0
-}
-
-.subir-archivos{
-    background: #f8f8f8;
-    padding-top: 10px;
-    padding-bottom:10px;
-    border-radius: 5px;
-}
-
-
-.carga-archivo-input {
-    position: relative;
-    overflow: hidden;
-    margin: 0px;    
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;    
-}
-.carga-archivo-input input[type=file] {
-    position: absolute;
-	top: 0;
-	right: 0;
-	margin: 0;
-	padding: 0;
-	font-size: 20px;
-	cursor: pointer;
-	opacity: 0;
-	filter: alpha(opacity=0);
-}
-.carga-archivo-input-title {
-    margin-left:2px;
-}
-                  }
-                </style>-->
+                
               </div>
             </div>
+          </div>
+        </div>
+
+        <label >JUZGADO</label>
+        <div class="contendor_kn">
+          <div class="panel panel-default" >
+            <div class="panel-body">
+              <div class="col-sm-3" style="text-align: right;">
+                <label style = "padding-top: 7px;">Juez a cargo </label><br>
+                <label style = "padding-top: 7px;">Juzgado</label><br>
+                <label style = "padding-top: 7px;">N° de Expediente</label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
+              </div>
+
+              <div class="col-sm-3" style = "padding-top: 3px;">
+                <select id="txtjuzgado" style="width: 100%" class="form-control select2">
+                  <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO">1er Juzgado de familia</option>
+                  <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" style="color:black">2do Juzgado de familia</option>
+                </select>
+
+                <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Expediente">
+              </div>
+
+              <div class="col-sm-2" style="text-align: right;">
+                <label style = "padding-top: 12px;">Fecha Registro</label>
+                <label style = "padding-top: 12px;">Cargar copia</label>
+              </div>
+
+              <div class="col-sm-3" style = "padding-top: 3px;">
+                <div class=" input-group" style = "padding-top: 3px;">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado"  class="form-control"  >
+                </div>
+                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
+                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                </div>
+              </div>
+              
+            </div>  
           </div>
         </div>
       
@@ -181,71 +163,38 @@
                 </div>
               </div>
 
-              <div class="col-sm-2" style="text-align: right;">   
-                <label style = "padding-top: 7px;">Cargar copia</label>
-              </div>
-
-              <div class="col-sm-3" style = "padding-top: 3px;">
-                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
-                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
-                </div>
-              </div>
+        
             </div>
           </div>
         </div>
 
-        <label >JUZGADO</label>
-        <div class="contendor_kn">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="col-sm-3" style="text-align: right;">
-                <label style = "padding-top: 7px;">Juez a cargo </label><br>
-                <label style = "padding-top: 7px;">Juzgado</label><br>
-                <label style = "padding-top: 7px;">Fecha Registro</label>
-              </div>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
-              </div>
-              <div class="col-sm-4" style = "padding-top: 3px;">
-                <select id="txtjuzgado" style="width: 100%" class="form-control select2">
-                  <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO">1er Juzgado de familia</option>
-                  <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" style="color:black">2do Juzgado de familia</option>
-                </select>
-                <div class=" input-group" style = "padding-top: 3px;">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado"  class="form-control"  >
-                </div>
-              </div>
-
-              <div class="col-sm-2" style="text-align: right;">
-                <label style = "padding-top: 7px;">Cargar copia</label>
-              </div>
-
-              <div class="col-sm-3" style = "padding-top: 3px;">
-                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
-                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
-                </div>
-              </div>
-              
-            </div>  
-          </div>
-        </div>
 
         <label >PERICIAS</label>
         <div class="contendor_kn">
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="col-sm-12" style="text-align: right;">
-                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
+                <div class="row" >
                   <div class="col-sm-3">
-                    <label style = "padding-top: 7px;">Pericia Psicologica</label>
-                    <label style = "padding-top: 7px;">Pericia Psicologica</label>
-                    <label style = "padding-top: 7px;">Pericia Psicologica</label>
-                    <label style = "padding-top: 7px;">Pericia Psicologica</label>
+                    <label style = "padding-top: 7px;padding-bottom:3px;">Pericia Psicológica</label>
+                    <label style = "padding-top: 7px;padding-bottom:3px;">Certificado Médico Legal</label>
+                    <label style = "padding-top: 7px;padding-bottom:3px;">Informe Psicológico de CEM </label>
+                    <label style = "padding-top: 7px;padding-bottom:3px;">Informe Psicológico de SAU</label>
+                    <label style = "padding-top: 7px;padding-bottom:3px;">Informe Social de CEM</label>
                   </div>
+
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Pericia Psicológica" >
+                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Certificado Médico Legal" >
+                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Informe Psicológico de CEM" >
+                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Informe Psicológico de SAU" >
+                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Informe Social de CEM" >
+                  </div>
+
                   <div class="col-sm-4" >
+                    <div class="row" style = "padding-top: 9px;">
+                      <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                    </div>
                     <div class="row" style = "padding-top: 9px;">
                       <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
                     </div>

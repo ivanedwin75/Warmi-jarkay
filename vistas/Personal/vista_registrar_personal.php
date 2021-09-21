@@ -28,8 +28,8 @@
             </div>
             
             <div class="col-sm-4">
-                <label >Nº Documento Identidad</label>
-                <input type="text" class="form-control" id="txtdni" onkeypress="return soloNumeros(event)"   maxlength="8" style="background-color: #FFFFFF" placeholder="Ingrese Nº Documento Identidad">
+                <label >CIP</label>
+                <input type="text" class="form-control" id="txtdni" onkeypress="return soloNumeros(event)"   maxlength="8" style="background-color: #FFFFFF" placeholder="Ingrese CIP">
                 <br>
             </div>
             

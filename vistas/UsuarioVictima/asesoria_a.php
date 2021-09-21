@@ -6,7 +6,7 @@
           <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');" ><strong> Español</strong></button>
           <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria_q.php');"  ><strong> Quechua</strong></button>
           <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria_a.php');"  ><strong> Aymara</strong></button><br>
-          <center><h3><b>ASESORÍA </b></h3></center> 
+          <center><h3><b>YANAPA</b></h3></center> 
           <center><label>¿Qué tipo de Asesoría Necesita?</label></center>
         </div> 
     </div>
