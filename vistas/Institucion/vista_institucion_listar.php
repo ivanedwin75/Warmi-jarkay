@@ -70,11 +70,11 @@
                 <input type="text" class="form-control" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
               </div>
 
-              <div class="col-sm-3" style="text-align: right;">
+              <div class="col-sm-2" style="text-align: right;">
                 <label style = "padding-top: 7px;">Nivel de riesgo </label>
-                <label style = "padding-top: 7px;">Cargar copia de Acta de Denuncia Verbal / Acta de Intervención Policial </label>
+                <label style = "padding-top: 7px;">Cargar copia de Acta de Denuncia Verbal / Intervención Policial </label>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3">
                 <select id="niv_riesgo" style="width: 100%" class="form-control select2">
                   <option value="Sin Riesgo" >Sin Riesgo</option>
                   <option value="Leve" >Leve</option>
@@ -84,8 +84,13 @@
                   <option value="Severo 3" >Severo 3</option>
                 </select>
                 
-                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
-                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                <div class="input-group" style="padding-top:15px">
+                  <label class="input-group-btn">
+                  <span class="btn btn-info btn-file">
+                  Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                  </span>
+                  </label>
+                  <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                 </div>
                 
               </div>
@@ -120,17 +125,22 @@
                 <label style = "padding-top: 12px;">Cargar copia</label>
               </div>
 
-              <div class="col-sm-3" style = "padding-top: 3px;">
+              <div class="col-sm-4" style = "padding-top: 3px;">
                 <div class=" input-group" style = "padding-top: 3px;">
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
                     <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado"  class="form-control"  >
                 </div>
-                <div class="row" style = "padding-top: 10px; padding-bottom:7px;">
-                  <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                
+                <div class="input-group">
+                  <label class="input-group-btn">
+                  <span class="btn btn-info btn-file">
+                  Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                  </span>
+                  </label>
+                  <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                 </div>
-              </div>
               
             </div>  
           </div>
@@ -192,20 +202,45 @@
                   </div>
 
                   <div class="col-sm-4" >
-                    <div class="row" style = "padding-top: 9px;">
-                      <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                      <span class="btn btn-info btn-file">
+                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      </span>
+                      </label>
+                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
-                    <div class="row" style = "padding-top: 9px;">
-                      <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                      <span class="btn btn-info btn-file">
+                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      </span>
+                      </label>
+                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
-                    <div class="row" style = "padding-top: 9px;">
-                      <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                      <span class="btn btn-info btn-file">
+                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      </span>
+                      </label>
+                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
-                    <div class="row" style = "padding-top: 9px;">
-                      <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                      <span class="btn btn-info btn-file">
+                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      </span>
+                      </label>
+                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
-                    <div class="row" style = "padding-top: 9px;">
-                      <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                      <span class="btn btn-info btn-file">
+                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      </span>
+                      </label>
+                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                   </div>
                   <!--<div class="col-sm-2"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
@@ -225,8 +260,13 @@
                     <label style = "padding-top: 7px;">Medidas de proteccion</label>
                   </div>
                   <div class="col-sm-4">
-                    <div class="row" style = "padding-top: 9px;">
-                      <div class="col-sm-9"><input type="file" name="id_archivo" class="file-upload-default"></div>
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                      <span class="btn btn-info btn-file">
+                        Subir Doc. <input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      </span>
+                      </label>
+                      <input class="form-control" id="banner_captura" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                   </div>
                   
@@ -288,4 +328,19 @@
         tecla_final = String.fromCharCode(tecla);
         return patron.test(tecla_final);
     }
+</script>
+<script>
+  $(document).on('change','.btn-file :file',function(){
+  var input = $(this);
+  var numFiles = input.get(0).files ? input.get(0).files.length : 1;
+  var label = input.val().replace(/\\/g,'/').replace(/.*\//,'');
+  input.trigger('fileselect',[numFiles,label]);
+});
+$(document).ready(function(){
+  $('.btn-file :file').on('fileselect',function(event,numFiles,label){
+    var input = $(this).parents('.input-group').find(':text');
+    var log = numFiles > 1 ? numFiles + ' files selected' : label;
+    if(input.length){ input.val(log); }else{ if (log) alert(log); }
+  });
+});
 </script>
