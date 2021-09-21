@@ -21,13 +21,13 @@
                 </div>          
                 <div class="col-sm-6">
                     <h5><b>Dirección  </b><button type="button" class="btn btn-dark btn-xs" data-toggle="modal" data-target="#Modal_mapa"> <i class="fa fa-map-marker icon text-info-lter"></i> </button></h5>
-                    <em><h6>(Debe encontrarse dentro de la juridicción de Huascar)</h6></em>
+                    <em><h6>(Debe encontrarse dentro de la juridicción de Huáscar)</h6></em>
                     <input type="text" class="form-control" id="txtdireccion" style="background-color: #FFFFFF" placeholder="Ingrese su Direccion">
                     
                 </div>
                 <div class="col-sm-6">
                     <h5><b>Referencia  </b><button type="button" class="btn btn-dark btn-xs" data-toggle="modal" data-target="#Modal_mapa"> <i class="fa fa-map-marker icon text-info-lter"></i> </button></h5> 
-                    <em><h6>(Debe encontrarse dentro de la juridicción de Huascar)</h6></em>
+                    <em><h6>(Debe encontrarse dentro de la juridicción de Huáscar)</h6></em>
                     <input type="text" class="form-control" id="txtdireccion" style="background-color: #FFFFFF" placeholder="Ingrese una Referencia">
                     
                 </div>
@@ -54,7 +54,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="panel panel-default" id="ModalLabel_mapa"><center><b> Mapa de la Juridicción de Huascar </b></center></h4>
+        <h4 class="Modal-title" id="ModalLabel_mapa"><center><b> Mapa de la Juridicción de Huáscar </b></center></h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

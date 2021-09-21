@@ -10,7 +10,7 @@
     <div class="panel-body"><br>
 	    <div class="col-md-10"> 
 	        <div class=" input-group">
-	          	<input type="text" class="form-control" placeholder="Ingrese el documento de identidad nacional" id="txtbuscar_personal"  onkeypress="return soloNumeros(event)"  >
+	          	<input type="text" class="form-control" placeholder="Ingrese el CIP" id="txtbuscar_personal"  onkeypress="return soloNumeros(event)"  >
 	          	<span class="input-group-addon"><i class="fa fa-search"></i></span>
 	        </div>
 	    </div>

@@ -7,7 +7,7 @@
       <div class="panel-body">
           <div class="col-md-10"> 
             <div class=" input-group">
-              <input id="txt_area_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el nombre del apellido paterno a buscar ">
+              <input id="txt_area_vista" type="text" class="form-control" onkeypress="return soloLetras(event)"  placeholder="Ingrese el apellido paterno a buscar ">
               <span class="input-group-addon"><i class="fa fa-search"></i></span>
             </div>
           </div>

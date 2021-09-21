@@ -3,18 +3,18 @@
 <div class="contendor_kn">
     <div class="panel panel-default">
         <div class="panel-heading">
-          <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');" ><strong> Español</strong></button>
+        <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');" ><strong> Español</strong></button>
           <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria_q.php');"  ><strong> Quechua</strong></button>
           <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria_a.php');"  ><strong> Aymara</strong></button><br>
-          <center><h3><b>ASESORÍA </b></h3></center> 
-          <center><label>¿Qué tipo de Asesoría Necesita?</label></center>
+            <center><h3><b>YANAPA</b></h3></center>
+            <center><label>¿Qué tipo de Asesoría Necesita?</label></center>
         </div> 
     </div>
 </div>
 <div class="contendor_kn">
     <div class="panel panel-default"> 
       <div class="panel-body">
-        <label >Legal</label> 
+        <label >kanqa</label> 
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
                 <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal"><strong > Proceso de Alimentos</strong></button>
@@ -77,8 +77,8 @@
       <div class="modal-footer">
         <div class="modal-title">
             <center><label>¿Resolvimos su duda?</label></center></div>
-        <button type="button" class="btn btn-danger"  data-toggle="modal" data-target="#Modal5">No</button>
-        <button type="button" class="btn btn-info" data-dismiss="modal">Si</button>
+        <button type="button" class="btn btn-danger"  data-toggle="modal" data-target="#Modal5">Mana</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal">Arí</button>
       </div>
     </div>
   </div>
@@ -109,8 +109,8 @@
       <div class="modal-footer">
         <div class="modal-title">
             <center><label>¿Resolvimos su duda?</label></center></div>
-        <button type="button" class="btn btn-danger"  data-toggle="modal" data-target="#Modal5">No</button>
-        <button type="button" class="btn btn-info" data-dismiss="modal">Si</button>
+        <button type="button" class="btn btn-danger"  data-toggle="modal" data-target="#Modal5">Mana</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal">Arí</button>
       </div>
     </div>
   </div>
@@ -140,8 +140,8 @@
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-info">Enviar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Q'ullwachay</button>
+        <button type="button" class="btn btn-info">Apachiy</button>
       </div>
     </div>
   </div>
@@ -172,8 +172,8 @@
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-info">Entendido</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Q'ullwachay</button>
+        <button type="button" class="btn btn-info">Unanchay</button>
       </div>
     </div>
   </div>
