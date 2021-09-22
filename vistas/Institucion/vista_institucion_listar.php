@@ -60,14 +60,14 @@
             <div class="panel-body">
               <div class="col-sm-2" style="text-align: right;" >
                 <input type="text" id="txtid_denuncia" hidden >
-                <label style = "padding-top: 7px; ">Instructor a cargo </label>
-                <label style = "padding-top: 7px; font-size:13px">N° de Oficio a Juzgado </label>
-                <label style = "padding-top: 7px;">N° de Oficio a fiscalia </label>
+                <label style = "padding-top: 10px; font-size:12.5px">Instructor a cargo </label>
+                <label style = "padding-top: 10px; font-size:12.5px">N° de Oficio a Juzgado </label>
+                <label style = "padding-top: 10px; font-size:12.5px">N° de Oficio a fiscalia </label>
               </div>
               <div class="col-sm-4">
                 <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese CIP del efectivo" maxlength="8">
-                <input type="text" class="form-control" id="txtofijuzgado" placeholder="Ingrese Nro de oficio a Juzgado" maxlength="35">
-                <input type="text" class="form-control" id="txtofifiscalia" placeholder="Ingrese Nro de oficio a fiscalia" maxlength="35">
+                <input type="text" class="form-control" id="txtofijuzgado" placeholder="Ingrese N° de oficio a Juzgado" maxlength="35">
+                <input type="text" class="form-control" id="txtofifiscalia" placeholder="Ingrese N° de oficio a fiscalia" maxlength="35">
               </div>
 
               <div class="col-sm-2" style="text-align: right;">
@@ -103,21 +103,21 @@
           <div class="panel panel-default" >
             <div class="panel-body">
               <div class="col-sm-2" style="text-align: right;">
-                <label style = "padding-top: 7px;">Juez a cargo </label><br>
-                <label style = "padding-top: 7px;">Juzgado</label><br>
-                <label style = "padding-top: 7px;">N° de Expediente</label>
+                <label style = "padding-top: 9px;">Juez a cargo </label><br>
+                <label style = "padding-top: 9px;">Juzgado</label><br>
+                <label style = "padding-top: 9px;">N° de Expediente</label>
               </div>
               <div class="col-sm-10">
                 <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
               </div>
 
-              <div class="col-sm-4" style = "padding-top: 6px;">
+              <div class="col-sm-4" style = "padding-top: 6px; ">
                 <select id="txtjuzgado" style="width: 100%" class="form-control select2">
                   <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO">1er Juzgado de familia</option>
                   <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" >2do Juzgado de familia</option>
                 </select>
 
-                <input type="text"  class="form-control" id="" placeholder="Ingrese Nro de Expediente">
+                <input type="text"  class="form-control" id="" placeholder="Ingrese N° de Expediente">
               </div>
 
               <div class="col-sm-2" style="text-align: right;">
@@ -183,49 +183,29 @@
         <div class="contendor_kn" style = "padding: 1px 1px 1px 0px; ">
           <div class="panel panel-default">
             <div class="panel-body">
-              <div class="col-sm-12" style="text-align: right;">
+              <div class="col-sm-12" style="text-align: center;">
                 <div class="row" >
-                  <div class="col-sm-3">
+                  <div class="col-sm-3" >
                     <label style = "padding-top: 7px;padding-bottom:3px;">Pericia Psicológica</label>
+                    <!--<input type="text" class="form-control" id="" placeholder="Ingrese N° de Pericia Psicológica" >-->
+                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Pericia Psicológica" ></textarea>
+                  </div>
+
+                  <div class="col-sm-3" style="border-right: 1px solid white; border-left: 1px solid white;">
                     <label style = "padding-top: 7px;padding-bottom:3px;">Certificado Médico Legal</label>
+                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Certificado Médico Legal" ></textarea>
+                    
+                    <label style = "padding-top: 7px;padding-bottom:3px;">Atención Facultativa</label>
+                    <input type="text" class="form-control" id="" placeholder="Ingrese N° de Atención Facultativa" >
+
+                    <label style = "padding-top: 7px;padding-bottom:3px;">Incapacidad Médico Legal</label>
+                    <input type="text" class="form-control" id="" placeholder="Ingrese N° de Incapacidad Médico Legal" >
+                  </div>
+
+                  <div class="col-sm-3" style="border-right: 1px solid white;">
                     <label style = "padding-top: 7px;padding-bottom:3px;">Informe Psicológico de CEM </label>
-                    <label style = "padding-top: 7px;padding-bottom:3px;">Informe Psicológico de SAU</label>
-                    <label style = "padding-top: 7px;padding-bottom:3px;">Informe Social de CEM</label>
-                  </div>
-
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Pericia Psicológica" >
-                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Certificado Médico Legal" >
-                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Informe Psicológico de CEM" >
-                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Informe Psicológico de SAU" >
-                    <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Informe Social de CEM" >
-                  </div>
-
-                  <div class="col-sm-4" >
-                    <div class="input-group">
-                      <label class="input-group-btn">
-                      <span class="btn btn-info btn-file">
-                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
-                      </span>
-                      </label>
-                      <input class="form-control" id="Per_psico" readonly="readonly" name="banner_captura" type="text" value="">
-                    </div>
-                    <div class="input-group">
-                      <label class="input-group-btn">
-                      <span class="btn btn-info btn-file">
-                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
-                      </span>
-                      </label>
-                      <input class="form-control" id="certi_med" readonly="readonly" name="banner_captura" type="text" value="">
-                    </div>
-                    <div class="input-group">
-                      <label class="input-group-btn">
-                      <span class="btn btn-info btn-file">
-                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
-                      </span>
-                      </label>
-                      <input class="form-control" id="CEM" readonly="readonly" name="banner_captura" type="text" value="">
-                    </div>
+                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Informe Psicológico de CEM" ></textarea>
+                    
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
@@ -234,13 +214,34 @@
                       </label>
                       <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
+                    
+                  </div>
+
+                  <div class="col-sm-3 " style="border-left: 1px solid white;">
+                    <label style = "padding-top: 7px;">Informe Psicológico de SAU</label>
+                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Informe Psicológico de SAU" ></textarea>
+                    
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
                       <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
                       </span>
                       </label>
-                      <input class="form-control" id="Social_CEM" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
+                    </div>
+
+                    <hr>
+
+                    <label style = "">Informe Social de CEM</label>
+                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Informe Social de CEM" ></textarea>
+                    
+                    <div class="input-group">
+                      <label class="input-group-btn">
+                      <span class="btn btn-info btn-file">
+                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      </span>
+                      </label>
+                      <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                   </div>
                   <!--<div class="col-sm-2"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
