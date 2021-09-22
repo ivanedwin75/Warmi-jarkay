@@ -41,9 +41,9 @@
 									<h5><b>Grado: </b> Sub Oficial de Tercera</h5>
 									<h5><b>N° de Oficio a Juzgado: </b> 21024</h5>
 									<h5><b>N° de Oficio a Fiscalía: </b> 21024</h5>
-									<h5><b>Nivel de Riesgo: </b> 2</h5>
+									<h5><b>Nivel de Riesgo: </b> Leve</h5>
 									<center>
-									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia Simple de denuncia</button>
+									<button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i>  Copia Simple Acta de Denuncia <br>Verbal / Intervención Policial</button>
 									</center>
 								</div>
 							</li>
@@ -56,7 +56,7 @@
 									<h5><b>N° de Expediente </b> 21024</h5>
 									<h5><b>Fecha de Registro: </b> 17/09/2021</h5>
 									<center>
-									<button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia de Expediente</button>
+									<button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i>  Copia de Demanda Electrónica</button>
 									</center>
 								</div>
 							</li>
@@ -73,23 +73,28 @@
 							<li data-date="16/04/2014">
 								<h3><b>PERICIAS</b></h3>
 								<div class="panel3"> 
-									<h5><b>Pericia Psicológica:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<center><h5><u><b>Pericia Psicológica  </b></u></center>
 									<h5><b>N° de Pericia Psicológica: </b> ...</h5>
-									<h5><b>Certificado Médico Legal:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<hr>
+									<center><h5><u><b>Certificado Médico Legal  </b></u> </center>
 									<h5><b>N° de Certificado Médico Legal: </b> ...</h5>
-									<h5><b>Informe Psicológico de CEM:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<h5><b>Atención Facultativa: </b> ...</h5>
+									<h5><b>Incapacidad Médico Legal: </b> ...</h5>
+									<hr>
+									<center><h5><u><b>Informe Psicológico de CEM  </b></u> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download" ></i></button>	</h5></center>
 									<h5><b>N° de Informe Psicológico de CEM: </b> ...</h5>
-									<h5><b>Informe Psicológico de SAU:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<hr>
+									<center><h5><u><b>Informe Psicológico de SAU  </b></u> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5></center>
 									<h5><b>N° de Informe Psicológico de SAU: </b> ...</h5>
-									<h5><b>Informe Social de CEM:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+									<hr>
+									<center><h5><u><b>Informe Social de CEM:  </b></u> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5></center>
 									<h5><b>N° de Informe Social de CEM: </b> ...</h5>
 								</div>
 							</li>
 							<li data-date="16/05/2014">
 								<h3><b>MEDIDAS</b></h3>
 								<div class="panel3"> 
-									<h5><b>Especialista: </b> Leonidas Quispe Luque</h5>
-									<h5><b>Medidas de protección:  </b> <button onclick=""  class="btn btn-info"><i class="fa fa-download"></i>  Copia </button>	</h5>
+								<center><h5><b>Medidas de protección  </b> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5><center>
 								</div>
 							</li>
 						</ol>
