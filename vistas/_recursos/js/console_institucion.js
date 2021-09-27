@@ -139,22 +139,26 @@ function AbrirModalInstitucion(control) {
             $("#txtofijuzgado").val(data[3]);
             $("#niv_riesgo").val(data[4]);
 
-            $("#txtexp_fiscalia").val(data[5]);
-            $("#txtfiscalia").val(data[6]);
-            $("#txtfiscal").val(data[7]);
-            $("#txtf_fiscalia").val(data[8]);
+            $("#txtfiscalia").val(data[5]);
+            $("#txtfiscal").val(data[6]);
+            $("#txtf_fiscalia").val(data[7]);
 
-            $("#txtexp_juzgado").val(data[9]);
-            $("#txtjuzgado").val(data[10]);
-            $("#txtjuez").val(data[11]);
-            $("#txtf_juzgado").val(data[12]);
+            $("#txtexp_juzgado").val(data[8]);
+            $("#txtjuzgado").val(data[9]);
+            $("#txtjuez").val(data[10]);
+            $("#txtf_juzgado").val(data[11]);
 
-            $("#txtden_scan").val(data[13]);
-            $("#txtdem_elec").val(data[14]);
-            $("#txtmed_prot").val(data[15]);
-            alert(data[13]);
+            $("#txtden_scan").val(data[12]);
+            $("#txtdem_elec").val(data[13]);
+            $("#Per_psico").val(data[14]);
+            $("#Certi_med").val(data[15]);
+            $("#CEM").val(data[16]);
+            $("#SAW").val(data[17]);
+            $("#Social_CEM").val(data[18]);
+            $("#txtmed_prot").val(data[19]);
+            //alert(data[13]);
 
-            $("#txtinstructor").val(data[16]);
+            $("#txtinstructor").val(data[20]);
 
             if (resp > 0) {
                 //$('#modal_editar_denuncia').modal('hide');
@@ -167,67 +171,14 @@ function AbrirModalInstitucion(control) {
 
         }
     });
-    /*
-    $.ajax({
-            url: '../controlador/institucion/controlador_get_denuncia.php',
-            type: 'POST',
-            data: {
-                id_denuncia: '1'
-            }
-        })
-        .success(function(resp) {
-            var data = resp;
-            //data[0] = 15;
-            //var data = JSON.parse(resp);
-            var cade = "";
-            for (let i = 0; i < 20; i++) {
-                cade += resp[i] + '\n';
-            }
-
-            alert(cade);
-            //var id_denuncia = $("#txtid_denuncia").val();
-            $("#txtofifiscalia").val(data[2]);
-            $("#txtofijuzgado").val(data[3]);
-            $("#niv_riesgo").val(data[4]);
-
-            $("#txtexp_fiscalia").val(data[5]);
-            $("#txtfiscalia").val(data[6]);
-            $("#txtfiscal").val(data[7]);
-            $("#txtf_fiscalia").val(data[8]);
-
-            $("#txtexp_juzgado").val(data[9]);
-            $("#txtjuzgado").val(data[10]);
-            $("#txtjuez").val(data[11]);
-            $("#txtf_juzgado").val(data[12]);
-
-            $("#txtden_scan").val(data[13]);
-            $("#txtdem_elec").val(data[14]);
-            $("#txtmed_prot").val(data[15]);
-
-            $("#txtinstructor").val(data[16]);
-
-            if (resp > 0) {
-                //$('#modal_editar_denuncia').modal('hide');
-                swal("Datos Actualizados!", "", "success");
-                //var dato_buscar = $("#txt_institucion_vista").val();
-                //listar_institucion_vista(dato_buscar, '1');
-            } else {
-                swal("! Lo sentimos no pudimos completar los datos", "", "error");
-            }
-        })*/
 }
-
-
-
-//$('#cmb_estado').val(datos_split[3]).trigger("change");
 
 function Editar_denuncia() {
     var id_denuncia = $("#txtid_denuncia").val();
-    var ofi_fiscalia = $("#txtofifiscalia").val();
     var ofi_juzgado = $("#txtofijuzgado").val();
+    var ofi_fiscalia = $("#txtofifiscalia").val();
     var niv_riesgo = $("#niv_riesgo").val();
 
-    var exp_fiscalia = $("#txtexp_fiscalia").val();
     var fiscalia = $("#txtfiscalia").val();
     var fiscal = $("#txtfiscal").val();
     var f_fiscalia = $("#txtf_fiscalia").val();
@@ -239,8 +190,12 @@ function Editar_denuncia() {
 
     var den_scan = $("#txtden_scan").val();
     var dem_elec = $("#txtdem_elec").val();
+    var per_psico = $("#Per_psico").val();
+    var certi_med = $("#certi_med").val();
+    var cem = $("#CEM").val();
+    var saw = $("#SAW").val();
+    var social_cem = $("#Social_CEM").val();
     var med_prot = $("#txtmed_prot").val();
-
     var instructor = $("#txtinstructor").val();
     /*
     if (institucion.length > 0 && tipo.length > 0) {} else {
@@ -256,7 +211,6 @@ function Editar_denuncia() {
                 ofi_fiscalia: ofi_fiscalia,
                 ofi_juzgado: ofi_juzgado,
                 niv_riesgo: niv_riesgo,
-                exp_fiscalia: exp_fiscalia,
                 fiscalia: fiscalia,
                 fiscal: fiscal,
                 f_fiscalia: f_fiscalia,
@@ -266,19 +220,25 @@ function Editar_denuncia() {
                 f_juzgado: f_juzgado,
                 den_scan: den_scan,
                 dem_elec: dem_elec,
+                per_psico: per_psico,
+                certi_med: certi_med,
+                cem: cem,
+                saw: saw,
+                social_cem: social_cem,
                 med_prot: med_prot,
                 instructor: instructor
             }
         })
         .done(function(resp) {
-            if (resp > 0) {
-                $('#modal_editar_denuncia').modal('hide');
-                swal("Datos Actualizados!", "", "success");
-                var dato_buscar = $("#txt_institucion_vista").val();
-                listar_institucion_vista(dato_buscar, '1');
-            } else {
-                swal("! Lo sentimos la institucion ya fue registrada con anterioridad!", "", "error");
-            }
+            //if (resp > 0) {
+            //alert(ofi_fiscalia);
+            $('#modal_editar_denuncia').modal('hide');
+            swal("Datos Actualizados!", "", "success");
+            //var dato_buscar = $("#txt_institucion_vista").val();
+            //listar_institucion_vista(dato_buscar, '1');
+            //} else {
+            //swal("! Lo sentimos la institucion ya fue registrada con anterioridad!", "", "error");
+            //}
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status === 0) {

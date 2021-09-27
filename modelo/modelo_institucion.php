@@ -8,10 +8,11 @@
 			$this->conexion = new conexion();
 			$this->conexion->conectar();
 		}
-		function Registrar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$exp_fiscalia,$fiscalia,$fiscal,$f_fiscalia,
+		
+		function Registrar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$fiscalia,$fiscal,$f_fiscalia,
 		$exp_juzgado,$juzgado,$juez,$f_juzgado,$den_scan,$dem_elec,$med_prot,$instructor){
 
-			$sql = "call PA_REGISTRARDENUNCIA('$id_denuncia','$ofi_fiscalia','$ofi_juzgado','$niv_riesgo','$exp_fiscalia','$fiscalia','$fiscal','$f_fiscalia',
+			$sql = "call PA_REGISTRARDENUNCIA('$id_denuncia','$ofi_fiscalia','$ofi_juzgado','$niv_riesgo','$fiscalia','$fiscal','$f_fiscalia',
 			'$exp_juzgado','$juzgado','$juez','$f_juzgado','$den_scan','$dem_elec','$med_prot','$instructor')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
@@ -21,18 +22,32 @@
 			}
 			$this->conexion->Cerrar_Conexion();
 		}
-		function Editar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$exp_fiscalia,$fiscalia,$fiscal,$f_fiscalia,
-		$exp_juzgado,$juzgado,$juez,$f_juzgado,$den_scan,$dem_elec,$med_prot,$instructor){
-			$sql = "call PA_REGISTRARDENUNCIA('$id_denuncia','$ofi_fiscalia','$ofi_juzgado','$niv_riesgo','$exp_fiscalia','$fiscalia','$fiscal','$f_fiscalia',
-			'$exp_juzgado','$juzgado','$juez','$f_juzgado','$den_scan','$dem_elec','$med_prot','$instructor')";
-			if ($resultado = $this->conexion->conexion->query($sql)){
-				return 1;
+
+		function Editar_denuncia($id_denuncia,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$fiscalia,$fiscal,$f_fiscalia,
+		$exp_juzgado,$juzgado,$juez,$f_juzgado,$den_scan,$dem_elec,$per_psico,
+		$certi_med,$cem,$saw,$social_cem,$med_prot,$instructor){
+			$sql = "UPDATE denuncia SET N_oficio_fiscalia='$ofi_fiscalia',N_oficio_juzgado='$ofi_juzgado',
+			Nivel_riesgo='$niv_riesgo',Fiscalia='$fiscalia',Fiscal_nombre='$fiscal',F_fiscalia='$f_fiscalia',
+			N_exp_juzgado='$exp_juzgado',Juzgado='$juzgado',Juez_nombre='$juez',F_juzgado='$f_juzgado',
+			Denuncia_scan='$den_scan',Demanda_electronica='$dem_elec',Pericia_psico='$per_psico',Cert_med_leg='$certi_med',Cert_cem='$cem',Cert_saw='$saw',
+			Social_cem='$social_cem',efectivos_id_efectivos= (SELECT efectivos.id_efectivos FROM efectivos WHERE efectivos.Dni = '$instructor')
+			WHERE denuncia.id_denuncia='$id_denuncia'";
+			//$sql = "CALL PA_REGISTRARDENUNCIA('$id_denuncia','$ofi_fiscalia','$ofi_juzgado','$niv_riesgo','$fiscalia','$fiscal','$f_fiscalia','$exp_juzgado','$juzgado','$juez','$f_juzgado','$den_scan','$dem_elec','$per_psico','$certi_med','$cem','$saw','$social_cem','$med_prot','$instructor')";
+			
+			$resultado = $this->conexion->conexion->query($sql);
+			//echo $sql;
+			
+			if ($resultado == TRUE){
+				return 1234;
 			}
 			else{
-				return 0;
+				echo ($this->conexion->conexion->errno);
+				return 55555;
+				
 			}
 			$this->conexion->Cerrar_Conexion();
 		}
+
 		function listar_institucion($valor, $inicio=FALSE,$limite=FALSE){
 			
 			if ($inicio!==FALSE && $limite!==FALSE) {
@@ -81,5 +96,5 @@
 			return $arreglo;
 			$this->conexion->cerrar();	
  		}
-	}
+	}	
 ?>

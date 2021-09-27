@@ -117,7 +117,7 @@
                   <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" style="color:black">2do Juzgado de familia</option>
                 </select>
 
-                <input type="text" class="form-control" id="" placeholder="Ingrese Nro de Expediente">
+                <input type="text" class="form-control" id="txtexp_juzgado" placeholder="Ingrese Nro de Expediente">
               </div>
 
               <div class="col-sm-2" style="text-align: right;">
