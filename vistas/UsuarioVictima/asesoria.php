@@ -3,9 +3,9 @@
 <div class="contendor_kn">
     <div class="panel panel-default">
         <div class="panel-heading">
-          <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');" ><strong> Español</strong></button>
+          <!--<button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');" ><strong> Español</strong></button>
           <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria_q.php');"  ><strong> Quechua</strong></button>
-          <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria_a.php');"  ><strong> Aymara</strong></button><br>
+          <button class="btn btn-light" style="float: right; border-color: gray;" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria_a.php');"  ><strong> Aymara</strong></button><br>-->
           <center><h3><b>ASESORÍA </b></h3></center> 
           <center><label>¿Qué tipo de Asesoría Necesita?</label></center>
         </div> 
@@ -130,11 +130,11 @@
             <div class="panel panel-default">
               <div class="panel-body">
               <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                <label for="">Escribenos un mensaje </label>
-                <textarea type="text" class="form-control" name="" id="" placeholder="" ></textarea>
+                <label>Número de Celular</label>
+                <input id=""  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nro de celular" class="form-control" >
               </div>   
                 <div style="text-align: center;" align="center">
-                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/mensaje.png">
+                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/llamada.png">
                 </div> 
               </div>         
             </div>
@@ -161,12 +161,14 @@
               <div class="panel-body">
               <div class="col-md-12 col-lg-12 col-xs-12"> 
                 <div class="col-sm-12">
+                    <label for="">Escriba su consulta </label>
+                    <textarea type="text" class="form-control" name="" id="" placeholder="" ></textarea>
                     <label>Número de Celular</label>
                     <input id=""  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nro de celular" class="form-control" >
                     <br>
                 </div><br>
                 <div style="text-align: center;" align="center">
-                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/llamada.png">
+                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/mensaje.png">
                 </div> 
               </div>         
             </div>
