@@ -50,8 +50,8 @@
 						
 						<div class="col-sm-6">
 	                        <input type="text" id="txtid_personal" hidden >
-	                        <label>Cargo </label>
-	                        <input type="text" class="form-control" id="txtcargo" placeholder="Ingrese Cargo" maxlength="10">
+	                        <label>Grado </label>
+	                        <input type="text" class="form-control" id="txtcargo" placeholder="Ingrese el Grado" maxlength="10">
 	                        <br>
 	                    </div>
 	                    <div class="col-md-6">

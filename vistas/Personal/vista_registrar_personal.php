@@ -22,8 +22,8 @@
                 <br>
             </div>
             <div class="col-sm-4">
-                <label >Cargo</label>
-                <input type="text" class="form-control" id="txtcargo" maxlength="8" style="background-color: #FFFFFF" placeholder="Ingrese Cargo">
+                <label >Grado</label>
+                <input type="text" class="form-control" id="txtcargo" maxlength="8" style="background-color: #FFFFFF" placeholder="Ingrese el Grado">
                 <br>
             </div>
             

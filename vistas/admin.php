@@ -36,6 +36,9 @@ session_start();
   <input type="text" value="<?php echo $_SESSION['codigo_personal']; ?>"  hidden="true" id="txtcodigo_principal_usuario">
   <input type="text" value="<?php echo $_SESSION['nombre_usuario']; ?>" hidden="true" id="txtnombre_principal_usuario">
   <input type="text" value="<?php echo $_SESSION['codigo_usuario']; ?>" style="display: none" id="txtnombre_codigo_usuario">
+  
+  
+
   <div class="app app-header-fixed" id="app" action="index.php">
     <div class="app-header navbar">
       <div class="navbar-header bg-info">
@@ -51,6 +54,7 @@ session_start();
           <img src="_recursos/img/logo.png" alt="." class="hide">-->
           <img class="img1" src="_recursos/img/LogoCom.png">  
           <span class="hidden-folded m-l-xs">DENMU</span>
+          
         </a>
       </div>
       <div class="collapse pos-rlt navbar-menu-wrapper navbar-collapse box-shadow bg-white-only">
@@ -171,13 +175,22 @@ session_start();
           <nav ui-nav class="navi">
             <ul class="nav">
               <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                <span translate="aside.nav.HEADER">PANEL ADMINISTRATIVO</span>
+                <center><span translate="aside.nav.HEADER">PANEL ADMINISTRATIVO</span></center>
+
+                <?php if ($_SESSION['usu']=="VICTIMA") {        
+                ?>
+                  <hr><center><span style="color:white"> Presione el botón para cambiar de Idioma <br>  Español | Aymara | Quechua</span></center>
+                  <a href="#" id="translate" style="background:green" data-text="Español,Aymara,Quechua" data-file="es,ay,qe" data-index="1">Español</a>
+                  <span class="loading-lang">Cargando...</span><hr>
+                <?php }
+                ?>
+
               </li>
               <li> 
             <!--<a href class="btn no-shadow navbar-btn" data-toggle="class:show" data-target="#aside-user">-->  
               <a href class="" data-toggle="class:show" data-target="#aside-user">
                 <i class="icon-user fa-fw"></i>
-                <span class="font-bold" translate="aside.nav.Mantenimiento">PERFIL</span>
+                <span class="font-bold" translate="aside.nav.Mantenimiento" data-lang="perfil">PERFIL</span>
               </a>
               </li>
               
@@ -186,25 +199,25 @@ session_start();
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');">      
                 <a ui-sref="app.dashboard-v2" >
                   <i class="fa fa-laptop icon text-success"></i>
-                  <span class="font-bold" translate="aside.nav.Mantenimiento">SEGUIMIENTO</span>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento" data-lang="seguimiento">SEGUIMIENTO</span>
                 </a>
               </li>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/copia_denuncia.php');">
                 <a ui-sref="app.dashboard-v2"> 
                   <i class="glyphicon glyphicon-user icon text-info-lter"></i>
-                  <span class="font-bold" translate="aside.nav.Mantenimiento" >SOLICITAR COPIA GRATIS DE DENUNCIA</span>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento" data-lang="copia">SOLICITAR COPIA GRATIS DE DENUNCIA</span>
                 </a>
               </li>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');">
                 <a ui-sref="app.dashboard-v2">
                   <i class="fa fa-briefcase icon text-info-lter text-success"></i>
-                  <span class="font-bold" translate="aside.nav.Mantenimiento">ASESORIA GRATUITA</span>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento" data-lang="asesoria">ASESORIA GRATUITA</span>
                 </a>
               </li>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/bpanico.php');">
                   <a ui-sref="app.dashboard-v2">     
                   <i class="fa fa-folder-open icon text-info-lter"></i>
-                  <span class="font-bold" translate="aside.nav.Mantenimiento">BOTON DE PANICO</span>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento" data-lang="boton">BOTON DE PÁNICO</span>
                   </a>
               </li>
 
@@ -276,10 +289,10 @@ session_start();
         <div class="contendor_kn">
           <div class="panel panel-default">
             <div class="panel-body">
-            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');">Seguimiento</button><br>
-            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/copia_denuncia.php');">Solicitar una copia gratis de Denuncia Simple</button><br>
-            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');">Asesoría Gratuita</button><br>
-            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/bpanico.php');">Botón de Pánico</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');" data-lang="seguimiento">Seguimiento</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/copia_denuncia.php');"data-lang="copia">Solicitar una copia gratis de Denuncia Simple</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');"data-lang="asesoria">Asesoría Gratuita</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/bpanico.php');"data-lang="boton">Botón de Pánico</button><br>
             </div>  
           </div>
         </div>
@@ -336,6 +349,7 @@ session_start();
   <script src="_recursos/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="_recursos/js/Console_menu.js"></script>
   <script src="_recursos/select2/dist/js/select2.full.min.js"></script>
+  <script src="js/main.js"></script>
     <!-- Custom Theme Scripts -->
     <script type="text/javascript">filtrar_DocumentosPendientes();</script>
   <script type="text/javascript">

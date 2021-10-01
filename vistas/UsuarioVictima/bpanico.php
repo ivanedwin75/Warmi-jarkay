@@ -3,7 +3,7 @@
 <div class="contendor_kn">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <center><h3><b>BOTÓN DE PÁNICO</b></h3></center>
+        <center><h3><b data-lang="boton">BOTÓN DE PÁNICO</b></h3></center>
       </div>
       <div class="panel-body">   
         <div style="text-align: center;" align="center">
@@ -40,7 +40,7 @@
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Entendido</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal" data-lang="entendido">Entendido</button>
       </div>
     </div>
   </div>
