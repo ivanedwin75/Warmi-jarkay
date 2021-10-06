@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>DENMU</title>
+  <title>WARMI JARK'AY Mujer Protegida</title>
   <link rel="shortcut icon" href="_recursos/img/LogoCom.png">
   <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -53,7 +53,8 @@ session_start();
           <!--<i class="fa "></i>
           <img src="_recursos/img/logo.png" alt="." class="hide">-->
           <img class="img1" src="_recursos/img/LogoCom.png">  
-          <span class="hidden-folded m-l-xs">DENMU</span>
+          <span class="hidden-folded m-l-xs">WARMI JARK'AY </span><br>
+          <span >Mujer Protegida</span>
           
         </a>
       </div>

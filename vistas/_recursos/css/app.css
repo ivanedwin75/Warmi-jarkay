@@ -929,10 +929,10 @@ button.btn2{
   display: inline-block;
   float: none;
   height: auto;
-  padding: 0 20px;
-  font-size: 20px;
+  padding: 5px 10px 5px;
+  font-size: 100%;
   font-weight: 700;
-  line-height: 50px;
+  line-height: 20px;
   text-align: center;
 }
 
