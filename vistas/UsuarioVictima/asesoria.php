@@ -14,7 +14,7 @@
 <div class="contendor_kn">
     <div class="panel panel-default"> 
       <div class="panel-body">
-        <label data-lang="legal">Legal</label> 
+        <center><label data-lang="legal">Asesoría Legal</label></center>
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
                 <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal"><strong data-lang="alimentos"> Proceso de Alimentos</strong></button>
@@ -31,7 +31,7 @@
 
     <div class="panel panel-default"> 
       <div class="panel-body"> 
-        <label >Psicológica</label> 
+        <center><label >Orientación y Consejería Psicológica</label></center>
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
                 <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal3"><strong data-lang="pena"> Crisis Emocional</strong></button>
@@ -40,7 +40,13 @@
                     
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
-                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal3"><strong data-lang="violacion"> Violación Sexual</strong></button>
+                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal3"><strong data-lang="violacion"> Ansiedad o Miedo <br>a lo que pueda pasar</strong></button>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
+                <div class="col-md-12">
+                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal3"><strong data-lang=""> Otros</strong></button>
                 </div>
             </div>
         </div>
@@ -66,11 +72,8 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <div style="text-align: center;" align="center">
-                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/afiche.jpg">
+                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/procesoa.png">
                 </div><br>
-                <div style="text-align: center;" align="center">
-                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/afiche.jpg">
-                </div> 
               </div>         
             </div>
       </div>
@@ -98,11 +101,8 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <div style="text-align: center;" align="center">
-                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/afiche.jpg">
+                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/tenenciam.png">
                 </div><br>
-                <div style="text-align: center;" align="center">
-                    <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/afiche.jpg">
-                </div> 
               </div>         
             </div>
       </div>

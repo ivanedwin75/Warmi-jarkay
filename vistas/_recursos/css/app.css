@@ -744,7 +744,7 @@ body {
 
 .app-content {
   height: 100%;
-  background-image: url("../img/fondo_v2.jpg");
+  background-image: url("../img/fondoh.png");
     /*background-image: url("../img/fondo_v1.png");
     background-image: url("../img/fondo.png");*/
   background-attachment: fixed;
@@ -1129,7 +1129,7 @@ b.l{
 }
 
 html {
-  background-image: url("../img/fondo_v2.jpg");
+  background-image: url("../img/fondoh.png");
     /*background-image: url("../img/fondo_v1.png");
     background-image: url("../img/fondo.png");*/
   background-repeat: no-repeat;
