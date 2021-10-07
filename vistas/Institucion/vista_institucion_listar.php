@@ -54,20 +54,21 @@
         <h4 class="modal-title" id="myModalLabel" style = "text-align:center;"><b>DATOS DE LA DENUNCIA</b></h4>
       </div>
       <div class="modal-body">
+      <form form action="" method="post" enctype="multipart/form-data">
         <label>COMISARIA / DENUNCIA</label>
         <div class="contendor_kn" style = "padding: 1px 1px 1px 0px; ">
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="col-sm-2" style="text-align: right;" >
-                <input type="text" id="txtid_denuncia" hidden >
+                <input type="text" id="txtid_denuncia" name="txtid_denuncia" hidden >
                 <label style = "padding-top: 10px; font-size:12.5px">Instructor a cargo </label>
                 <label style = "padding-top: 10px; font-size:12.5px">N° de Oficio a Juzgado </label>
                 <label style = "padding-top: 10px; font-size:12.5px">N° de Oficio a fiscalia </label>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" placeholder="Ingrese CIP del efectivo" maxlength="8">
-                <input type="text" class="form-control" id="txtofijuzgado" placeholder="Ingrese N° de oficio a Juzgado" maxlength="35">
-                <input type="text" class="form-control" id="txtofifiscalia" placeholder="Ingrese N° de oficio a fiscalia" maxlength="35">
+                <input type="text" class="form-control" onkeypress="return soloNumeros(event)" id="txtinstructor" name="txtinstructor" placeholder="Ingrese CIP del efectivo" maxlength="8">
+                <input type="text" class="form-control" id="txtofijuzgado" name="txtofijuzgado" placeholder="Ingrese N° de oficio a Juzgado" maxlength="35">
+                <input type="text" class="form-control" id="txtofifiscalia" name="txtofifiscalia" placeholder="Ingrese N° de oficio a fiscalia" maxlength="35">
               </div>
 
               <div class="col-sm-2" style="text-align: right;">
@@ -75,7 +76,7 @@
                 <label style = "padding-top: 7px;">Cargar copia de Acta de Denuncia Verbal / Intervención Policial </label>
               </div>
               <div class="col-sm-4">
-                <select id="niv_riesgo" style="width: 100%" class="form-control select2">
+                <select id="niv_riesgo" name="niv_riesgo" style="width: 100%" class="form-control select2">
                   <option value="Sin Riesgo" >Sin Riesgo</option>
                   <option value="Leve" >Leve</option>
                   <option value="Moderado" >Moderado</option>
@@ -87,10 +88,10 @@
                 <div class="input-group" style="padding-top:15px">
                   <label class="input-group-btn">
                   <span class="btn btn-info btn-file">
-                  <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                  <i class="fa fa-upload"></i><input class="hidden" name="arch_den_scan" id="arch_den_scan" type="file" >
                   </span>
                   </label>
-                  <input class="form-control" id="txtden_scan" readonly="readonly" name="banner_captura" type="text" value="">
+                  <input class="form-control" id="txtden_scan" readonly="readonly" type="text">
                 </div>
                 
               </div>
@@ -108,16 +109,16 @@
                 <label style = "padding-top: 9px;">N° de Expediente</label>
               </div>
               <div class="col-sm-10">
-                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtjuez" name="txtjuez" placeholder="Ingrese Nombre de Juez" maxlength="100">
               </div>
 
               <div class="col-sm-4" style = "padding-top: 6px; ">
-                <select id="txtjuzgado" style="width: 100%" class="form-control select2">
+                <select id="txtjuzgado" name="txtjuzgado" style="width: 100%" class="form-control select2">
                   <option value="1° JUZGADO DE FAMILIA SUBESPEC. LEY 30364 - SEDE ANEXA PUNO">1er Juzgado de familia</option>
                   <option value="2° JUZGADO DE FAMILIA - SEDE ANEXA PUNO" >2do Juzgado de familia</option>
                 </select>
 
-                <input type="text"  class="form-control" id="" placeholder="Ingrese N° de Expediente">
+                <input type="text"  class="form-control" id="txtexp_juzgado" name="txtexp_juzgado" placeholder="Ingrese N° de Expediente">
               </div>
 
               <div class="col-sm-2" style="text-align: right;">
@@ -130,13 +131,13 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado"  class="form-control"  >
+                    <input type="date" style="padding: 0px 12px;background-color: #FFFFFF;font-weight:bold;" id="txtf_juzgado" name="txtf_juzgado" class="form-control"  >
                 </div>
                 
                 <div class="input-group" style="padding-top:10px">
                   <label class="input-group-btn">
                   <span class="btn btn-info btn-file">
-                  <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                  <i class="fa fa-upload"></i><input class="hidden" id="arch_dem_elec" name="arch_dem_elec" type="file" >
                   </span>
                   </label>
                   <input class="form-control" id="txtdem_elec" readonly="readonly" name="banner_captura" type="text" value="">
@@ -157,10 +158,10 @@
               </div>
               
               <div class="col-sm-10">
-                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtfiscal" placeholder="Ingrese Nombre completo de fiscal" maxlength="100">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="txtfiscal" name="txtfiscal" placeholder="Ingrese Nombre completo de fiscal" maxlength="100">
               </div>
               <div class="col-sm-4" style = "padding-top: 3px;">
-                <select id="txtfiscalia" style="width: 100%" class="form-control select2">
+                <select id="txtfiscalia" name="txtfiscalia" style="width: 100%" class="form-control select2">
                   <option value="Primera Fiscalía Provincial Civil y Familia de Puno" >1era FPPC - Puno</option>
                   <option value="Segunda Fiscalía Provincial Penal Corporativa de Puno" >2da FPPC - Puno</option>
                 </select>
@@ -188,60 +189,60 @@
                   <div class="col-sm-3" >
                     <label style = "padding-top: 7px;padding-bottom:3px;">Pericia Psicológica</label>
                     <!--<input type="text" class="form-control" id="" placeholder="Ingrese N° de Pericia Psicológica" >-->
-                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Pericia Psicológica" ></textarea>
+                    <textarea type="text" class="form-control" name="Per_psico" id="Per_psico" placeholder="Ingrese N° de Pericia Psicológica" ></textarea>
                   </div>
 
                   <div class="col-sm-3" style="border-right: 1px solid white; border-left: 1px solid white;">
                     <label style = "padding-top: 7px;padding-bottom:3px;">Certificado Médico Legal</label>
-                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Certificado Médico Legal" ></textarea>
+                    <textarea type="text" class="form-control" name="certi_med" id="certi_med" placeholder="Ingrese N° de Certificado Médico Legal" ></textarea>
                     
                     <label style = "padding-top: 7px;padding-bottom:3px;">Atención Facultativa</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese N° de Atención Facultativa" >
+                    <input type="text" class="form-control" name="at_facultativa" id="at_facultativa" placeholder="Ingrese N° de Atención Facultativa" >
 
                     <label style = "padding-top: 7px;padding-bottom:3px;">Incapacidad Médico Legal</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese N° de Incapacidad Médico Legal" >
+                    <input type="text" class="form-control" name="incap_medico" id="incap_medico" placeholder="Ingrese N° de Incapacidad Médico Legal" >
                   </div>
 
                   <div class="col-sm-3" style="border-right: 1px solid white;">
                     <label style = "padding-top: 7px;padding-bottom:3px;">Informe Psicológico de CEM </label>
-                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Informe Psicológico de CEM" ></textarea>
+                    <textarea type="text" class="form-control" name="CEM_label" id="CEM_label" placeholder="Ingrese N° de Informe Psicológico de CEM" ></textarea>
                     
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" id="arch_cem" name="arch_cem" type="file">
                       </span>
                       </label>
-                      <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="CEM" readonly="readonly" name="CEM" type="text">
                     </div>
                     
                   </div>
 
                   <div class="col-sm-3 " style="border-left: 1px solid white;">
                     <label style = "padding-top: 7px;">Informe Psicológico de SAU</label>
-                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Informe Psicológico de SAU" ></textarea>
+                    <textarea type="text" class="form-control" name="SAW_label" id="SAW_label" placeholder="Ingrese N° de Informe Psicológico de SAU" ></textarea>
                     
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" id="arch_saw" name="arch_saw" type="file">
                       </span>
                       </label>
-                      <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="SAW" readonly="readonly" name="SAW" type="text" value="">
                     </div>
 
                     <hr>
 
                     <label style = "">Informe Social de CEM</label>
-                    <textarea type="text" class="form-control" name="" id="" placeholder="Ingrese N° de Informe Social de CEM" ></textarea>
+                    <textarea type="text" class="form-control" name="Social_CEM_label" id="Social_CEM_label" placeholder="Ingrese N° de Informe Social de CEM" ></textarea>
                     
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" id="arch_social_cem" name="arch_social_cem" type="file">
                       </span>
                       </label>
-                      <input class="form-control" id="SAW" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="Social_CEM" readonly="readonly" name="Social_CEM" type="text">
                     </div>
                   </div>
                   <!--<div class="col-sm-2"><button id="btn_cargar_pericias" type="button" class="btn btn-primary"><strong>Cargar</strong></button></div>-->
@@ -264,10 +265,10 @@
                     <div class="input-group">
                       <label class="input-group-btn">
                       <span class="btn btn-info btn-file">
-                      <i class="fa fa-upload"></i><input class="hidden" name="id_archivo" type="file" id="id_archivo">
+                      <i class="fa fa-upload"></i><input class="hidden" id="arch_med_prot" name="arch_med_prot" type="file">
                       </span>
                       </label>
-                      <input class="form-control" id="txtmed_prot" readonly="readonly" name="banner_captura" type="text" value="">
+                      <input class="form-control" id="txtmed_prot" name="txtmed_prot" readonly="readonly" name="banner_captura" type="text" value="">
                     </div>
                   </div>
                   
@@ -276,8 +277,8 @@
               </div>
             </div>
           </div>
-        </div>
-    </div> 
+        </div>    
+      </div> 
         <div class="modal-footer">
           <!--<progress value="0" max="100" class="progress" id="progreso">0%</progress>
           <label for="" id="etiqueta">0%</label><br>
@@ -286,7 +287,8 @@
           <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>
         </div> 
     </div>
-  </div> 
+    </form>
+  </div>   
 </div>
 <script type="text/javascript">
 	$("#txt_institucion_vista").keyup(function(){

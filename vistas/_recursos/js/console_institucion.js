@@ -123,7 +123,7 @@ function AbrirModalInstitucion(control) {
         url: '../controlador/institucion/controlador_get_denuncia.php',
         type: 'POST',
         data: {
-            id_denuncia: id_denuncia,
+            id_denuncia: id_denuncia
         },
         beforeSend: function() {
             $("#loading_almacen").addClass("fa fa-refresh fa-spin fa-3x fa-fw");
@@ -133,7 +133,6 @@ function AbrirModalInstitucion(control) {
         },
         success: function(resp) {
             var data = JSON.parse(resp);
-
             //alert(data);
             $("#txtofifiscalia").val(data[2]);
             $("#txtofijuzgado").val(data[3]);
@@ -152,13 +151,18 @@ function AbrirModalInstitucion(control) {
             $("#txtdem_elec").val(data[13]);
             $("#Per_psico").val(data[14]);
             $("#Certi_med").val(data[15]);
-            $("#CEM").val(data[16]);
-            $("#SAW").val(data[17]);
-            $("#Social_CEM").val(data[18]);
-            $("#txtmed_prot").val(data[19]);
-            //alert(data[13]);
 
-            $("#txtinstructor").val(data[20]);
+            $("#at_facultativa").val(data[16]);
+            $("#incap_medico").val(data[17]);
+            $("#CEM_label").val(data[18]);
+            $("#CEM").val(data[19]);
+            $("#SAW_label").val(data[20]);
+            $("#SAW").val(data[21]);
+            $("#Social_CEM_label").val(data[22]);
+            $("#Social_CEM").val(data[23]);
+            $("#txtmed_prot").val(data[24]);
+            //alert(data[13]);
+            $("#txtinstructor").val(data[25]);
 
             if (resp > 0) {
                 //$('#modal_editar_denuncia').modal('hide');
@@ -166,7 +170,7 @@ function AbrirModalInstitucion(control) {
                 //var dato_buscar = $("#txt_institucion_vista").val();
                 //listar_institucion_vista(dato_buscar, '1');
             } else {
-                swal("Esta denuncia posee información incompleta", "", "info");
+                swal("Esta información será vista por los usuarios del aplicativo", "", "info");
             }
 
         }
@@ -188,21 +192,72 @@ function Editar_denuncia() {
     var juez = $("#txtjuez").val();
     var f_juzgado = $("#txtf_juzgado").val();
 
-    var den_scan = $("#txtden_scan").val();
-    var dem_elec = $("#txtdem_elec").val();
+    //var den_scan = $("#txtden_scan").val();
+    //var dem_elec = $("#txtdem_elec").val();
     var per_psico = $("#Per_psico").val();
     var certi_med = $("#certi_med").val();
-    var cem = $("#CEM").val();
-    var saw = $("#SAW").val();
-    var social_cem = $("#Social_CEM").val();
-    var med_prot = $("#txtmed_prot").val();
+    var at_facultativa = $("#at_facultativa").val();
+    var incap_medico = $("#incap_medico").val();
+    var cem_label = $("#CEM_label").val();
+    //var cem = $("#CEM").val();
+    var saw_label = $("#SAW_label").val();
+    //var saw = $("#SAW").val();
+    var social_label = $("#Social_CEM_label").val();
+    //var social_cem = $("#Social_CEM").val();
+    //var med_prot = $("#txtmed_prot").val();
     var instructor = $("#txtinstructor").val();
+
+    var formData = new FormData();
+    formData.append("txtid_denuncia", id_denuncia);
+    formData.append("txtofijuzgado", ofi_juzgado);
+    formData.append("txtofifiscalia", ofi_fiscalia);
+    formData.append("niv_riesgo", niv_riesgo);
+
+    formData.append("txtfiscalia", fiscalia);
+    formData.append("txtfiscal", fiscal);
+    formData.append("txtf_fiscalia", f_fiscalia);
+
+    formData.append("txtexp_juzgado", exp_juzgado);
+    formData.append("txtjuzgado", juzgado);
+    formData.append("txtjuez", juez);
+    formData.append("txtf_juzgado", f_juzgado);
+
+    formData.append("arch_den_scan", $("#arch_den_scan").prop("files")[0]);
+    formData.append("arch_dem_elec", $("#arch_dem_elec").prop("files")[0]);
+    formData.append("Per_psico", per_psico);
+    formData.append("certi_med", certi_med);
+    formData.append("at_facultativa", at_facultativa);
+    formData.append("incap_medico", incap_medico);
+    formData.append("CEM_label", cem_label);
+    formData.append("arch_cem", $("#arch_cem").prop("files")[0]);
+    formData.append("SAW_label", saw_label);
+    formData.append("arch_saw", $("#arch_saw").prop("files")[0]);
+    formData.append("Social_CEM_label", social_label);
+    formData.append("arch_social_cem", $("#arch_social_cem").prop("files")[0]);
+    formData.append("arch_med_prot", $("#arch_med_prot").prop("files")[0]);
+    formData.append("txtinstructor", instructor);
+
     /*
     if (institucion.length > 0 && tipo.length > 0) {} else {
         return swal("Falta Llenar Datos", "", "info");
-    }
+    .}
     */
-
+    $.ajax({
+        url: '../controlador/institucion/controlador_editar_institucion.php',
+        type: 'POST',
+        data: formData,
+        beforeSend: function() {
+            $("#loading_almacen").addClass("fa fa-refresh fa-spin fa-3x fa-fw");
+        },
+        complete: function() {
+            $("#loading_almacen").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
+        },
+        success: function() {
+            $('#modal_editar_denuncia').modal('hide');
+            swal("Datos Actualizados!", "", "success");
+        }
+    });
+    /*
     $.ajax({
             url: '../controlador/institucion/controlador_editar_institucion.php',
             type: 'POST',
@@ -222,14 +277,19 @@ function Editar_denuncia() {
                 dem_elec: dem_elec,
                 per_psico: per_psico,
                 certi_med: certi_med,
+                at_facultativa: at_facultativa,
+                incap_medico: incap_medico,
+                cem_label: cem_label,
                 cem: cem,
+                saw_label: saw_label,
                 saw: saw,
+                social_label: social_label,
                 social_cem: social_cem,
                 med_prot: med_prot,
                 instructor: instructor
             }
         })
-        .done(function(resp) {
+        .success(function(resp) {
             //if (resp > 0) {
             //alert(ofi_fiscalia);
             $('#modal_editar_denuncia').modal('hide');
@@ -271,7 +331,7 @@ function Editar_denuncia() {
 
             }
         })
-
+*/
 
 }
 
