@@ -107,11 +107,11 @@
 		function listar_institucion($valor, $inicio=FALSE,$limite=FALSE){
 			
 			if ($inicio!==FALSE && $limite!==FALSE) {
-			    $sql = "SELECT denuncia.id_denuncia,denuncia.Expediente_comisaria,victima.Dni, CONCAT(victima.Nombres,' ',victima.Ap_paterno,' ',victima.Ap_materno),victima.F_registro
+			    $sql = "SELECT denuncia.id_denuncia,victima.Dni, CONCAT(victima.Nombres,' ',victima.Ap_paterno,' ',victima.Ap_materno),victima.F_registro
 				FROM denuncia INNER JOIN victima ON victima.id_victima = denuncia.victima_id_victima
 				where victima.Dni like '".$valor."%' ORDER BY victima.Dni DESC LIMIT $inicio,$limite";
 			}else{
-			    $sql = "SELECT denuncia.id_denuncia,denuncia.Expediente_comisaria,victima.Dni, CONCAT(victima.Nombres,' ',victima.Ap_paterno,' ',victima.Ap_materno),victima.F_registro
+			    $sql = "SELECT denuncia.id_denuncia,victima.Dni, CONCAT(victima.Nombres,' ',victima.Ap_paterno,' ',victima.Ap_materno),victima.F_registro
 				FROM denuncia INNER JOIN victima ON victima.id_victima = denuncia.victima_id_victima
 				where victima.Dni like '".$valor."%' ORDER BY victima.Dni DESC";
 			}
@@ -125,7 +125,7 @@
  		}
 
 		function get_denuncia($denuncia){
-			$sql = "SELECT denuncia.id_denuncia,denuncia.Expediente_comisaria,denuncia.N_oficio_fiscalia,
+			$sql = "SELECT denuncia.id_denuncia,denuncia.N_oficio_fiscalia,
 			denuncia.N_oficio_juzgado,denuncia.Nivel_riesgo,denuncia.Fiscalia,Fiscal_nombre,denuncia.
 			F_fiscalia,denuncia.N_exp_juzgado,denuncia.Juzgado,denuncia.Juez_nombre,denuncia.F_juzgado,
 			denuncia.Denuncia_scan,denuncia.Demanda_electronica,denuncia.Pericia_psico,denuncia.Cert_med_leg,

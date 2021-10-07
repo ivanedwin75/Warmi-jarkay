@@ -290,7 +290,7 @@ session_start();
           <div class="panel panel-default">
             <div class="panel-body">
             <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');" data-lang="seguimiento">Seguimiento</button><br>
-            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/copia_denuncia.php');"data-lang="copia">Solicitar una copia gratis de Denuncia Simple</button><br>
+            <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/copia_denuncia.php');"data-lang="copia">Solicitar copia gratuita de Denuncia</button><br>
             <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/asesoria.php');"data-lang="asesoria">Asesoría Gratuita</button><br>
             <button type="button" class="btn1 btn-info btn-block active" onclick="cargar_contenido('main-content','UsuarioVictima/bpanico.php');"data-lang="boton">Botón de Pánico</button><br>
             </div>  

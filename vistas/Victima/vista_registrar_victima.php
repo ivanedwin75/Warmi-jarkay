@@ -6,13 +6,13 @@
     </div>
     <div class="panel-body">     
           <div class="col-md-12 col-lg-12 col-xs-12"> 
-            
+            <!--
             <div class="col-sm-12">
                 <label>Nro Expediente</label>
                 <input id="txtexpediente"  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nro de expediente" class="form-control" >
                 <br>
             </div>
-
+-->
             <div class="col-sm-6">
                 <label >Apellido Paterno</label>
                 <input type="text" class="form-control" id="txtapellidopaterno" onkeypress="return soloLetras(event)"    style="background-color: #FFFFFF"    placeholder="Ingrese Apellido Paterno">

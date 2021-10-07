@@ -19,7 +19,7 @@ function listar_institucion_vista(valor, pagina) {
                 cadena += "<thead  class=''>";
                 cadena += "<tr >";
                 cadena += "<th style = 'text-align: center' hidden='true' >ID</th>";
-                cadena += "<th style = 'text-align: center'>NRO DE EXPEDIENTE</th>";
+                //cadena += "<th style = 'text-align: center'>NRO DE EXPEDIENTE</th>";
                 cadena += "<th style = 'text-align: center'>DNI</th>";
                 cadena += "<th style = 'text-align: center'>DENUNCIANTE</th>";
                 cadena += "<th style = 'text-align: center'>FECHA DE REGISTRO</th>";
@@ -90,7 +90,7 @@ function listar_institucion_vista(valor, pagina) {
                 cadena += "<thead  class=''>";
                 cadena += "<tr >";
                 cadena += "<th style = 'text-align: center' hidden='true' >ID</th>";
-                cadena += "<th style = 'text-align: center'>NRO DE EXPEDIENTE</th>";
+                //cadena += "<th style = 'text-align: center'>NRO DE EXPEDIENTE</th>";
                 cadena += "<th style = 'text-align: center'>DNI</th>";
                 cadena += "<th style = 'text-align: center'>DENUNCIANTE</th>";
                 cadena += "<th style = 'text-align: center'>FECHA DE REGISTRO</th>";
