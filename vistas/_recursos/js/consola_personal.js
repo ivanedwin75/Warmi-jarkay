@@ -32,7 +32,7 @@ function listar_personal_vista(valor,pagina){
 				cadena += "<thead  class=''>";
 				cadena += "<tr >";
 				cadena += "<th style = 'text-align: center'>ID</th>";
-				cadena += "<th style = 'text-align: center'>CARGO</th>";
+				cadena += "<th style = 'text-align: center'>GRADO</th>";
 				cadena += "<th style = 'text-align: center'>APELLIDO PATERNO</th>";
 				cadena += "<th style = 'text-align: center'>APELLIDO MATERNO</th>";
 				cadena += "<th style = 'text-align: center'>NOMBRES</th>";
@@ -109,7 +109,7 @@ function listar_personal_vista(valor,pagina){
 				cadena += "<thead  class=''>";
 				cadena += "<tr >";
 				cadena += "<th style = 'text-align: center'>ID</th>";
-				cadena += "<th style = 'text-align: center'>CARGO</th>";
+				cadena += "<th style = 'text-align: center'>GRADO</th>";
 				cadena += "<th style = 'text-align: center'>APELLIDO PATERNO</th>";
 				cadena += "<th style = 'text-align: center'>APELLIDO MATERNO</th>";
 				cadena += "<th style = 'text-align: center'>NOMBRES</th>";

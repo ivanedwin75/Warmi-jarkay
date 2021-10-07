@@ -6,7 +6,7 @@
 <div class="contendor_kn">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <center><h4><b>SEGUIMIENTO</b></h4></center>
+            <center><h4 data-lang="seguimiento"><b>SEGUIMIENTO</b></h4></center>
         </div> 
         <div class="panel-body"> 
             <div class="panelpq">
@@ -35,13 +35,13 @@
 					<div class="events-content">
 						<ol>
 							<li class="selected" data-date="16/01/2014">
-								<h3><b>COMISARÍA</b></h3>
+								<h3><b data-lang="comisaria">COMISARÍA</b></h3>
 								<div class="panel3">
-									<h5><b>Instructor: </b> Leonidas Quispe Luque</h5>
-									<h5><b>Grado: </b> Sub Oficial de Tercera</h5>
+									<h5 ><b data-lang="instructor">Instructor: </b> Leonidas Quispe Luque</h5>
+									<h5 ><b data-lang="grado">Grado: </b> Sub Oficial de Tercera</h5>
 									<h5><b>N° de Oficio a Juzgado: </b> 21024</h5>
 									<h5><b>N° de Oficio a Fiscalía: </b> 21024</h5>
-									<h5><b>Nivel de Riesgo: </b> Leve</h5>
+									<h5 ><b data-lang="riesgo">Nivel de Riesgo: </b> Leve</h5>
 									<center>
 									<button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i>  Copia Simple Acta de Denuncia <br>Verbal / Intervención Policial</button>
 									</center>
@@ -49,12 +49,12 @@
 							</li>
 
 							<li data-date="16/02/2014">
-								<h3><b>JUZGADO</b></h3>
+								<h3><b data-lang="juzgado">JUZGADO</b></h3>
 								<div class="panel3"> 
-									<h5><b>Juez: </b> Leonidas Quispe Luque</h5>
-									<h5><b>Juzgado: </b> Sub Oficial de Tercera</h5>
-									<h5><b>N° de Expediente </b> 21024</h5>
-									<h5><b>Fecha de Registro: </b> 17/09/2021</h5>
+									<h5><b data-lang="juez">Juez: </b> Leonidas Quispe Luque</h5>
+									<h5><b data-lang="juzgad">Juzgado: </b> Sub Oficial de Tercera</h5>
+									<h5><b data-lang="expediente">N° de Expediente </b> 21024</h5>
+									<h5><b data-lang="fecha">Fecha de Registro: </b> 17/09/2021</h5>
 									<center>
 									<button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i>  Copia de Demanda Electrónica</button>
 									</center>
@@ -62,24 +62,24 @@
 							</li>
 
 							<li data-date="16/03/2014">
-								<h3><b>FISCALÍA</b></h3>
+								<h3><b data-lang="fiscalia">FISCALÍA</b></h3>
 								<div class="panel3"> 
-									<h5><b>Fiscal: </b> Leonidas Quispe Luque</h5>
-									<h5><b>Fiscalía: </b> 1era FPPC - Puno</h5>
-									<h5><b>Fecha de Registro: </b> 17/09/2021</h5>
+									<h5><b data-lang="fiscal">Fiscal: </b> Leonidas Quispe Luque</h5>
+									<h5><b data-lang="fiscali">Fiscalía: </b> 1era FPPC - Puno</h5>
+									<h5><b data-lang="fecha">Fecha de Registro: </b> 17/09/2021</h5>
 								</div>
 							</li>
 
 							<li data-date="16/04/2014">
-								<h3><b>PERICIAS</b></h3>
+								<h3><b data-lang="pericia">PERICIAS</b></h3>
 								<div class="panel3"> 
-									<center><h5><u><b>Pericia Psicológica  </b></u></center>
-									<h5><b>N° de Pericia Psicológica: </b> ...</h5>
+									<center><h5><u><b data-lang="periciap">Pericia Psicológica  </b></u></center>
+									<h5><b data-lang="npericiap">N° de Pericia Psicológica: </b> ...</h5>
 									<hr>
-									<center><h5><u><b>Certificado Médico Legal  </b></u> </center>
-									<h5><b>N° de Certificado Médico Legal: </b> ...</h5>
+									<center><h5><u><b data-lang="certificado">Certificado Médico Legal  </b></u> </center>
+									<h5><b data-lang="ncertificado">N° de Certificado Médico Legal: </b> ...</h5>
 									<h5><b>Atención Facultativa: </b> ...</h5>
-									<h5><b>Incapacidad Médico Legal: </b> ...</h5>
+									<h5><b data-lang="incapacidad">Incapacidad Médico Legal: </b> ...</h5>
 									<hr>
 									<center><h5><u><b>Informe Psicológico de CEM  </b></u> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download" ></i></button>	</h5></center>
 									<h5><b>N° de Informe Psicológico de CEM: </b> ...</h5>
@@ -92,9 +92,9 @@
 								</div>
 							</li>
 							<li data-date="16/05/2014">
-								<h3><b>MEDIDAS</b></h3>
+								<h3 ><b data-lang="medidas">MEDIDAS</b></h3>
 								<div class="panel3"> 
-								<center><h5><b>Medidas de protección  </b> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5><center>
+								<center><h5><b data-lang="medidasp">Medidas de protección  </b> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5><center>
 								</div>
 							</li>
 						</ol>

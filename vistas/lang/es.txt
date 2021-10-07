@@ -1,0 +1,51 @@
+perfil=>PERFIL
+seguimiento=>SEGUIMIENTO
+copia=>SOLICITAR COPIA GRATIS DE DENUNCIA
+asesoria=>ASESORIA GRATUITA
+boton=>BOTON DE PÁNICO
+comisaria=>COMISARÍA
+instructor=>Instructor: 
+grado=>Grado: 
+riesgo=>Nivel de Riesgo:
+juzgado=>JUZGADO
+juez=>Juez: 
+juzgad=>Juzgado: 
+expediente=>N° de Expediente:
+fecha=>Fecha de Registro: 
+fiscalia=>FISCALÍA
+fiscal=>Fiscal: 
+fiscali=>Fiscalía: 
+pericia=>PERICIAS
+periciap=>Pericia Psicológica
+npericiap=>N° de Pericia Psicológica: 
+certificado=>Certificado Médico
+ncertificado=>N° de Certificado Médico:
+incapacidad=>Incapacidad Médico legal:
+medidas=>MEDIDAS
+medidasp=>Medidas de Protección
+entrega=>(La entrega se realizará solo al denunciante)
+celular=>Celular
+direccion=>Dirección
+deber=>(Debe encontrarse dentro de la jurisdicción de Huáscar)
+referencia=>Referencia
+solicitar=>Solicitar
+mapa=>Mapa de la Jurisdicción de Huáscar
+cerrar=>Cerrar
+cancelar=>Cancelar
+elige=>¿Qué tipo de Asesoría Necesita?
+legal=>Legal
+alimentos=>Proceso de Alimentos
+tenencia=>Tenencia de Menores
+pena=>Crisis Emocional
+violacion=>Violación Sexual
+entendio=>¿Resolvimos su duda?
+no=>No
+si=>Si
+enviar=>Enviar
+entendido=>Entendido
+asesori=>Asesoría Gratuita
+escribir=>¿En qué le podemos ayudar con su problema? Escribenos
+
+
+
+

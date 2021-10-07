@@ -744,7 +744,7 @@ body {
 
 .app-content {
   height: 100%;
-  background-image: url("../img/fondo_v2.jpg");
+  background-image: url("../img/fondoh.png");
     /*background-image: url("../img/fondo_v1.png");
     background-image: url("../img/fondo.png");*/
   background-attachment: fixed;
@@ -929,10 +929,10 @@ button.btn2{
   display: inline-block;
   float: none;
   height: auto;
-  padding: 0 20px;
-  font-size: 20px;
+  padding: 5px 10px 5px;
+  font-size: 100%;
   font-weight: 700;
-  line-height: 50px;
+  line-height: 20px;
   text-align: center;
 }
 
@@ -1129,7 +1129,7 @@ b.l{
 }
 
 html {
-  background-image: url("../img/fondo_v2.jpg");
+  background-image: url("../img/fondoh.png");
     /*background-image: url("../img/fondo_v1.png");
     background-image: url("../img/fondo.png");*/
   background-repeat: no-repeat;
