@@ -8,7 +8,7 @@
 		public function __construct(){
 			$this->servidor = "localhost";
 			$this->usuario = "root";
-			$this->contrasena = "Ochoespacios";
+			$this->contrasena = "";
 			$this->basedatos = "db_DENMU";
 		}
 		function conectar(){
