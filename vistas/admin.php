@@ -54,7 +54,6 @@ session_start();
           <img src="_recursos/img/logo.png" alt="." class="hide">-->
           <img class="img1" src="_recursos/img/LogoCom.png">  
           <span class="hidden-folded m-l-xs">WARMI JARK'AY </span><br>
-          <span >Mujer Protegida</span>
           
         </a>
       </div>
