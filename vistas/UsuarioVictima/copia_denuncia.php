@@ -3,7 +3,7 @@
 <div class="contendor_kn">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <center><h4><b data-lang="copia">SOLICITAR UNA COPIA SIMPLE</b></h4></center>
+            <center><h4><b data-lang="copia">SOLICITAR COPIA GRATUITA DE DENUNCIA</b></h4></center>
         </div> 
         <div class="panel-body">     
           <div class="col-md-12 col-lg-12 col-xs-12"> 
@@ -28,14 +28,14 @@
                 <div class="col-sm-6">
                     <h5><b data-lang="referencia">Referencia  </b><button type="button" class="btn btn-dark btn-xs" data-toggle="modal" data-target="#Modal_mapa"> <i class="fa fa-map-marker icon text-info-lter"></i> </button></h5> 
                     <em><h6 data-lang="deber">(Debe encontrarse dentro de la jurisdicción de Huáscar)</h6></em>
-                    <input type="text" class="form-control" id="txtdireccion" style="background-color: #FFFFFF" placeholder="Ingrese una Referencia">
+                    <input type="text" class="form-control" id="txtreferencia" style="background-color: #FFFFFF" placeholder="Ingrese una Referencia">
                     
                 </div>
             </div>   
                     
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
-                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal_mensaje"><strong data-lang="solicitar">  Solicitar  </strong></button><br>
+                <br><button type="submit" class="btn btn-success" onclick="Enviar_datos()" data-toggle="modal" data-target="#Modal_mensaje"><strong data-lang="solicitar">  Solicitar  </strong></button><br>
                 </div>
             </div>
         </div>

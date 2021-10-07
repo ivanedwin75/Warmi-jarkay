@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="zxx">
 <head>
-	<title>WARMI JARK'AY Mujer Protegida</title>
+	<title>WARMI JARK'AY</title>
 	<link rel="shortcut icon" href="_plantilla/images/LogoCom.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -22,7 +22,7 @@ session_start();
 	
 <header class="main-header">
 		<img class="img1" src="_plantilla/images/LogoCom.png">  
-        <h2 class="l">COMISARIA PNP HUASCAR <br> WARMI JARK'AY <br>Mujer Protegida</h2>
+        <h2 class="l">COMISARIA PNP HUASCAR <br> WARMI JARK'AY</h2>
 </header>
 </head>
 
