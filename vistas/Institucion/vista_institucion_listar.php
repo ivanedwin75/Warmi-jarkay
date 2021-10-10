@@ -54,7 +54,7 @@
         <h4 class="modal-title" id="myModalLabel" style = "text-align:center;"><b>DATOS DE LA DENUNCIA</b></h4>
       </div>
       <div class="modal-body">
-      <form form action="" method="post" enctype="multipart/form-data">
+      <!--<form form action="" method="post" enctype="multipart/form-data">-->
         <label>COMISARIA / DENUNCIA</label>
         <div class="contendor_kn" style = "padding: 1px 1px 1px 0px; ">
           <div class="panel panel-default">
@@ -287,7 +287,7 @@
           <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;<b>Cancelar</b></button>
         </div> 
     </div>
-    </form>
+    <!--</form>-->
   </div>   
 </div>
 <script type="text/javascript">

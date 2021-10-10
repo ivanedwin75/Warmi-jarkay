@@ -227,6 +227,35 @@ function Editar_victima() {
         })
 }
 
+function validar_reniec() {
+    var dni = $("#txtdni").val();
+
+    if (dni.length < 8) {
+        return swal("El DNI debe contener 8 digitos", "", "info");
+    }
+
+    $.ajax({
+        url: '../controlador/victima/controlador_validar_reniec.php',
+        type: 'POST',
+        data: {
+            dni: dni
+        },
+        beforeSend: function() {
+            $("#loading_almacen").addClass("fa fa-refresh fa-spin fa-3x fa-fw");
+        },
+        complete: function() {
+            $("#loading_almacen").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
+        },
+        success: function(resp) {
+            var data = JSON.parse(resp);
+            $("#txtapellidopaterno").val(data["apellidoPaterno"]);
+            $("#txtapellidomaterno").val(data["apellidoMaterno"]);
+            $("#txtnombre").val(data["nombres"]);
+        }
+    });
+}
+
+
 
 function revisar_dni_victima() {
     //var expediente = $("#txtexpediente").val();
@@ -245,7 +274,7 @@ function revisar_dni_victima() {
         return swal("Faltan Llenar Datos", "", "info");
     }
     if (dni.length == 0) {
-        return swal("Faltan Llenar Su Documento de Identidad", "", "info");
+        return swal("Falta Llenar Su Documento de Identidad", "", "info");
     }
     $.ajax({
             url: '../controlador/victima/controlador_verificar_existencia_dni.php',

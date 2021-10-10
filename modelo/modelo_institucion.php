@@ -1,6 +1,5 @@
 <?php
-	class Modelo_institucion
-	{
+	class Modelo_institucion{
 		private $conexion;
 		function __construct()
 		{
@@ -48,62 +47,6 @@
 			$this->conexion->Cerrar_Conexion();
 		}
 */		
-		function Editar_den_comisaria($id_denuncia,$instructor,$ofi_fiscalia,$ofi_juzgado,$niv_riesgo,$den_scan){
-			$sql = "UPDATE denuncia SET N_oficio_fiscalia='$ofi_fiscalia',N_oficio_juzgado='$ofi_juzgado',
-			Nivel_riesgo='$niv_riesgo',Denuncia_scan='$den_scan',efectivos_id_efectivos= (SELECT efectivos.id_efectivos FROM efectivos WHERE efectivos.Dni = '$instructor')
-			WHERE denuncia.id_denuncia='$id_denuncia'";
-			
-			if ($resultado = $this->conexion->conexion->query($sql)){
-				return 1;
-			}
-			else{
-				return 0;
-			}
-			$this->conexion->Cerrar_Conexion();
-		}
-
-		function Editar_juzgado($id_denuncia,$exp_juzgado,$juzgado,$juez,$f_juzgado,$dem_elec){
-			$sql = "UPDATE denuncia SET N_exp_juzgado='$exp_juzgado',Juzgado='$juzgado',Juez_nombre='$juez',F_juzgado='$f_juzgado',
-			Demanda_electronica='$dem_elec' WHERE denuncia.id_denuncia='$id_denuncia'";
-			
-			if ($resultado = $this->conexion->conexion->query($sql)){
-				return 1;
-			}
-			else{
-				return 0;
-			}
-			$this->conexion->Cerrar_Conexion();
-		}
-
-		function Editar_fiscalia($id_denuncia,$fiscalia,$fiscal,$f_fiscalia){
-			$sql = "UPDATE denuncia SET Fiscalia='$fiscalia',Fiscal_nombre='$fiscal',F_fiscalia='$f_fiscalia'
-			WHERE denuncia.id_denuncia='$id_denuncia'";
-			
-			if ($resultado = $this->conexion->conexion->query($sql)){
-				return 1;
-			}
-			else{
-				return 0;
-			}
-			$this->conexion->Cerrar_Conexion();
-		}
-
-		function Editar_pericias($id_denuncia,$per_psico,$certi_med,$at_facultativa,
-		$incap_medico,$cem_label,$cem,$saw_label,$saw,$social_label,$social_cem,$med_prot){
-			$sql = "UPDATE denuncia SET Pericia_psico='$per_psico',Cert_med_leg='$certi_med',
-			At_facultativa='$at_facultativa',Incapacidad_medico='$incap_medico',Cem_label='$cem_label',Cert_cem='$cem',
-			Sau_label='$saw_label',Cert_saw='$saw',Social_cem_label='$social_label',Social_cem='$social_cem',Medidas_proteccion='$med_prot'
-			WHERE denuncia.id_denuncia='$id_denuncia'";
-			
-			if ($resultado = $this->conexion->conexion->query($sql)){
-				return 1;
-			}
-			else{
-				return 0;
-			}
-			$this->conexion->Cerrar_Conexion();
-		}
-
 		function listar_institucion($valor, $inicio=FALSE,$limite=FALSE){
 			
 			if ($inicio!==FALSE && $limite!==FALSE) {
@@ -125,13 +68,33 @@
  		}
 
 		function get_denuncia($denuncia){
-			$sql = "SELECT denuncia.id_denuncia,denuncia.N_oficio_fiscalia,
-			denuncia.N_oficio_juzgado,denuncia.Nivel_riesgo,denuncia.Fiscalia,Fiscal_nombre,denuncia.
-			F_fiscalia,denuncia.N_exp_juzgado,denuncia.Juzgado,denuncia.Juez_nombre,denuncia.F_juzgado,
-			denuncia.Denuncia_scan,denuncia.Demanda_electronica,denuncia.Pericia_psico,denuncia.Cert_med_leg,
-			denuncia.At_facultativa,denuncia.Incapacidad_medico,denuncia.Cem_label,denuncia.Cert_cem,
-			denuncia.Sau_label,denuncia.Cert_saw,denuncia.Social_cem_label,denuncia.Social_cem,
-			denuncia.Medidas_proteccion,efectivos.Dni FROM denuncia INNER JOIN efectivos 
+			$sql = "SELECT 
+			denuncia.id_denuncia,
+			denuncia.N_oficio_fiscalia,
+			denuncia.N_oficio_juzgado,
+			denuncia.Nivel_riesgo,
+			denuncia.Fiscalia,
+			denuncia.Fiscal_nombre,
+			denuncia.F_fiscalia,
+			denuncia.N_exp_juzgado,
+			denuncia.Juzgado,
+			denuncia.Juez_nombre,
+			denuncia.F_juzgado,
+			denuncia.Denuncia_scan,
+			denuncia.Demanda_electronica,
+			denuncia.Pericia_psico,
+			denuncia.Cert_med_leg,
+			denuncia.At_facultativa,
+			denuncia.Incapacidad_medico,
+			denuncia.Cem_label,
+			denuncia.Cert_cem,
+			denuncia.Sau_label,
+			denuncia.Cert_saw,
+			denuncia.Social_cem_label,
+			denuncia.Social_cem,
+			denuncia.Medidas_proteccion,
+			efectivos.Dni 
+			FROM denuncia INNER JOIN efectivos 
 			ON denuncia.efectivos_id_efectivos = efectivos.id_efectivos 
 			WHERE denuncia.id_denuncia = '$denuncia'";
 

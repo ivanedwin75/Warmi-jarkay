@@ -13,6 +13,17 @@
                 <br>
             </div>
 -->
+            <div class="col-sm-9">
+                <label >Nº Documento Identidad</label>
+                <input type="text" class="form-control" id="txtdni" onkeypress="return soloNumeros(event)"   maxlength="8" style="background-color: #FFFFFF" placeholder="Ingrese Nº Documento Identidad">
+                <br>
+            </div>
+
+            <div class="col-sm-3">
+                <label ></label><br>
+                <button class="btn btn-success" onclick="validar_reniec()">Buscar</button>
+            </div>
+
             <div class="col-sm-6">
                 <label >Apellido Paterno</label>
                 <input type="text" class="form-control" id="txtapellidopaterno" onkeypress="return soloLetras(event)"    style="background-color: #FFFFFF"    placeholder="Ingrese Apellido Paterno">
@@ -41,12 +52,7 @@
                 <input type="text" class="form-control" id="txtedad" onkeypress="return soloNumeros(event)"   maxlength="2" style="background-color: #FFFFFF" placeholder="Ingrese edad">
                 <br>
             </div>
-            <br>
-            <div class="col-sm-6">
-                <label >Nº Documento Identidad</label>
-                <input type="text" class="form-control" id="txtdni" onkeypress="return soloNumeros(event)"   maxlength="8" style="background-color: #FFFFFF" placeholder="Ingrese Nº Documento Identidad">
-                <br>
-            </div>
+            
             <div class="col-sm-6">
                 <label>Celular </label>
                 <input type="text"class="form-control" id="txtmovil"  onkeypress="return soloNumeros(event)" placeholder="Ingrese nro movil" maxlength="9">

@@ -1,4 +1,12 @@
 <?php
+require_once '../../FirePHPCore/FirePHP.class.php';
+ob_start();
+$firephp = FirePHP::getInstance(TRUE);
+
+//print_r($_FILES);
+//echo $tmp;
+  //echo "<img src='$path' />";
+$firephp->log("Esta funcionando LISTAR");
 	  include '../../modelo/modelo_institucion.php';
     $boton = $_POST['boton'];
     $boton = 'buscar';

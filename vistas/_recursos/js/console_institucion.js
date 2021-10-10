@@ -33,7 +33,7 @@ function listar_institucion_vista(valor, pagina) {
                     cadena += "<td align='center'>" + valores[i][1] + "</td>";
                     cadena += "<td align='center'>" + valores[i][2] + "</td>";
                     cadena += "<td align='center'>" + valores[i][3] + "</td>";
-                    cadena += "<td align='center'>" + valores[i][4] + "</td>";
+                    //cadena += "<td align='center'>" + valores[i][4] + "</td>";
 
                     /*
 					if (valores[i][3] == "INACTIVO") {
@@ -134,39 +134,39 @@ function AbrirModalInstitucion(control) {
         success: function(resp) {
             var data = JSON.parse(resp);
             //alert(data);
-            $("#txtofifiscalia").val(data[2]);
-            $("#txtofijuzgado").val(data[3]);
-            $("#niv_riesgo").val(data[4]);
+            $("#txtofifiscalia").val(data[1]);
+            $("#txtofijuzgado").val(data[2]);
+            $("#niv_riesgo").val(data[3]);
 
-            $("#txtfiscalia").val(data[5]);
-            $("#txtfiscal").val(data[6]);
-            $("#txtf_fiscalia").val(data[7]);
+            $("#txtfiscalia").val(data[4]);
+            $("#txtfiscal").val(data[5]);
+            $("#txtf_fiscalia").val(data[6]);
 
-            $("#txtexp_juzgado").val(data[8]);
-            $("#txtjuzgado").val(data[9]);
-            $("#txtjuez").val(data[10]);
-            $("#txtf_juzgado").val(data[11]);
+            $("#txtexp_juzgado").val(data[7]);
+            $("#txtjuzgado").val(data[8]);
+            $("#txtjuez").val(data[9]);
+            $("#txtf_juzgado").val(data[10]);
 
-            $("#txtden_scan").val(data[12]);
-            $("#txtdem_elec").val(data[13]);
-            $("#Per_psico").val(data[14]);
-            $("#Certi_med").val(data[15]);
+            $("#txtden_scan").val(data[11]);
+            $("#txtdem_elec").val(data[12]);
+            $("#Per_psico").val(data[13]);
+            $("#Certi_med").val(data[14]);
 
-            $("#at_facultativa").val(data[16]);
-            $("#incap_medico").val(data[17]);
-            $("#CEM_label").val(data[18]);
-            $("#CEM").val(data[19]);
-            $("#SAW_label").val(data[20]);
-            $("#SAW").val(data[21]);
-            $("#Social_CEM_label").val(data[22]);
-            $("#Social_CEM").val(data[23]);
-            $("#txtmed_prot").val(data[24]);
+            $("#at_facultativa").val(data[15]);
+            $("#incap_medico").val(data[16]);
+            $("#CEM_label").val(data[17]);
+            $("#CEM").val(data[18]);
+            $("#SAW_label").val(data[19]);
+            $("#SAW").val(data[20]);
+            $("#Social_CEM_label").val(data[21]);
+            $("#Social_CEM").val(data[22]);
+            $("#txtmed_prot").val(data[23]);
             //alert(data[13]);
-            $("#txtinstructor").val(data[25]);
+            $("#txtinstructor").val(data[24]);
 
             if (resp > 0) {
                 //$('#modal_editar_denuncia').modal('hide');
-                swal("Datos Actualizados!", "", "success");
+                swal("Datos completos!", "", "success");
                 //var dato_buscar = $("#txt_institucion_vista").val();
                 //listar_institucion_vista(dato_buscar, '1');
             } else {
@@ -222,41 +222,53 @@ function Editar_denuncia() {
     formData.append("txtjuez", juez);
     formData.append("txtf_juzgado", f_juzgado);
 
-    formData.append("arch_den_scan", $("#arch_den_scan").prop("files")[0]);
-    formData.append("arch_dem_elec", $("#arch_dem_elec").prop("files")[0]);
+    formData.append("arch_den_scan", document.getElementById('arch_den_scan').files[0]);
+    formData.append("arch_dem_elec", document.getElementById('arch_dem_elec').files[0]);
     formData.append("Per_psico", per_psico);
     formData.append("certi_med", certi_med);
     formData.append("at_facultativa", at_facultativa);
     formData.append("incap_medico", incap_medico);
     formData.append("CEM_label", cem_label);
-    formData.append("arch_cem", $("#arch_cem").prop("files")[0]);
+    formData.append("arch_cem", document.getElementById('arch_cem').files[0]);
     formData.append("SAW_label", saw_label);
-    formData.append("arch_saw", $("#arch_saw").prop("files")[0]);
+    formData.append("arch_saw", document.getElementById('arch_saw').files[0]);
     formData.append("Social_CEM_label", social_label);
-    formData.append("arch_social_cem", $("#arch_social_cem").prop("files")[0]);
-    formData.append("arch_med_prot", $("#arch_med_prot").prop("files")[0]);
+    formData.append("arch_social_cem", document.getElementById('arch_social_cem').files[0]);
+    formData.append("arch_med_prot", document.getElementById('arch_med_prot').files[0]);
     formData.append("txtinstructor", instructor);
-
+//debugger;
     /*
     if (institucion.length > 0 && tipo.length > 0) {} else {
         return swal("Falta Llenar Datos", "", "info");
-    .}
+    }
+
+    for (var pair of formData.entries()) {
+    console.log(pair[0]+ ', ' + pair[1]); 
+    }
     */
     $.ajax({
         url: '../controlador/institucion/controlador_editar_institucion.php',
         type: 'POST',
         data: formData,
-        beforeSend: function() {
+        cache: false,
+        contentType: false,
+        processData: false,
+        
+        beforeSend: function(){
             $("#loading_almacen").addClass("fa fa-refresh fa-spin fa-3x fa-fw");
         },
+
         complete: function() {
             $("#loading_almacen").removeClass("fa fa-refresh fa-spin fa-3x fa-fw");
         },
+        
         success: function() {
             $('#modal_editar_denuncia').modal('hide');
             swal("Datos Actualizados!", "", "success");
         }
+
     });
+
     /*
     $.ajax({
             url: '../controlador/institucion/controlador_editar_institucion.php',
