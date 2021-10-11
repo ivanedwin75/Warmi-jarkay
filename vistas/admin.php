@@ -330,8 +330,7 @@ session_start();
     <center>
     <div class="app-footer wrapper b-t">
       <span class="pull-bottom">
-        <b>Dirección: </b> Jr. 5XC8+V77, Puno 21001 <br>
-        <b>Teléfono: </b> 945191118 <br> 
+        <b>Dirección: </b> Av. Juliaca con Jr. Tupac Catari <br>
         <strong>COMISARIA PNP HUASCAR PUNO</strong> &copy; Copyright 2021 
         reservados.
       </span>
