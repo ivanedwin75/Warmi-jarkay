@@ -91,7 +91,7 @@
                   <i class="fa fa-upload"></i><input class="hidden" name="arch_den_scan" id="arch_den_scan" type="file" >
                   </span>
                   </label>
-                  <input class="form-control" id="txtden_scan" readonly="readonly" type="text">
+                  <input class="form-control" id="txtden_scan" name="txtden_scan" readonly="readonly" type="text">
                 </div>
                 
               </div>
@@ -140,7 +140,7 @@
                   <i class="fa fa-upload"></i><input class="hidden" id="arch_dem_elec" name="arch_dem_elec" type="file" >
                   </span>
                   </label>
-                  <input class="form-control" id="txtdem_elec" readonly="readonly" name="banner_captura" type="text" value="">
+                  <input class="form-control" id="txtdem_elec" readonly="readonly" name="txtdem_elec" type="text" >
                 </div>
               
             </div>  

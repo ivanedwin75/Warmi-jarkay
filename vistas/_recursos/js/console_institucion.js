@@ -192,19 +192,19 @@ function Editar_denuncia() {
     var juez = $("#txtjuez").val();
     var f_juzgado = $("#txtf_juzgado").val();
 
-    //var den_scan = $("#txtden_scan").val();
-    //var dem_elec = $("#txtdem_elec").val();
+    var den_scan = $("#txtden_scan").val();
+    var dem_elec = $("#txtdem_elec").val();
     var per_psico = $("#Per_psico").val();
     var certi_med = $("#certi_med").val();
     var at_facultativa = $("#at_facultativa").val();
     var incap_medico = $("#incap_medico").val();
     var cem_label = $("#CEM_label").val();
-    //var cem = $("#CEM").val();
+    var cem = $("#CEM").val();
     var saw_label = $("#SAW_label").val();
-    //var saw = $("#SAW").val();
+    var saw = $("#SAW").val();
     var social_label = $("#Social_CEM_label").val();
-    //var social_cem = $("#Social_CEM").val();
-    //var med_prot = $("#txtmed_prot").val();
+    var social_cem = $("#Social_CEM").val();
+    var med_prot = $("#txtmed_prot").val();
     var instructor = $("#txtinstructor").val();
 
     var formData = new FormData();
@@ -236,6 +236,15 @@ function Editar_denuncia() {
     formData.append("arch_social_cem", document.getElementById('arch_social_cem').files[0]);
     formData.append("arch_med_prot", document.getElementById('arch_med_prot').files[0]);
     formData.append("txtinstructor", instructor);
+
+    formData.append("txtden_scan", den_scan);
+    formData.append("txtdem_elec", dem_elec);
+    formData.append("CEM", cem);
+    formData.append("SAW", saw);
+    formData.append("Social_CEM", social_cem);
+    formData.append("txtmed_prot", med_prot);
+
+
 //debugger;
     /*
     if (institucion.length > 0 && tipo.length > 0) {} else {

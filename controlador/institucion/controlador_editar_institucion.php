@@ -27,6 +27,10 @@
 					move_uploaded_file($arch_den_scan_tmp,$arch_den_scan_path);
 				}
 			}
+			else{
+				$arch_den_scan_path= $_POST['txtden_scan'];
+			}
+	
 			
 			if($_FILES['arch_dem_elec']){
 				$arch_dem_elec = $_FILES['arch_dem_elec']['name'];
@@ -38,6 +42,10 @@
 					move_uploaded_file($arch_dem_elec_tmp,$arch_dem_elec_path);
 				}
 			}
+			else{
+				$arch_dem_elec_path = $_POST['txtdem_elec'];
+			}
+
 			if($_FILES['arch_cem']){
 				$arch_cem = $_FILES['arch_cem']['name'];
 				$arch_cem_tmp = $_FILES['arch_cem']['tmp_name'];
@@ -48,6 +56,11 @@
 					move_uploaded_file($arch_cem_tmp,$arch_cem_path);
 				}
 			}
+			else{
+				$arch_cem_path = $_POST['CEM'];
+			}
+
+
 			if($_FILES['arch_saw']){
 				$arch_saw = $_FILES['arch_saw']['name'];
 				$arch_saw_tmp = $_FILES['arch_saw']['tmp_name'];
@@ -58,6 +71,11 @@
 					move_uploaded_file($arch_saw_tmp,$arch_saw_path);
 				}
 			}
+			else{
+				$arch_saw_path = $_POST['SAW'];
+			}
+
+
 			if($_FILES['arch_social_cem']){
 				$arch_social_cem = $_FILES['arch_social_cem']['name'];
 				$arch_social_cem_tmp = $_FILES['arch_social_cem']['tmp_name'];
@@ -68,6 +86,10 @@
 					move_uploaded_file($arch_social_cem_tmp,$arch_social_cem_path);
 				}
 			}
+			else{
+				$arch_social_cem_path = $_POST['Social_CEM'];
+			}
+
 			if($_FILES['arch_med_prot']){
 				$arch_med_prot = $_FILES['arch_med_prot']['name'];
 				$arch_med_prot_tmp = $_FILES['arch_med_prot']['tmp_name'];
@@ -77,6 +99,9 @@
 					$arch_med_prot_path = $path.strtolower($arch_med_prot_final); 
 					move_uploaded_file($arch_dem_scan_tmp,$arch_dem_scan_path);
 				}
+			}
+			else{
+				$arch_med_prot_path = $_POST['txtmed_prot'];
 			}
 			
     } 
