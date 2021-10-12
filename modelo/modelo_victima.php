@@ -8,15 +8,15 @@
 			$this->conexion = new conexion();
 			$this->conexion->conectar();
 		}
-		function Registrar_victima($exp,$nombre,$apePat,$apeMat,$est_civil,$edad,$dni,$movil,$direcc,$fecha){
-			$sql = "call PA_REGISTRARVICTIMA('$exp','$nombre','$apePat','$apeMat','$edad','$est_civil','$dni','$direcc','$movil','$fecha')";
+		function Registrar_victima($nombre,$apePat,$apeMat,$est_civil,$edad,$dni,$movil,$direcc,$fecha){
+			$sql = "call PA_REGISTRARVICTIMA('$nombre','$apePat','$apeMat','$edad','$est_civil','$dni','$direcc','$movil','$fecha')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function Editar_ciudadano($codigo,$nombre,$apePat,$apeMat,$tipopersona,$telefo,$movil,$direc,$fecha,$nrodocume,$email){
 			$sql = "call PA_EDITARCIUDADANOTODOS('$codigo','$nombre','$apePat','$apeMat','$tipopersona','$telefo','$movil','$direc','$fecha','$nrodocume','$email')";
@@ -26,7 +26,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function listar_ciudadano($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {
@@ -44,14 +44,14 @@
  		}
  		function buscar_dni($dni){
 			$sql = "SELECT * from victima where Dni = '$dni'";		
-			$arreglo = array();
-			if ($consulta = $this->conexion->conexion->query($sql)) {
-				while ($consulta_VU = mysqli_fetch_array($consulta)) {
-					$arreglo[] = $consulta_VU;
-				}
-				return $arreglo;
-				$this->conexion->cerrar();	
+			if ($this->conexion->conexion->query($sql)) {
+				return 1;
 			}
+			else{
+				return 0;
+			}
+			$this->conexion->cerrar();	
+
 		}
 		function listar_ciudadanoremitente($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {

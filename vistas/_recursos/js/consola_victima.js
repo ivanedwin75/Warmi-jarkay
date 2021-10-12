@@ -268,29 +268,13 @@ function revisar_dni_victima() {
     var movil = $("#txtmovil").val();
     var direccion = $("#txtdireccion").val();
     var fecha = $("#txtfecha_registro").val();
-
     if (nombre.length > 0 && apemat.length > 0 && apepat.length > 0 && fecha.length > 0 &&
-        direccion.length > 0 && edad.length > 0 && expediente.length > 0 && est_civil.length > 0 && movil.length > 0) {} else {
+        direccion.length > 0 && edad.length > 0 && est_civil.length > 0 && movil.length > 0 && dni.length > 0) {
+        Registrar_victima();
+    } else {
         return swal("Faltan Llenar Datos", "", "info");
     }
-    if (dni.length == 0) {
-        return swal("Falta Llenar Su Documento de Identidad", "", "info");
-    }
-    $.ajax({
-            url: '../controlador/victima/controlador_verificar_existencia_dni.php',
-            type: 'POST',
-            data: {
-                dni: dni
-            }
-        })
-        .done(function(resp) {
-            var data = JSON.parse(resp);
-            if (data.length <= 0) {
-                Registrar_victima();
-            } else {
-                swal("Lo sentimos el DNI Ingresado ya esta siendo utilizado por otro Ciudadano", "", "warning");
-            }
-        })
+
 }
 
 function Registrar_victima() {
@@ -305,12 +289,12 @@ function Registrar_victima() {
     var movil = $("#txtmovil").val();
     var direcc = $("#txtdireccion").val();
     var fecha = $("#txtfecha_registro").val();
-
+    //debugger;
     $.ajax({
             url: '../controlador/victima/controlador_registrar_victima.php',
             type: 'POST',
             data: {
-                exp: exp,
+                //exp: exp,
                 nombre: nombre,
                 apepat: apepat,
                 apemat: apemat,
@@ -326,9 +310,6 @@ function Registrar_victima() {
             if (resp > 0) {
                 swal("Datos Registrados!", "", "success")
                 Limpieza_post_victima()
-                    .then((value) => {
-                        $("#main-content").load("victima/vista_listar_victima.php");
-                    });
             } else {
                 swal("! Registro no completado!", "", "error");
             }
