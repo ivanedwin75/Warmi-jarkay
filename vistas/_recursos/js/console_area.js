@@ -140,63 +140,69 @@ function Editar_area() {
     var nombre = $("#txtnombre").val();
     var email = $("#txtemail_modal").val();
     var movil = $("#txtmovil_modal").val();
-    if (idasesor.length > 0 && profesion.length > 0 && apepat.length > 0 && apemat.length > 0 && nombre.length > 0 && movil.length > 0 && email.length > 0) {} else {
+    debugger;
+
+    if (profesion.length > 0 && apepat.length > 0 &&
+        apemat.length > 0 && nombre.length > 0 && movil.length > 0 && email.length > 0) {
+        $.ajax({
+                url: '../controlador/area/controlador_editar_area.php',
+                type: 'POST',
+                data: {
+                    idasesor: idasesor,
+                    profesion: profesion,
+                    apepat: apepat,
+                    apemat: apemat,
+                    nombre: nombre,
+                    email: email,
+                    movil: movil
+                }
+            })
+            .done(function(resp) {
+                if (resp > 0) {
+                    $('#modal_editar_area').modal('hide');
+                    swal("Datos Actualizados!", "", "success");
+                    var dato_buscar = $("#txt_area_vista").val();
+                    listar_area_vista(dato_buscar, '1');
+                } else {
+                    swal("! Lo sentimos el asesor ya fue registrada con anterioridad!", "", "error");
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+
+                    alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+                }
+            })
+
+    } else {
         return swal("Falta Llenar Datos", "", "info");
     }
-    $.ajax({
-            url: '../controlador/area/controlador_editar_area.php',
-            type: 'POST',
-            data: {
-                idasesor: idasesor,
-                profesion: profesion,
-                apepat: apepat,
-                apemat: apemat,
-                nombre: nombre,
-                email: email,
-                movil: movil
-            }
-        })
-        .done(function(resp) {
-            if (resp > 0) {
-                $('#modal_editar_area').modal('hide');
-                swal("Datos Actualizados!", "", "success");
-                var dato_buscar = $("#txt_area_vista").val();
-                listar_area_vista(dato_buscar, '1');
-            } else {
-                swal("! Lo sentimos el asesor ya fue registrada con anterioridad!", "", "error");
-            }
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            if (jqXHR.status === 0) {
 
-                alert('Not connect: Verify Network.');
-
-            } else if (jqXHR.status == 404) {
-
-                alert('Requested page not found [404]');
-
-            } else if (jqXHR.status == 500) {
-
-                alert('Internal Server Error [500].');
-
-            } else if (textStatus === 'parsererror') {
-
-                alert('Requested JSON parse failed.');
-
-            } else if (textStatus === 'timeout') {
-
-                alert('Time out error.');
-
-            } else if (textStatus === 'abort') {
-
-                alert('Ajax request aborted.');
-
-            } else {
-
-                alert('Uncaught Error: ' + jqXHR.responseText);
-
-            }
-        })
 }
 
 function registrar_area() {
@@ -227,7 +233,7 @@ function registrar_area() {
                 if (resp > 0) {
                     swal("Datos Registrados!", "", "success")
                 } else {
-                    swal("! Lo sentimos el area ya fue registrada con anterioridad!", "", "error");
+                    swal("! Lo sentimos el Asesor ya fue registrado con anterioridad!", "", "error");
                 }
             })
             .fail(function(jqXHR, textStatus, errorThrown) {

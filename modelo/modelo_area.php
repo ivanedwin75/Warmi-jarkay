@@ -30,9 +30,9 @@
 		}
 		function listar_areas($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {
-			    $sql = "SELECT * FROM Asesor where Asesor.Ap_paterno like '".$valor."%' ORDER BY id_Asesor DESC LIMIT $inicio,$limite";
+			    $sql = "SELECT * FROM asesor where asesor.Ap_paterno like '".$valor."%' ORDER BY id_Asesor DESC LIMIT $inicio,$limite";
 			}else{
-			    $sql = "SELECT * FROM Asesor where Asesor.Ap_paterno like '".$valor."%' ORDER BY id_Asesor DESC";
+			    $sql = "SELECT * FROM asesor where asesor.Ap_paterno like '".$valor."%' ORDER BY id_Asesor DESC";
 			}
 			$resultado =  $this->conexion->conexion->query($sql);
 			$arreglo = array();
