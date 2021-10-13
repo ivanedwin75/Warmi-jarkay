@@ -16,7 +16,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function Editar_personal($id_personal,$cargo,$apePat,$apeMat,$nombre,$dni,$movil,$email){
 			$sql = "call PA_EDITARPERSONAL('$id_personal','$cargo','$apePat','$apeMat','$nombre','$dni','$movil','$email')";
@@ -26,7 +26,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function listar_personal($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {

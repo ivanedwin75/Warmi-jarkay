@@ -8,15 +8,15 @@
 			$this->conexion = new conexion();
 			$this->conexion->conectar();
 		}
-		function Registrar_areas($idasesor,$profesion,$apepat,$apemat,$nombre,$email,$movil){
-			$sql = "call PA_REGISTRARAREA('$idasesor','$profesion','$apepat','$apemat','$nombre','$email','$movil')";
+		function Registrar_areas($profesion,$apepat,$apemat,$nombre,$email,$movil){
+			$sql = "call PA_REGISTRARAREA('$profesion','$apepat','$apemat','$nombre','$email','$movil')";
 			if ($resultado = $this->conexion->conexion->query($sql)){
 				return 1;
 			}
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function Editar_areas($idasesor,$profesion,$apepat,$apemat,$nombre,$email,$movil){
 			$sql = "call PA_EDITARAREA('$idasesor','$profesion','$apepat','$apemat','$nombre','$email','$movil')";
@@ -26,7 +26,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function listar_areas($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {

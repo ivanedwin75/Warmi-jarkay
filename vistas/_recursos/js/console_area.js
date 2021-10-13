@@ -25,7 +25,7 @@ function listar_area_vista(valor, pagina) {
                 cadena += "<th style = 'text-align: center'>NOMBRES</th>";
                 cadena += "<th style = 'text-align: center'>E-MAIL</th>";
                 cadena += "<th style = 'text-align: center'>CELULAR</th>";
-				cadena += "<th style = 'text-align: center'>OPCIONES</th>";
+                cadena += "<th style = 'text-align: center'>OPCIONES</th>";
                 cadena += "</tr>";
                 cadena += "</thead>";
                 cadena += "<tbody style='background-color:white'>";
@@ -200,63 +200,70 @@ function Editar_area() {
 }
 
 function registrar_area() {
-    var area = $("#txtarea_modal").val();
-    if (area.length > 0) {} else {
+    //var idasesor = $("#txtid_asesor").val();
+    var profesion = $("#txtprofesion").val();
+    var apepat = $("#txtapellidopaterno").val();
+    var apemat = $("#txtapellidomaterno").val();
+    var nombre = $("#txtnombre").val();
+    var email = $("#txtemail_modal").val();
+    var movil = $("#txtmovil_modal").val();
+
+    if (profesion.length > 0 && apepat.length > 0 && apemat.length > 0 &&
+        nombre.length > 0 && email.length && movil.length > 0) {
+        $.ajax({
+                url: '../controlador/area/controlador_registrar_area.php',
+                type: 'POST',
+                data: {
+                    //idasesor: idasesor,
+                    profesion: profesion,
+                    apepat: apepat,
+                    apemat: apemat,
+                    nombre: nombre,
+                    email: email,
+                    movil: movil
+                }
+            })
+            .done(function(resp) {
+                if (resp > 0) {
+                    swal("Datos Registrados!", "", "success")
+                } else {
+                    swal("! Lo sentimos el area ya fue registrada con anterioridad!", "", "error");
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+
+                    alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+                }
+            })
+
+    } else {
         return swal("Falta Llenar Datos", "", "info");
     }
-    $.ajax({
-            url: '../controlador/area/controlador_registrar_area.php',
-            type: 'POST',
-            data: {
-                idasesor: idasesor,
-                profesion: profesion,
-                apepat: apepat,
-                apemat: apemat,
-                nombre: nombre,
-                email: email,
-                movil: movil
-            }
-        })
-        .done(function(resp) {
-            if (resp > 0) {
-                swal("Datos Registrados!", "", "success")
-                    .then((value) => {
-                        $("#main-content").load("Area/vista_area_listar.php");
-                    });
 
-            } else {
-                swal("! Lo sentimos el area ya fue registrada con anterioridad!", "", "error");
-            }
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            if (jqXHR.status === 0) {
-
-                alert('Not connect: Verify Network.');
-
-            } else if (jqXHR.status == 404) {
-
-                alert('Requested page not found [404]');
-
-            } else if (jqXHR.status == 500) {
-
-                alert('Internal Server Error [500].');
-
-            } else if (textStatus === 'parsererror') {
-
-                alert('Requested JSON parse failed.');
-
-            } else if (textStatus === 'timeout') {
-
-                alert('Time out error.');
-
-            } else if (textStatus === 'abort') {
-
-                alert('Ajax request aborted.');
-
-            } else {
-
-                alert('Uncaught Error: ' + jqXHR.responseText);
-
-            }
-        })
 }

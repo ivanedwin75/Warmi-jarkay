@@ -1,5 +1,5 @@
 <?php
-	$idasesor		= $_POST["idasesor"];
+	//$idasesor		= $_POST["idasesor"];
 	$profesion		= strtoupper($_POST["profesion"]);
 	$apepat			= strtoupper($_POST["apepat"]);
 	$apemat			= strtoupper($_POST["apemat"]);
@@ -9,6 +9,6 @@
     
 	require '../../modelo/modelo_area.php';
 	$MC = new Modelo_area();
-	$consulta = $MC->Registrar_areas($idasesor,$profesion,$apepat,$apemat,$nombre,$email,$movil);
+	$consulta = $MC->Registrar_areas($profesion,$apepat,$apemat,$nombre,$email,$movil);
 	echo $consulta;
 ?>
