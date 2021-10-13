@@ -20,7 +20,7 @@
 		}
 		function Editar_personal($id_personal,$cargo,$apePat,$apeMat,$nombre,$dni,$movil,$email){
 			$sql = "call PA_EDITARPERSONAL('$id_personal','$cargo','$apePat','$apeMat','$nombre','$dni','$movil','$email')";
-			if ($resultado = $this->conexion->conexion->query($sql)){
+			if ($this->conexion->conexion->query($sql)){
 				return 1;
 			}
 			else{
@@ -44,17 +44,16 @@
 			$this->conexion->cerrar();	
  		}
  		function buscar_dni($dni){
-				$sql = "SELECT * from efectivos where efectivos.Dni = '$dni'";
+			$sql = "SELECT * from efectivos where efectivos.Dni = '$dni'";
 				
-				$arreglo = array();
-				if ($consulta = $this->conexion->conexion->query($sql)) {
+			if ($this->conexion->conexion->query($sql)) {
+				return 1;
+			}
+			else{
+				return 0;
+			}
+			$this->conexion->cerrar();	
 
-					while ($consulta_VU = mysqli_fetch_array($consulta)) {
-						$arreglo[] = $consulta_VU;
-					}
-					return $arreglo;
-					$this->conexion->cerrar();	
-				}
 		}
 		//borrrrrrrrrrrrrarrrrrr
 		function listar_combotipousuario(){

@@ -155,64 +155,53 @@ function Editar_personal() {
     var movil = $('#txtmovil_modal').val();
     var email = $('#txtemail_modal').val();
 
-    if (id_personal.length > 0 && cargo.length > 0 && apepat.length > 0 && apemat.length > 0 && nombre.length > 0 && dni.length > 0 && movil.length > 0 && email.length > 0) {} else {
+    if (id_personal.length > 0 && cargo.length > 0 && apepat.length > 0 && apemat.length > 0 && nombre.length > 0 && dni.length > 0 && movil.length > 0 && email.length > 0) {
+        $.ajax({
+                url: '../controlador/personal/controlador_editar_personal.php',
+                type: 'POST',
+                data: {
+                    id_personal: id_personal,
+                    cargo: cargo,
+                    apepat: apepat,
+                    apemat: apemat,
+                    nombre: nombre,
+                    dni: dni,
+                    movil: movil,
+                    email: email
+                }
+            })
+            .done(function(resp) {
+                if (resp > 0) {
+                    $('#modal_editar_personal').modal('hide');
+                    swal("Datos Actualizados!", "", "success");
+                    var dato_buscar = $("#txtbuscar_personal").val();
+                    listar_personal_vista(dato_buscar, '1');
+                } else {
+                    swal("! Registro no completado!", "", "error");
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect: Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found [404]');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                } else if (textStatus === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (textStatus === 'timeout') {
+                    alert('Time out error.');
+                } else if (textStatus === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+                }
+            })
+
+    } else {
         return swal("Falta Llenar Datos", "", "info");
     }
-    $.ajax({
-            url: '../controlador/personal/controlador_editar_personal.php',
-            type: 'POST',
-            data: {
-                id_personal: id_personal,
-                cargo: cargo,
-                apepat: apepat,
-                apemat: apemat,
-                nombre: nombre,
-                dni: dni,
-                movil: movil,
-                email: email
-            }
-        })
-        .done(function(resp) {
-            if (resp > 0) {
-                $('#modal_editar_personal').modal('hide');
-                swal("Datos Actualizados!", "", "success");
-                var dato_buscar = $("#txtbuscar_personal").val();
-                listar_personal_vista(dato_buscar, '1');
-            } else {
-                swal("! Registro no completado!", "", "error");
-            }
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            if (jqXHR.status === 0) {
 
-                alert('Not connect: Verify Network.');
-
-            } else if (jqXHR.status == 404) {
-
-                alert('Requested page not found [404]');
-
-            } else if (jqXHR.status == 500) {
-
-                alert('Internal Server Error [500].');
-
-            } else if (textStatus === 'parsererror') {
-
-                alert('Requested JSON parse failed.');
-
-            } else if (textStatus === 'timeout') {
-
-                alert('Time out error.');
-
-            } else if (textStatus === 'abort') {
-
-                alert('Ajax request aborted.');
-
-            } else {
-
-                alert('Uncaught Error: ' + jqXHR.responseText);
-
-            }
-        })
 }
 
 function revisar_dni_personal() {
@@ -224,29 +213,33 @@ function revisar_dni_personal() {
     var movil = $("#txtmovil").val();
     var correo = $("#txtemail").val();
 
-    if (nombre.length > 0 && apemat.length > 0 && apepat.length > 0 && cargo.length > 0 && movil.length > 0 && correo.length > 0) {} else {
+    if (nombre.length > 0 && apemat.length > 0 && apepat.length > 0 && cargo.length > 0 && movil.length > 0 && correo.length > 0) {
+        $.ajax({
+                url: '../controlador/personal/controlador_verificar_existencia_dni.php',
+                type: 'POST',
+                data: {
+                    dni: dni
+                }
+            })
+            .done(function(resp) {
+                if (resp > 0) {
+                    Registrar_personal();
+                } else {
+                    swal("Lo sentimos el Nro de CIP Ingresado ya esta siendo utilizado por otro personal", "", "warning");
+                }
+            })
+
+
+    } else {
         return swal("Faltan Llenar Datos", "", "info");
+
     }
-    if (dni.length == 0) {
+    if (dni.length < 8) {
         return swal("Faltan Llenar Su Nro de CIP", "", "info");
     }
 
-    $.ajax({
-            url: '../controlador/victima/controlador_verificar_existencia_dni.php',
-            type: 'POST',
-            data: {
-                dni: dni
-            }
-        })
-        .done(function(resp) {
-            var data = JSON.parse(resp);
-            if (data.length <= 0) {
-                Registrar_personal();
 
-            } else {
-                swal("Lo sentimos el Nro de CIP Ingresado ya esta siendo utilizado por otro personal", "", "warning");
-            }
-        })
+
 }
 
 function Registrar_personal() {
