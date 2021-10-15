@@ -51,7 +51,7 @@ session_start();
 					<center>
 					<!--<a href="seguimiento.php" class="btn btn-default" style="box-shadow: 0 0 0 .2rem rgba(0,0,0,0);">Seguimiento Documentario</a><br><br> -->
 					<button onclick="VerificarUsuario()"  class="btn">INGRESAR</button>
-						</center>
+					</center>
 					
 			</div>
 		</div>

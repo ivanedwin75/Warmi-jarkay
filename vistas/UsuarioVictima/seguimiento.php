@@ -37,64 +37,49 @@
 							<li class="selected" data-date="16/01/2014">
 								<h3><b data-lang="comisaria">COMISARÍA</b></h3>
 								<div class="panel3">
-									<h5 ><b data-lang="instructor">Instructor: </b> Leonidas Quispe Luque</h5>
-									<h5 ><b data-lang="grado">Grado: </b> Sub Oficial de Tercera</h5>
-									<h5><b>N° de Oficio a Juzgado: </b> 21024</h5>
-									<h5><b>N° de Oficio a Fiscalía: </b> 21024</h5>
-									<h5 ><b data-lang="riesgo">Nivel de Riesgo: </b> Leve</h5>
-									<center>
-									<button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i>  Copia Simple Acta de Denuncia <br>Verbal / Intervención Policial</button>
-									</center>
+									<div id="listar_comisaria" class=" icon-loading">
+										<i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
+										<div id="nodatos"></div>
+									</div> 
 								</div>
 							</li>
 
 							<li data-date="16/02/2014">
 								<h3><b data-lang="juzgado">JUZGADO</b></h3>
 								<div class="panel3"> 
-									<h5><b data-lang="juez">Juez: </b> Leonidas Quispe Luque</h5>
-									<h5><b data-lang="juzgad">Juzgado: </b> Sub Oficial de Tercera</h5>
-									<h5><b data-lang="expediente">N° de Expediente </b> 21024</h5>
-									<h5><b data-lang="fecha">Fecha de Registro: </b> 17/09/2021</h5>
-									<center>
-									<button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i>  Copia de Demanda Electrónica</button>
-									</center>
+									<div id="listar_juzgado" class=" icon-loading">
+										<i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
+										<div id="nodatos"></div>
+									</div>
 								</div>
 							</li>
 
 							<li data-date="16/03/2014">
 								<h3><b data-lang="fiscalia">FISCALÍA</b></h3>
 								<div class="panel3"> 
-									<h5><b data-lang="fiscal">Fiscal: </b> Leonidas Quispe Luque</h5>
-									<h5><b data-lang="fiscali">Fiscalía: </b> 1era FPPC - Puno</h5>
-									<h5><b data-lang="fecha">Fecha de Registro: </b> 17/09/2021</h5>
+									<div id="listar_fiscalia" class=" icon-loading">
+										<i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
+										<div id="nodatos"></div>
+									</div>
 								</div>
 							</li>
 
 							<li data-date="16/04/2014">
 								<h3><b data-lang="pericia">PERICIAS</b></h3>
 								<div class="panel3"> 
-									<center><h5><u><b data-lang="periciap">Pericia Psicológica  </b></u></center>
-									<h5><b data-lang="npericiap">N° de Pericia Psicológica: </b> ...</h5>
-									<hr>
-									<center><h5><u><b data-lang="certificado">Certificado Médico Legal  </b></u> </center>
-									<h5><b data-lang="ncertificado">N° de Certificado Médico Legal: </b> ...</h5>
-									<h5><b>Atención Facultativa: </b> ...</h5>
-									<h5><b data-lang="incapacidad">Incapacidad Médico Legal: </b> ...</h5>
-									<hr>
-									<center><h5><u><b>Informe Psicológico de CEM  </b></u> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download" ></i></button>	</h5></center>
-									<h5><b>N° de Informe Psicológico de CEM: </b> ...</h5>
-									<hr>
-									<center><h5><u><b>Informe Psicológico de SAU  </b></u> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5></center>
-									<h5><b>N° de Informe Psicológico de SAU: </b> ...</h5>
-									<hr>
-									<center><h5><u><b>Informe Social de CEM:  </b></u> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5></center>
-									<h5><b>N° de Informe Social de CEM: </b> ...</h5>
+									<div id="listar_pericias" class=" icon-loading">
+										<i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
+										<div id="nodatos"></div>
+									</div>
 								</div>
 							</li>
 							<li data-date="16/05/2014">
 								<h3 ><b data-lang="medidas">MEDIDAS</b></h3>
 								<div class="panel3"> 
-								<center><h5><b data-lang="medidasp">Medidas de protección  </b> <button onclick=""  class="btn btn-info" style="padding:0.5px 3px 0.5px 3px"><i class="fa fa-download"></i></button>	</h5><center>
+									<div id="listar_medidas" class=" icon-loading">
+										<i id="loading_almacen" style="margin:auto;display:block; margin-top:60px;"></i>
+										<div id="nodatos"></div>
+									</div>	
 								</div>
 							</li>
 						</ol>
@@ -104,8 +89,11 @@
         </div>
     </div>
 </div>
-        
-<script  src="_recursos/js/seguimiento.js"></script>
+
+<!-- INICIO MODAL -->
+<script  src="_recursos/js/consola_usu_victima.js"></script>
+<script type="text/javascript">listar_comisaria();</script>
+<!--Fin Modal-->
 
 <style type="text/css">
   .contendor_kn{

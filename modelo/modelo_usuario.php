@@ -20,8 +20,8 @@
 					$arreglo[] = $consulta_VU;
 				}
 				return $arreglo;
-				$this->conexion->cerrar();	
 			}
+			$this->conexion->cerrar();
 		}
 		function buscar_adminsitrador($buscar){
 			$sql = "call PA_BUSCARADMINISTRADOR('$buscar')";	

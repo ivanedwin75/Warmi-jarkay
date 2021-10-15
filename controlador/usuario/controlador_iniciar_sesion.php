@@ -1,18 +1,23 @@
 <?php
-$usuario = $_POST['user'];
-$pass = $_POST['pass'];
-$nom = $_POST['nom'];
-$img = $_POST['img'];
-$usu = $_POST['usuario'];
-$codigo_personal=$_POST['codigo_personal'];
-$idusuario = $_POST['idusuario'];
+require_once '../../FirePHPCore/FirePHP.class.php';
+ob_start();
+$firephp = FirePHP::getInstance(TRUE);
+
+$usuario = $_POST['user']; //usuario
+$pass = $_POST['pass']; //password
+$usu = $_POST['t_usu']; //tipo de usuario
+$idusu = $_POST['idusu']; //id usuario
+$nom = $_POST['nom']; //nombre completo
+
+	//$firephp->log($usuario);
+	//$firephp->log($pass);
+	//$firephp->log($nom);
+	//$firephp->log($usu);
+
 session_start();
 $_SESSION['usuario'] = $usuario;
 $_SESSION['pass'] = $pass;
-$_SESSION['nombre_usuario'] = $nom;
-$_SESSION['imagen_usuario'] = $img; 
-$_SESSION['usu'] = $usu; 
-$_SESSION['codigo_personal']=$codigo_personal;
-$_SESSION['codigo_usuario']=$idusuario;
+$_SESSION['usu'] = $usu;
+$_SESSION['idusu'] = $idusu;
+$_SESSION['nombre_usuario'] = $nom; 
 ?>
-

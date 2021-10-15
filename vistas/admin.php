@@ -30,12 +30,10 @@ session_start();
    <link rel="stylesheet" href="_recursos/select2/dist/css/select2.min.css">
 </head>
 <body>
-  <!-- <?php echo $_SESSION['usuario']; ?>-->
-  <!--<?php echo $_SESSION['usu']; ?>-->
-  
-  <input type="text" value="<?php echo $_SESSION['codigo_personal']; ?>"  hidden="true" id="txtcodigo_principal_usuario">
+
+  <input type="text" value="<?php echo $_SESSION['idusu']; ?>"  hidden="true" id="txtcodigo_principal_usuario">
   <input type="text" value="<?php echo $_SESSION['nombre_usuario']; ?>" hidden="true" id="txtnombre_principal_usuario">
-  <input type="text" value="<?php echo $_SESSION['codigo_usuario']; ?>" style="display: none" id="txtnombre_codigo_usuario">
+  <input type="text" value="<?php echo $_SESSION['usu']; ?>" style="display: none" id="txtnombre_codigo_usuario">
   
   
 
@@ -73,7 +71,7 @@ session_start();
         
         
         
-        <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
+        <?php if ($_SESSION['usu']=="1") {        //sesion de administrador (id_tipo_usuario)
         ?>
           <li class="dropdown">
             <a class="nav-link count-indicator dropdown-toggle"  id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -111,7 +109,7 @@ session_start();
                 <i class="on md b-white bottom"></i>
               </span>-->
               <span class="hidden-sm hidden-md">
-                <strong><?php echo $_SESSION['usu'] ?></strong> : <label id="txtnombre_usuario"></label></span>
+                <strong><?php echo $_SESSION['nombre_usuario'] ?></strong> : <label id="txtnombre_usuario"></label></span>
               </span> <b class="caret"></b>
             </a>
             <!-- dropdown -->
@@ -151,7 +149,7 @@ session_start();
               </a>
               <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><label id="txtnombre_usuario1"></label></span></strong> 
-                </span> <span class="text-muted text-xs block"><?php echo $_SESSION['usu']?> <b class="caret"></b></span> </span>
+                </span> <span class="text-muted text-xs block"><?php echo $_SESSION['nombre_usuario']?> <b class="caret"></b></span> </span>
               </a>
               <ul class="dropdown-menu animated fadeInRight w hidden-folded">
                 <li class="wrapper b-b m-b-sm bg-info m-t-n-xs">
@@ -177,7 +175,7 @@ session_start();
               <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                 <center><span translate="aside.nav.HEADER">PANEL ADMINISTRATIVO</span></center>
 
-                <?php if ($_SESSION['usu']=="VICTIMA") {        
+                <?php if ($_SESSION['usu']=="2") {    //usuario victima id_tipo_usuario = 2    
                 ?>
                   <hr><center><span style="color:white"> Presione el botón para cambiar de Idioma <br>  Español | Aymara | Quechua</span></center>
                   <a href="#" id="translate" style="background:green" data-text="Español,Aymara,Quechua" data-file="es,ay,qe" data-index="1">Español</a>
@@ -194,7 +192,7 @@ session_start();
               </a>
               </li>
               
-            <?php if ($_SESSION['usu']=="VICTIMA") {        
+            <?php if ($_SESSION['usu']=="2") {        
             ?>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','UsuarioVictima/seguimiento.php');">      
                 <a ui-sref="app.dashboard-v2" >
@@ -227,7 +225,7 @@ session_start();
 
             
             
-            <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
+            <?php if ($_SESSION['usu']=="1") {        
             ?>
               <li ui-sref-active="active" onclick="cargar_contenido('main-content','Victima/vista_registrar_victima.php');">      
                 <a ui-sref="app.dashboard-v2" >
@@ -267,7 +265,7 @@ session_start();
     <!-- / menu -->
 
     <!-- content -->
-    <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
+    <?php if ($_SESSION['usu']=="1") {        
     ?>
       <div class="app-content" id="main-content">
         <div class="contendor_kn">
@@ -283,7 +281,7 @@ session_start();
       <?php }
       ?>
 
-    <?php if ($_SESSION['usu']=="VICTIMA") {        
+    <?php if ($_SESSION['usu']=="2") {        
     ?>
       <div class="app-content" id="main-content">
         <div class="contendor_kn">
@@ -323,7 +321,7 @@ session_start();
       </div>
     </div>
     <!-- / aside right -->
-    <?php if ($_SESSION['usu']=="ADMINISTRADOR") {        
+    <?php if ($_SESSION['usu']=="1") {        
     ?>
 
     <!-- footer -->
@@ -477,7 +475,7 @@ session_start();
               <div class="panel-body">
                 <form method="POST" id="update-form-administrador">
                   <div class="col-md-6">
-                    <input type="text" id="personal_id" name="personal_id" hidden value="<?php echo $_SESSION['codigo_personal']?>" >
+                    <input type="text" id="personal_id" name="personal_id" hidden value="<?php echo $_SESSION['idusu']?>" >
                     <label  class="col-sm-4 control-label">Nombres </label>
                     <div class="col-sm-8">
                       <input type="text" class="form-control" onkeypress="return soloLetras(event)" name="nombres_personal" id="nombres_personal" placeholder="Ingrese Nombres" maxlength="">
