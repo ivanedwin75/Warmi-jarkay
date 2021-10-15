@@ -40,7 +40,7 @@
 			WHERE denuncia.victima_id_victima = '$id_victima'";
             
 			$resultado = $this->conexion->conexion->query($sql);
-			$arreglo = array();
+			//$arreglo = array();
 			$consulta_VU=mysqli_fetch_array($resultado);
 			return $consulta_VU;
 			
