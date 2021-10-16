@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-12"><br>
           <label>ESTADO:</label>
-          <input class="form-control" readonly value="ACTIVO" type="text" style="color: rgb(25,25,51); background-color: rgb(255,255,255);solid 5px;color:#9B0000; text-align:center;font-weight: bold;" id="txtestado">
+          <input class="form-control" readonly value="ACTIVO" type="text" style="color: rgb(25,25,51); background-color: rgb(255,255,255);solid: 5px;color:#9B0000; text-align:center;font-weight: bold;" id="txtestado">
         </div>
         <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
           <div class="col-md-12">

@@ -391,7 +391,7 @@ session_start();
       text-align-last:center;
     }
     .select2-container--default.select2-container--disabled .select2-selection--single{
-      color: rgb(25,25,51); background-color: rgb(255,255,255);solid 5px;
+      color: rgb(25,25,51); background-color: rgb(255,255,255);
     }
     .modal-open .select2-container--open {
       z-index: 999999 !important; width:100% !important; 

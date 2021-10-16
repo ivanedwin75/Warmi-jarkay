@@ -16,7 +16,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function listar_TipoDocumento($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {
@@ -40,7 +40,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function listar_combotipodocumento(){
 				$sql = "SELECT * FROM tipo_documento WHERE tipodo_estado = 'ACTIVO' ORDER BY tipodocumento_cod DESC";

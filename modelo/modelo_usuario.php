@@ -43,7 +43,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function editar_personal($codigo,$nombre,$apePat,$apeMat,$email,$telefo,$movil,$direc,$fecha,$dni){
 			$sql ="call PA_EDITARPERSONAL('$codigo','$nombre','$apePat','$apeMat','$email','$telefo','$movil','$direc','$fecha','$dni')";
@@ -52,7 +52,7 @@
 			}else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 	}
 ?>

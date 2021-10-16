@@ -236,7 +236,7 @@ class Modelo_institucion{
 				return 0;
 				
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->conectar();
 		}
 }
 ?>

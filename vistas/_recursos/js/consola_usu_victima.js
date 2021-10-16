@@ -296,48 +296,48 @@ function listar_comisaria() {
             var cadena_medidas = "";
 
 
-            if (resp.length > 0) {
-                var data = JSON.parse(resp);
+            //if (resp.length >= 0) {
+            var data = JSON.parse(resp);
 
-                cadena_comisaria += "<h5 ><b data-lang='instructor'>Instructor: </b>" + data[24] + "</h5>";
-                cadena_comisaria += "<h5><b>N° de Oficio a Fiscalía: </b>" + data[1] + "</h5>";
-                cadena_comisaria += "<h5><b>N° de Oficio a Juzgado: </b>" + data[2] + "</h5>";
-                cadena_comisaria += "<h5 ><b data-lang='riesgo'>Nivel de Riesgo: </b>" + data[3] + "</h5>";
-                cadena_comisaria += "<center><button class='btn btn-info' style='padding:0.5px 3px 0.5px 3px'><i class='fa fa-download'></i> <a href='../../controlador/institucion/" + data[11] + "' download='Acta_denuncia'>Copia Simple Acta de Denuncia <br>Verbal / Intervención Policial</a> </button></center>";
+            cadena_comisaria += "<h5 ><b data-lang='instructor'>Instructor: </b>" + data[24] + "</h5>";
+            cadena_comisaria += "<h5><b>N° de Oficio a Fiscalía: </b>" + data[1] + "</h5>";
+            cadena_comisaria += "<h5><b>N° de Oficio a Juzgado: </b>" + data[2] + "</h5>";
+            cadena_comisaria += "<h5 ><b data-lang='riesgo'>Nivel de Riesgo: </b>" + data[3] + "</h5>";
+            cadena_comisaria += "<center><button class='btn btn-info' style='padding:0.5px 3px 0.5px 3px'><i class='fa fa-download'></i> <a href='../../controlador/institucion/" + data[11] + "' download='Acta_denuncia.pdf'>Copia Simple Acta de Denuncia <br>Verbal / Intervención Policial</a> </button></center>";
 
-                $("#listar_comisaria").html(cadena_comisaria);
+            $("#listar_comisaria").html(cadena_comisaria);
 
-                cadena_juzgado += "<h5><b data-lang='juez'>Juez: </b>" + data[9] + "</h5>";
-                cadena_juzgado += "<h5><b data-lang='juzgad'>Juzgado: </b>" + data[8] + "</h5>";
-                cadena_juzgado += "<h5><b data-lang='expediente'>N° de Expediente </b>" + data[7] + "</h5>";
-                cadena_juzgado += "<h5><b data-lang='fecha'>Fecha de Registro: </b>" + data[10] + "</h5>";
-                cadena_juzgado += "<center><button class='btn btn-info' style='padding:0.5px 3px 0.5px 3px'><i class='fa fa-download'></i> <a href='../../controlador/institucion/" + data[12] + "' download='Demanda_electronica'>Copia de Demanda Electrónica</a> </button></center>";
+            cadena_juzgado += "<h5><b data-lang='juez'>Juez: </b>" + data[9] + "</h5>";
+            cadena_juzgado += "<h5><b data-lang='juzgad'>Juzgado: </b>" + data[8] + "</h5>";
+            cadena_juzgado += "<h5><b data-lang='expediente'>N° de Expediente </b>" + data[7] + "</h5>";
+            cadena_juzgado += "<h5><b data-lang='fecha'>Fecha de Registro: </b>" + data[10] + "</h5>";
+            cadena_juzgado += "<center><button class='btn btn-info' style='padding:0.5px 3px 0.5px 3px'><i class='fa fa-download'></i> <a href='../../controlador/institucion/" + data[12] + "' download='Demanda_electronica.pdf'>Copia de Demanda Electrónica</a> </button></center>";
 
-                $("#listar_juzgado").html(cadena_juzgado);
+            $("#listar_juzgado").html(cadena_juzgado);
 
-                cadena_fiscalia += "<h5><b data-lang='fiscal'>Fiscal: </b>" + data[5] + "</h5>";
-                cadena_fiscalia += "<h5><b data-lang='fiscali'>Fiscalía: </b>" + data[4] + "</h5>";
-                cadena_fiscalia += "<h5><b data-lang='fecha'>Fecha de Registro: </b>" + data[6] + "</h5>";
-                $("#listar_fiscalia").html(cadena_fiscalia);
+            cadena_fiscalia += "<h5><b data-lang='fiscal'>Fiscal: </b>" + data[5] + "</h5>";
+            cadena_fiscalia += "<h5><b data-lang='fiscali'>Fiscalía: </b>" + data[4] + "</h5>";
+            cadena_fiscalia += "<h5><b data-lang='fecha'>Fecha de Registro: </b>" + data[6] + "</h5>";
+            $("#listar_fiscalia").html(cadena_fiscalia);
 
-                cadena_pericias += "<center><h5 ><u><b data-lang='periciap'>Pericia Psicológica  </b></u></center>";
-                cadena_pericias += "<h5><b data-lang='npericiap'>N° de Pericia Psicológica: </b> " + data[13] + "</h5><hr>";
-                cadena_pericias += "<center><h5><u><b data-lang='certificado'>Certificado Médico Legal  </b></u> </center>";
-                cadena_pericias += "<h5><b data-lang='ncertificado'>N° de Certificado Médico Legal: </b> " + data[14] + "</h5>";
-                cadena_pericias += "<h5><b>Atención Facultativa: </b> " + data[15] + "</h5>";
-                cadena_pericias += "<h5><b data-lang='incapacidad'>Incapacidad Médico Legal: </b> " + data[16] + "</h5><hr>";
-                cadena_pericias += "<center><h5 ><i class='fa fa-download'></i><u><a style='color:blue' href='../../controlador/institucion/" + data[18] + "' download='Informe_psicologico_CEM'>Informe Psicológico de CEM </a></u></h5></center>";
-                cadena_pericias += "<h5><b>N° de Informe Psicológico de CEM: </b> " + data[17] + "</h5><hr>";
-                cadena_pericias += "<center><h5><i class='fa fa-download'></i><u><a style='color:blue' href='../../controlador/institucion/" + data[20] + "' download='Informe_psicologico_SAU'>Informe Psicológico de SAU: </a></u></h5></center>";
-                cadena_pericias += "<h5><b>N° de Informe Psicológico de SAU: </b> " + data[19] + "</h5><hr>";
-                cadena_pericias += "<center><h5><i class='fa fa-download'></i><u><a style='color:blue' href='../../controlador/institucion/" + data[22] + "' download='Informe_Social_CEM'>Informe Social de CEM: </a></u></h5></center>";
-                cadena_pericias += "<h5><b>N° de Informe Social de CEM: </b> " + data[21] + "</h5>";
-                $("#listar_pericias").html(cadena_pericias);
+            cadena_pericias += "<center><h5 ><u><b data-lang='periciap'>Pericia Psicológica  </b></u></center>";
+            cadena_pericias += "<h5><b data-lang='npericiap'>N° de Pericia Psicológica: </b> " + data[13] + "</h5><hr>";
+            cadena_pericias += "<center><h5><u><b data-lang='certificado'>Certificado Médico Legal  </b></u> </center>";
+            cadena_pericias += "<h5><b data-lang='ncertificado'>N° de Certificado Médico Legal: </b> " + data[14] + "</h5>";
+            cadena_pericias += "<h5><b>Atención Facultativa: </b> " + data[15] + "</h5>";
+            cadena_pericias += "<h5><b data-lang='incapacidad'>Incapacidad Médico Legal: </b> " + data[16] + "</h5><hr>";
+            cadena_pericias += "<center><h5 ><i class='fa fa-download'></i><u><a style='color:blue' href='../../controlador/institucion/" + data[18] + "' download='Informe_psicologico_CEM.pdf'>Informe Psicológico de CEM </a></u></h5></center>";
+            cadena_pericias += "<h5><b>N° de Informe Psicológico de CEM: </b> " + data[17] + "</h5><hr>";
+            cadena_pericias += "<center><h5><i class='fa fa-download'></i><u><a style='color:blue' href='../../controlador/institucion/" + data[20] + "' download='Informe_psicologico_SAU.pdf'>Informe Psicológico de SAU: </a></u></h5></center>";
+            cadena_pericias += "<h5><b>N° de Informe Psicológico de SAU: </b> " + data[19] + "</h5><hr>";
+            cadena_pericias += "<center><h5><i class='fa fa-download'></i><u><a style='color:blue' href='../../controlador/institucion/" + data[22] + "' download='Informe_Social_CEM.pdf'>Informe Social de CEM: </a></u></h5></center>";
+            cadena_pericias += "<h5><b>N° de Informe Social de CEM: </b> " + data[21] + "</h5>";
+            $("#listar_pericias").html(cadena_pericias);
 
-                cadena_medidas += "<center><h5><i class='fa fa-download'></i><u><a style='color:blue' data-lang='medidasp'href='../../controlador/institucion/" + data[22] + "' download='Medidas_proteccion'>Medidas de protección  </a></u></h5><center>"
-                $("#listar_medidas").html(cadena_medidas);
+            cadena_medidas += "<center><h5><i class='fa fa-download'></i><u><a style='color:blue' data-lang='medidasp'href='../../controlador/institucion/" + data[22] + "' download='Medidas_proteccion.pdf'>Medidas de protección  </a></u></h5><center>"
+            $("#listar_medidas").html(cadena_medidas);
 
-            }
+            //}
         },
     });
 }

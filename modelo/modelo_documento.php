@@ -28,7 +28,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function Editar_institucion($codigo,$institucion,$tipo,$estado){
 			$sql = "call PA_EDITARINSTITUCION('$codigo','$institucion','$tipo','$estado')";
@@ -38,7 +38,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar()();
 		}
 		function listar_documento($valor, $inicio=FALSE,$limite=FALSE){
 			if ($inicio!==FALSE && $limite!==FALSE) {
@@ -99,7 +99,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 		function Rechazado_documento($iddocumento){
 			$sql = "UPDATE documento SET doc_estado = 'RECHAZADO' WHERE documento_cod = '$iddocumento'";
@@ -109,7 +109,7 @@
 			else{
 				return 0;
 			}
-			$this->conexion->Cerrar_Conexion();
+			$this->conexion->cerrar();
 		}
 	}
 ?>
