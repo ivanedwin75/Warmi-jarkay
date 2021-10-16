@@ -11,7 +11,7 @@
 
 
 	$valid_extensions = array('pdf'); // valid extensions    
-	$path = 'Archivo/'; // upload directory
+	$path = '../../Archivo/'; // upload directory
 
     if($_FILES['arch_den_scan'] || $_FILES['arch_dem_elec'] || 
 		$_FILES['arch_cem'] || $_FILES['arch_saw'] || $_FILES['arch_social_cem'] || 

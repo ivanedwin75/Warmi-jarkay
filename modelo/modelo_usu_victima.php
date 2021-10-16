@@ -34,7 +34,7 @@
 			denuncia.Social_cem_label,
 			denuncia.Social_cem,
 			denuncia.Medidas_proteccion,
-			efectivos.Dni 
+			CONCAT_WS(' ', efectivos.Cargo, efectivos.Ap_paterno, efectivos.Ap_materno, efectivos.Nombres)
 			FROM denuncia INNER JOIN efectivos 
 			ON denuncia.efectivos_id_efectivos = efectivos.id_efectivos 
 			WHERE denuncia.victima_id_victima = '$id_victima'";
