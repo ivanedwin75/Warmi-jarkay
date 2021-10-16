@@ -11,7 +11,7 @@
 
 
 	$valid_extensions = array('pdf'); // valid extensions    
-	$path = '../../Archivo/'; // upload directory
+	$path = 'Archivo/'; // upload directory
 
     if($_FILES['arch_den_scan'] || $_FILES['arch_dem_elec'] || 
 		$_FILES['arch_cem'] || $_FILES['arch_saw'] || $_FILES['arch_social_cem'] || 
@@ -24,7 +24,7 @@
 				$arch_den_scan_final = rand(1000,1000000).$arch_den_scan;
 				if(in_array($arch_den_scan_ext, $valid_extensions)){
 					$arch_den_scan_path = $path.strtolower($arch_den_scan_final);
-					move_uploaded_file($arch_den_scan_tmp,$arch_den_scan_path);
+					move_uploaded_file($arch_den_scan_tmp, "../../../$arch_den_scan_path");
 				}
 			}
 			else{
@@ -39,7 +39,7 @@
 				$arch_dem_elec_final = rand(1000,1000000).$arch_dem_elec;
 				if (in_array($arch_dem_elec_ext, $valid_extensions)){
 					$arch_dem_elec_path = $path.strtolower($arch_dem_elec_final); 
-					move_uploaded_file($arch_dem_elec_tmp,$arch_dem_elec_path);
+					move_uploaded_file($arch_dem_elec_tmp, "../../../$arch_dem_elec_path");
 				}
 			}
 			else{
