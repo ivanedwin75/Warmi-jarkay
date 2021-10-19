@@ -49,6 +49,7 @@ function listar_institucion_vista(valor, pagina) {
                 cadena += "</tbody>";
                 cadena += "</table>";
                 $("#listar_institucion_tabla").html(cadena);
+
                 var totaldatos = datos[1];
                 var numero_paginas = Math.ceil(totaldatos / 5);
                 var paginar = "<ul class='pagination'>";
@@ -59,6 +60,7 @@ function listar_institucion_vista(valor, pagina) {
                     paginar += "<li class='disabled'><a href='javascript:void(0)'>&laquo;</a></li>";
                     paginar += "<li class='disabled'><a href='javascript:void(0)'>Anterior</a></li>";
                 }
+
                 limite = 10;
                 div = Math.ceil(limite / 2);
                 pagina_inicio = (pagina > div) ? (pagina - div) : 1;
@@ -68,6 +70,7 @@ function listar_institucion_vista(valor, pagina) {
                 } else {
                     pagina_fin = numero_paginas;
                 }
+
                 for (i = pagina_inicio; i <= pagina_fin; i++) {
                     if (i == pagina) {
                         paginar += "<li class='active'><a href='javascript:void(0)'>" + i + "</a></li>";
@@ -83,7 +86,7 @@ function listar_institucion_vista(valor, pagina) {
                     paginar += "<li class='disabled'><a href='javascript:void(0)'>&raquo;</a></li>";
                 }
                 paginar += "</ul>";
-                $("#paginador_institucion_vista").html(paginar);
+                $("#paginador_institucion_tabla").html(paginar);
             } else {
                 var cadena = "";
                 cadena += "<table  class='table table-condensed jambo_table'>";

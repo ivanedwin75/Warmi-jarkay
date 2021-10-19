@@ -88,7 +88,7 @@ function listar_area_vista(valor, pagina) {
                     paginar += "<li class='disabled'><a href='javascript:void(0)'>&raquo;</a></li>";
                 }
                 paginar += "</ul>";
-                $("#paginador_area_vista").html(paginar);
+                $("#paginador_area_tabla").html(paginar);
             } else {
                 var cadena = "";
                 cadena += "<table  class='table table-condensed jambo_table'>";
@@ -232,6 +232,9 @@ function registrar_area() {
             .done(function(resp) {
                 if (resp > 0) {
                     swal("Datos Registrados!", "", "success")
+                        .then((value) => {
+                            $("#main-content").load("Area/vista_area_listar.php");
+                        });
                 } else {
                     swal("! Lo sentimos el Asesor ya fue registrado con anterioridad!", "", "error");
                 }

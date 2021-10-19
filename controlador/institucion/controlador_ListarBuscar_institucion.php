@@ -2,14 +2,10 @@
 require_once '../../FirePHPCore/FirePHP.class.php';
 ob_start();
 $firephp = FirePHP::getInstance(TRUE);
-
-//print_r($_FILES);
-//echo $tmp;
-  //echo "<img src='$path' />";
 $firephp->log("Esta funcionando LISTAR");
 	  include '../../modelo/modelo_institucion.php';
     $boton = $_POST['boton'];
-    $boton = 'buscar';
+    //$boton = 'buscar';
     if($boton==='buscar'){
       $inicio = 0;
       $limite = 5;
@@ -23,6 +19,7 @@ $firephp->log("Esta funcionando LISTAR");
       $a = $instancia->listar_institucion($valor);
       $b = count($a);
       $c = $instancia->listar_institucion($valor,$inicio,$limite);
+      $firephp->log($b);
       echo json_encode($c)."*".$b;
     }
 ?>
