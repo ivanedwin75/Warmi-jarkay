@@ -19,7 +19,7 @@ $firephp->log("Esta funcionando LISTAR");
       $a = $instancia->listar_institucion($valor);
       $b = count($a);
       $c = $instancia->listar_institucion($valor,$inicio,$limite);
-      $firephp->log($b);
+      $firephp->log($a);
       echo json_encode($c)."*".$b;
     }
 ?>

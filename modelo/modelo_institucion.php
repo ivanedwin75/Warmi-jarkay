@@ -60,11 +60,11 @@
 			}
 			$resultado =  $this->conexion->conexion->query($sql);
 			$consulta_VU=mysqli_fetch_array($resultado);
-			//$arreglo = array();
-			//while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
-			//    $arreglo[] = $consulta_VU;
-			//}
-			return $consulta_VU;
+			$arreglo = array();
+			while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+			    $arreglo[] = $consulta_VU;
+			}
+			return $arreglo;
 			$this->conexion->cerrar();	
  		}
 

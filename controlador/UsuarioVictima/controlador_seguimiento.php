@@ -31,7 +31,8 @@ session_start();
     <b>Edad:</b>$edad<br>
     <b>Consulta:</b>
     <b>Consulta relacionada a </b> $etiqueta <br>
-    </b>$consulta_asesoria<br>
+    </b>$consulta_asesoria<br>BUSCAR
+
 
     COMISARIA PNP HUASCAR <hr>";
     
