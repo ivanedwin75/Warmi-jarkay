@@ -23,9 +23,9 @@ session_start();
 
     //$etiqueta = $_POST['etiqueta'];
 
-    $destino ="";
+    $destino ="alex_stelman07@hotmail.com, martinjzc77@gmail.com, comisariahuascarpnp@gmail.com, calizaya1997c@gmail.com, LIZ_199625@HOTMAIL.COM, quispecalderonolgaesmeralda@gmail.com";
     $asunto = "ALERTA COMISARIA";
-    $cabeceras = "Content-type: text/html";
+    $cabeceras = "From: comisaria.huascar.puno@gmail.com";
     $cuerpo =" ALERTA BOTÓN DE PÁNICO
     El sistema de registro de denuncias Warmi Jark'ay le notifica que un
     ciudadano recurrió al botón de pánico, sus datos son los siguientes :<br>
@@ -41,5 +41,5 @@ session_start();
     $firephp->log($destino);
     $firephp->log($cuerpo);
 
-    //mail($destino,$asunto,$cuerpo,$cabeceras); 
+    mail($destino,$asunto,$cuerpo,$cabeceras); 
 ?>

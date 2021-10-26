@@ -18,9 +18,9 @@ session_start();
     $nombre = $consulta[0][0];
     $edad = $consulta[0][1];
 
-    $destino ="";
+    $destino ="centenoeno@gmail.com, luyde101213@gmail.com, alex_stelman07@hotmail.com";
     $asunto = "ALERTA COMISARIA";
-    $cabeceras = "Content-type: text/html";
+    $cabeceras = "From: comisaria.huascar.puno@gmail.com";
     $cuerpo ="Hola, el sistema de registro de denuncias Warmi Jark'ay le notifica que un
     usuario solicitó la copia simple de su denuncia verbal, comuníquese con el ciudadano y sirvase a atender su pedido.:<br>
     <b>Nombre:</b>$nombre<br>
@@ -33,5 +33,5 @@ session_start();
     $firephp->log($destino);
     $firephp->log($cuerpo);
 
-    //mail($destino,$asunto,$cuerpo,$cabeceras);  
+    mail($destino,$asunto,$cuerpo,$cabeceras);  
 ?>

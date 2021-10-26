@@ -21,9 +21,9 @@ session_start();
     $nombre = $consulta[0][0];
     $edad = $consulta[0][1];
 
-    $destino ="";
+    $destino ="sanchz15@hotmail.com";
     $asunto = "ALERTA COMISARIA";
-    $cabeceras = "Content-type: text/html";
+    $cabeceras = "From: comisaria.huascar.puno@gmail.com";
     $cuerpo ="Hola, el sistema de registro de denuncias Warmi Jark'ay le notifica que un
     usuario requiere de asesoría legal, comuníquese con el ciudadano :<br>
     <b>Nombre:</b>$nombre<br>

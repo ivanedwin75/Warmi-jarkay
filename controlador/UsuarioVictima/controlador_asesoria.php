@@ -1,4 +1,5 @@
 <?php
+//CONTROLADOR DE SEGUIMIENTO!!!
 require_once '../../FirePHPCore/FirePHP.class.php';
 ob_start();
 $firephp = FirePHP::getInstance(TRUE);
