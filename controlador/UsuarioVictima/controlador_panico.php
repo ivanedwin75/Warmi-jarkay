@@ -1,49 +1,45 @@
-<link type="text/css" rel="stylesheet" href="_recursos/input-file/css/disenio_input.css">
-<div class="contendor_kn">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <center><h3><b>BOTÓN DE PÁNICOssss</b></h3></center>
-    </div>
-    <div class="panel-body">     
-        
-  </div>
-  <div class="panel panel-default">
-        <div class="panel-body">
-            <div style="text-align: center;" align="center">
-            <img class="imagen" style="text-align: center;" align="center" src="imagen/ind_panico.png">
-            </div>
-        </div>  
-    </div>
-</div>
-<script type="text/javascript">
-</script>
-<script type="text/javascript" src="_recursos/js/consola_victima.js"></script>
+<?php
+//Controlador BOTON DE PANICO
+require_once '../../FirePHPCore/FirePHP.class.php';
+ob_start();
+$firephp = FirePHP::getInstance(TRUE);
+session_start();
 
-<style type="text/css">
-  .contendor_kn{
-    padding: 10px;
-  }
-</style>
-<style type="text/css">
-    label{
-      font-weight:bold;
-    }
-    .select2{
-      font-weight:bold;
-      text-align-last:center;
-    }
-    button{
-    font-weight:bold;
+    $id_victima = $_SESSION['idusu']; // id de la victima tabla victima
+        $firephp->log($id_victima);
+
+	include '../../modelo/modelo_usu_victima.php';
+    $MC = new Modelo_usu_victima();
+    $consulta = $MC->get_btn_panic($id_victima);
+        $firephp->log($consulta);
+
+    $nombre = $consulta[0][0];
+    $dni = $consulta[0][1];
+    $edad = $consulta[0][2];
+    $movil = $consulta[0][3];
+    $civil = $consulta[0][4];
+    $direcc = $consulta[0][5];
+
+
+    //$etiqueta = $_POST['etiqueta'];
+
+    $destino ="";
+    $asunto = "ALERTA COMISARIA";
+    $cabeceras = "Content-type: text/html";
+    $cuerpo =" ALERTA BOTÓN DE PÁNICO
+    El sistema de registro de denuncias Warmi Jark'ay le notifica que un
+    ciudadano recurrió al botón de pánico, sus datos son los siguientes :<br>
+    <b>Nombre:</b>$nombre<br>
+    <b>DNI :</b>$dni<br>
+    <b>Edad:</b>$edad<br>
+    <b>Celular:</b>$movil<br>
+    <b>Estado civil:</b>$civil<br>
+    <b>Dirección:</b>$direcc<br>
+
+    COMISARIA PNP HUASCAR <hr>";
     
-    }
-    select{
-       font-weight:bold;
-      text-align-last:center;
-    }
-    .select2-container--default.select2-container--disabled .select2-selection--single{
-      color: rgb(25,25,51); background-color: rgb(255,255,255);solid 5px;
-    }
-    .modal-open .select2-container--open {
-      z-index: 999999 !important; width:100% !important; 
-    }
-</style>
+    $firephp->log($destino);
+    $firephp->log($cuerpo);
+
+    //mail($destino,$asunto,$cuerpo,$cabeceras); 
+?>

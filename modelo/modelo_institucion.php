@@ -59,11 +59,12 @@
 				where victima.Dni like '".$valor."%' ORDER BY victima.Dni DESC";
 			}
 			$resultado =  $this->conexion->conexion->query($sql);
-			$arreglo = array();
-			while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
-			    $arreglo[] = $consulta_VU;
-			}
-			return $arreglo;
+			$consulta_VU=mysqli_fetch_array($resultado);
+			//$arreglo = array();
+			//while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+			//    $arreglo[] = $consulta_VU;
+			//}
+			return $consulta_VU;
 			$this->conexion->cerrar();	
  		}
 

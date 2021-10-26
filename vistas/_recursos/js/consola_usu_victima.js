@@ -342,9 +342,214 @@ function listar_comisaria() {
     });
 }
 
-function downloadURI(uri, name) {
-    var link = document.createElement("a");
-    link.download = name;
-    link.href = uri;
-    link.click();
+function limpiar_copia_denuncia() {
+    $('#txtdni').val("");
+    $('#txtmovil').val("");
+    $('#txtdireccion').val("");
+    $('#txtreferencia').val("");
+    //$("#main-content").load("UsuarioVictima/copia_denuncia.php");
+
+}
+
+function copia_denuncia() {
+    var dni = $('#txtdni').val();
+    var movil = $('#txtmovil').val();
+    var direccion = $('#txtdireccion').val();
+    var referencia = $('#txtreferencia').val();
+
+    if (dni.length > 0 && movil.length > 0 && direccion.length > 0 && referencia.length > 0) {
+        $.ajax({
+                url: '../controlador/UsuarioVictima/controlador_copia_denuncia.php',
+                type: 'POST',
+                data: {
+                    dni: dni,
+                    movil: movil,
+                    direccion: direccion,
+                    referencia: referencia
+                }
+            })
+            .success(function() {
+                //if (resp > 0) {
+                //$('#modal_editar_personal').modal('hide');
+                limpiar_copia_denuncia();
+                swal("Datos Enviados, en breve se comunicarán con Ud.!", "", "success")
+                    .then((value) => {
+                        $("#main-content").load("UsuarioVictima/copia_denuncia.php");
+                        $('#Modal_mensaje').modal('close');
+                    });
+                //var dato_buscar = $("#txtbuscar_personal").val();
+                //listar_personal_vista(dato_buscar, '1');
+                //} else {
+                //swal("! Registro no completado!", "", "error");
+                //}
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect: Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found [404]');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                } else if (textStatus === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (textStatus === 'timeout') {
+                    alert('Time out error.');
+                } else if (textStatus === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+                }
+            })
+
+    } else {
+        return swal("Falta Llenar Datos", "", "info");
+    }
+}
+
+var etiq;
+
+function get_etiqueta(palabra) {
+    etiq = palabra;
+}
+
+
+function asesoria() {
+    var consulta = $('#consulta_alimentos').val();
+    var movil = $('#movil_alimentos').val();
+    var etiqueta = etiq;
+
+    if (consulta.length > 0 && movil.length > 0) {
+        $.ajax({
+                url: '../controlador/UsuarioVictima/controlador_seguimiento.php',
+                type: 'POST',
+                data: {
+                    consulta: consulta,
+                    movil: movil,
+                    etiqueta: etiqueta
+                }
+            })
+            .success(function() {
+                //if (resp > 0) {
+                //$('#modal_editar_personal').modal('hide');
+                //limpiar_copia_denuncia();
+                swal("Datos Enviados, en breve se comunicarán con Ud.!", "", "success")
+                    .then((value) => {
+                        $("#main-content").load("UsuarioVictima/asesoria.php");
+                        $('#Modal_mensaje').modal('close');
+                    });
+                //var dato_buscar = $("#txtbuscar_personal").val();
+                //listar_personal_vista(dato_buscar, '1');
+                //} else {
+                //swal("! Registro no completado!", "", "error");
+                //}
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect: Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found [404]');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                } else if (textStatus === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (textStatus === 'timeout') {
+                    alert('Time out error.');
+                } else if (textStatus === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+                }
+            })
+
+    } else {
+        return swal("Falta Llenar Datos", "", "info");
+    }
+}
+
+function asesoria_psico() {
+    var movil = $('#movil_psico').val();
+    var etiqueta = etiq;
+
+    if (movil.length > 0) {
+        $.ajax({
+                url: '../controlador/UsuarioVictima/controlador_seguimiento_psico.php',
+                type: 'POST',
+                data: {
+                    movil: movil,
+                    etiqueta: etiqueta
+                }
+            })
+            .success(function() {
+                //if (resp > 0) {
+                //$('#modal_editar_personal').modal('hide');
+                //limpiar_copia_denuncia();
+                swal("Datos Enviados, en breve se comunicarán con Ud.!", "", "success")
+                    .then((value) => {
+                        $("#main-content").load("UsuarioVictima/asesoria.php");
+                        $('#Modal_mensaje').modal('close');
+                    });
+                //var dato_buscar = $("#txtbuscar_personal").val();
+                //listar_personal_vista(dato_buscar, '1');
+                //} else {
+                //swal("! Registro no completado!", "", "error");
+                //}
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect: Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found [404]');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                } else if (textStatus === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (textStatus === 'timeout') {
+                    alert('Time out error.');
+                } else if (textStatus === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+                }
+            })
+
+    } else {
+        return swal("Falta Llenar Datos", "", "info");
+    }
+}
+
+
+function panic_button() {
+    $.ajax({
+            url: '../controlador/UsuarioVictima/controlador_panico.php',
+            type: 'POST',
+            data: {}
+        })
+        .success(function() {
+            //if (resp > 0) {
+            //$('#modal_editar_personal').modal('hide');
+            //swal("Datos Enviados, mantenga la calma, en breve se comunicarán con Ud.!", "", "success");
+            //var dato_buscar = $("#txtbuscar_personal").val();
+            //listar_personal_vista(dato_buscar, '1');
+            //} else {
+            //swal("! Registro no completado!", "", "error");
+            //}
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status === 0) {
+                alert('Not connect: Verify Network.');
+            } else if (jqXHR.status == 404) {
+                alert('Requested page not found [404]');
+            } else if (jqXHR.status == 500) {
+                alert('Internal Server Error [500].');
+            } else if (textStatus === 'parsererror') {
+                alert('Requested JSON parse failed.');
+            } else if (textStatus === 'timeout') {
+                alert('Time out error.');
+            } else if (textStatus === 'abort') {
+                alert('Ajax request aborted.');
+            } else {
+                alert('Uncaught Error: ' + jqXHR.responseText);
+            }
+        })
+
 }

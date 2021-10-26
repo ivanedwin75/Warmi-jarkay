@@ -7,7 +7,7 @@
       </div>
       <div class="panel-body">   
         <div style="text-align: center;" align="center">
-          <img class="imagen0" style="text-align: center;" onclick="" data-toggle="modal" data-target="#Modal0"  align="center" src="_recursos/img/botonp.png"> 
+          <img class="imagen0" style="text-align: center;" onclick="panic_button()" data-toggle="modal" data-target="#Modal0"  align="center" src="_recursos/img/botonp.png"> 
         </div> 
       </div>
     </div>
@@ -48,7 +48,7 @@
 
 <script type="text/javascript">
 </script>
-<script type="text/javascript" src="_recursos/js/consola_victima.js"></script>
+<script type="text/javascript" src="_recursos/js/consola_usu_victima.js"></script>
 
 <style type="text/css">
   .contendor_kn{

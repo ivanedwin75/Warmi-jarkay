@@ -47,5 +47,37 @@
 			$this->conexion->cerrar();
         }
 
+		function get_nombre($id_victima){
+            $sql = "SELECT 
+			CONCAT_WS(' ', victima.Ap_paterno, victima.Ap_materno, victima.Nombres),
+			victima.Edad
+			FROM victima
+			WHERE victima.id_victima = '$id_victima'";
+            
+			$resultado = $this->conexion->conexion->query($sql);
+			$arreglo = array();
+			while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+			    $arreglo[] = $consulta_VU;
+			}
+			return $arreglo;
+			$this->conexion->cerrar();
+        }
+
+		function get_btn_panic($id_victima){
+            $sql = "SELECT 
+			CONCAT_WS(' ', victima.Ap_paterno, victima.Ap_materno, victima.Nombres),
+			victima.Dni, victima.Edad, victima.Cel, victima.Est_civil, victima.Direccion
+			FROM victima
+			WHERE victima.id_victima = '$id_victima'";
+            
+			$resultado = $this->conexion->conexion->query($sql);
+			$arreglo = array();
+			while($consulta_VU=mysqli_fetch_array($resultado)){ ///MYSQL_BOTH, MYSQL_ASSOC, MYSQL_NUM
+			    $arreglo[] = $consulta_VU;
+			}
+			return $arreglo;
+			$this->conexion->cerrar();
+        }
+
 	}	
 ?>

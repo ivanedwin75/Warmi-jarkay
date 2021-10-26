@@ -95,7 +95,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger"  data-dismiss="modal" data-lang="cancelar"> Cancelar </button>
-        <button class="btn btn-success" onclick=""><strong data-lang="solicitar">  Solicitar  </strong></button>
+        <button class="btn btn-success" onclick="copia_denuncia()" data-dismiss="modal"><strong data-lang="solicitar">  Solicitar  </strong></button>
       </div>
     </div>
   </div>
@@ -104,7 +104,7 @@
 
 <script type="text/javascript">
 </script>
-<script type="text/javascript" src="_recursos/js/consola_victima.js"></script>
+<script type="text/javascript" src="_recursos/js/consola_usu_victima.js"></script>
 
 <style type="text/css">
   .contendor_kn{

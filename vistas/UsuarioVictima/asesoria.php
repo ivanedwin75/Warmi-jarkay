@@ -12,18 +12,18 @@
     </div>
 </div>
 <div class="contendor_kn">
-    <div class="panel panel-default"> 
+    <div class="panel panel-default">
       <div class="panel-body">
         <center><label data-lang="legal">Asesoría Legal</label></center>
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
-                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal"><strong data-lang="alimentos"> Proceso de Alimentos</strong></button>
+                <br><button class="btn btn-success" data-toggle="modal" onclick="get_etiqueta('Proceso de Alimentos')" data-target="#Modal"><strong data-lang="alimentos"> Proceso de Alimentos</strong></button>
                 </div>
             </div>   
                     
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
-                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal2"><strong data-lang="tenencia"> Tenencia de Menores</strong></button>
+                <br><button class="btn btn-success" data-toggle="modal" onclick="get_etiqueta('Tenencia de menores')" data-target="#Modal2"><strong data-lang="tenencia"> Tenencia de Menores</strong></button>
                 </div>
             </div>
     </div>
@@ -34,19 +34,19 @@
         <center><label >Orientación y Consejería Psicológica</label></center>
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
-                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal3"><strong data-lang="pena"> Crisis Emocional</strong></button>
+                <br><button class="btn btn-success"  data-toggle="modal" onclick="get_etiqueta('Crisis emocional')" data-target="#Modal3"><strong data-lang="pena"> Crisis Emocional</strong></button>
                 </div>
             </div>   
                     
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
-                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal3"><strong data-lang="violacion"> Ansiedad o Miedo <br>a lo que pueda pasar</strong></button>
+                <br><button class="btn btn-success" data-toggle="modal" onclick="get_etiqueta('Ansiedad o miedo a lo que pueda pasar')" data-target="#Modal3"><strong data-lang="violacion"> Ansiedad o Miedo <br>a lo que pueda pasar</strong></button>
                 </div>
             </div>
 
             <div class="col-md-12 col-lg-12 col-xs-12" style="text-align:center;">
                 <div class="col-md-12">
-                <br><button class="btn btn-success" onclick="" data-toggle="modal" data-target="#Modal3"><strong data-lang=""> Otros</strong></button>
+                <br><button class="btn btn-success" data-toggle="modal" onclick="get_etiqueta('Otros problemas')" data-target="#Modal3"><strong data-lang=""> Otros</strong></button>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
     <div class="">
         <div style="text-align: center;" align="center">
             <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/ayuda.png">
-        </div> 
+        </div>
     </div>
       
 <!-- Modal1 -->
@@ -131,7 +131,7 @@
               <div class="panel-body">
               <div class="form-group col-lg-12 col-md-12 col-xs-12">
                 <label data-lang="celular">Número de Celular</label>
-                <input id=""  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nro de celular" class="form-control" >
+                <input id="movil_psico"  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nro de celular" class="form-control" >
               </div>   
                 <div style="text-align: center;" align="center">
                     <img class="imagen" style="text-align: center;" align="center" src="_recursos/img/llamada.png">
@@ -141,7 +141,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal" data-lang="cancelar">Cancelar</button>
-        <button type="button" class="btn btn-info" data-lang="enviar">Enviar</button>
+        <button type="button" class="btn btn-info" data-lang="enviar" onclick="asesoria_psico()" data-dismiss="modal">Enviar</button>
       </div>
     </div>
   </div>
@@ -162,9 +162,9 @@
               <div class="col-md-12 col-lg-12 col-xs-12"> 
                 <div class="col-sm-12">
                     <label for="" data-lang="escribir">Escriba su consulta </label>
-                    <textarea type="text" class="form-control" name="" id="" placeholder="" ></textarea>
+                    <textarea type="text" class="form-control" id="consulta_alimentos" placeholder="" ></textarea>
                     <label data-lang="celular">Número de Celular</label>
-                    <input id=""  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nro de celular" class="form-control" >
+                    <input id="movil_alimentos"  type="text" style="background-color: #FFFFFF"  placeholder="Ingrese nro de celular" class="form-control" >
                     <br>
                 </div><br>
                 <div style="text-align: center;" align="center">
@@ -175,7 +175,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal"data-lang="cancelar">Cancelar</button>
-        <button type="button" class="btn btn-info" data-lang="entendido">Entendido</button>
+        <button type="button" class="btn btn-info" onclick="asesoria()" data-dismiss="modal" data-lang="entendido">Entendido</button>
       </div>
     </div>
   </div>
@@ -190,7 +190,7 @@
 
 <script type="text/javascript">
 </script>
-<script type="text/javascript" src="_recursos/js/consola_victima.js"></script>
+<script type="text/javascript" src="_recursos/js/consola_usu_victima.js"></script>
 
 <style type="text/css">
   .contendor_kn{
