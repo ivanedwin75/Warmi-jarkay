@@ -53,8 +53,9 @@ function listar_personal_vista(valor, pagina) {
                     cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold; '>" + valores[i][5] + "</td>";
                     cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold; '>" + valores[i][6] + "</td>";
                     cadena += "<td style='color:#9B0000; text-align:center;font-weight: bold; '>" + valores[i][7] + "</td>";
-
                     cadena += "<td ><button name='" + valores[i][0] + "*" + valores[i][1] + "*" + valores[i][2] + "*" + valores[i][3] + "*" + valores[i][4] + "*" + valores[i][5] + "*" + valores[i][6] + "*" + valores[i][7] + "*" + valores[i][8] + "*" + valores[i][9] + "*" + valores[i][10] + "*" + valores[i][11] + "*" + valores[i][12] + "*" + valores[i][13] + "*" + valores[i][14] + "' class='btn btn-primary' onclick='AbrirModalEditarPersonal(this)'><span class='glyphicon glyphicon-pencil'></span>";
+                    cadena += "</button>&nbsp;&nbsp;&nbsp;";
+                    cadena += "<button name='" + valores[i][0] + "' class='btn btn-danger' onclick='delete_personal(this)' ><span class='glyphicon glyphicon-trash'></span>";
                     cadena += "</button></td> ";
                     cadena += "</tr>";
                     //Utilizar inner Join con la actividad de usuario
@@ -276,6 +277,53 @@ function Registrar_personal() {
             }
         })
 }
+
+function delete_personal(control) {
+    var datos = control.name;
+    var datos_split = datos.split("*");
+    var id_personal = datos_split[0];
+
+    var resultado = window.confirm('Estas seguro?');
+    if (resultado === true) {
+        //window.alert('Okay, si estas seguro.');
+        $.ajax({
+                url: '../controlador/personal/controlador_delete_personal.php',
+                type: 'POST',
+                data: {
+                    id_personal: id_personal
+                }
+            })
+            .done(function(resp) {
+                if (resp > 0) {
+                    swal("Personal eliminado!", "", "success");
+                    var dato_buscar = $("#txtbuscar_personal").val();
+                    listar_personal_vista(dato_buscar, '1');
+                } else {
+                    swal("Error al eliminar!", "", "error");
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect: Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found [404]');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                } else if (textStatus === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (textStatus === 'timeout') {
+                    alert('Time out error.');
+                } else if (textStatus === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+                }
+            })
+    }
+
+}
+
+
 
 function Listar_tipousuario_combo() {
     $.ajax({

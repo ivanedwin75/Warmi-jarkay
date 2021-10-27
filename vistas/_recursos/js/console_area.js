@@ -48,6 +48,8 @@ function listar_area_vista(valor, pagina) {
                     				*/
 
                     cadena += "<td ><button name='" + valores[i][0] + "*" + valores[i][1] + "*" + valores[i][2] + "*" + valores[i][3] + "*" + valores[i][4] + "*" + valores[i][5] + "*" + valores[i][6] + "' class='btn btn-primary' onclick='AbrirModalArea(this)'><span class='glyphicon glyphicon-pencil'></span>";
+                    cadena += "</button>&nbsp;&nbsp;&nbsp;";
+                    cadena += "<button name='" + valores[i][0] + "' class='btn btn-danger' onclick='delete_asesor(this)'><span class='glyphicon glyphicon-trash'></span>";
                     cadena += "</button></td> ";
                     cadena += "</tr>";
                 }
@@ -275,4 +277,48 @@ function registrar_area() {
         return swal("Falta Llenar Datos", "", "info");
     }
 
+}
+
+function delete_asesor(control) {
+    var datos = control.name;
+    var datos_split = datos.split("*");
+    var id_asesor = datos_split[0];
+
+    var resultado = window.confirm('Estas seguro?');
+    if (resultado === true) {
+        //window.alert('Okay, si estas seguro.');
+        $.ajax({
+                url: '../controlador/area/controlador_delete_asesor.php',
+                type: 'POST',
+                data: {
+                    id_asesor: id_asesor
+                }
+            })
+            .done(function(resp) {
+                if (resp > 0) {
+                    swal("Asesor eliminado!", "", "success");
+                    var dato_buscar = $("#txt_area_vista").val();
+                    listar_area_vista(dato_buscar, '1');
+                } else {
+                    swal("Error al eliminar!", "", "error");
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect: Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found [404]');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                } else if (textStatus === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (textStatus === 'timeout') {
+                    alert('Time out error.');
+                } else if (textStatus === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+                }
+            })
+    }
 }

@@ -23,12 +23,12 @@ session_start();
 
     //$etiqueta = $_POST['etiqueta'];
 
-    $destino ="alex_stelman07@hotmail.com, martinjzc77@gmail.com, comisariahuascarpnp@gmail.com, calizaya1997c@gmail.com, LIZ_199625@HOTMAIL.COM, quispecalderonolgaesmeralda@gmail.com";
+    $destino ="alex_stelman07@hotmail.com, martinjzc77@gmail.com, huascarcomisariapnp@gmail.com, calizaya1997c@gmail.com, LIZ_199625@HOTMAIL.COM, quispecalderonolgaesmeralda@gmail.com";
     $asunto = "ALERTA COMISARIA";
-    $cabeceras = "From: comisaria.huascar.puno@gmail.com";
+    $cabeceras = "Content-type:text/html;charset=UTF-8";
+
     $cuerpo =" ALERTA BOTÓN DE PÁNICO
-    El sistema de registro de denuncias Warmi Jark'ay le notifica que un
-    ciudadano recurrió al botón de pánico, sus datos son los siguientes :<br>
+    El sistema de registro de denuncias Warmi Jark'ay le notifica que un ciudadano recurrió al botón de pánico, sus datos son los siguientes :<br>
     <b>Nombre:</b>$nombre<br>
     <b>DNI :</b>$dni<br>
     <b>Edad:</b>$edad<br>

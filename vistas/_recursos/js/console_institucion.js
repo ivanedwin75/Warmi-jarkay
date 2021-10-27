@@ -43,6 +43,7 @@ function listar_institucion_vista(valor, pagina) {
                     }
 					*/
                     cadena += "<td><button name='" + valores[i][0] + '*' + valores[i][1] + "' class='btn btn-primary' onclick='AbrirModalInstitucion(this)'><span class='glyphicon glyphicon-pencil'></span>";
+                    //cadena += "<td><button name='" + valores[i][0] + "' class='btn btn-primary' onclick='delete_denuncia(this)'><span class='glyphicon glyphicon-pencil'></span>";
                     cadena += "</button></td> ";
                     cadena += "</tr>";
                 }
@@ -179,6 +180,10 @@ function AbrirModalInstitucion(control) {
         }
     });
 }
+
+
+
+
 
 function Editar_denuncia() {
     var id_denuncia = $("#txtid_denuncia").val();

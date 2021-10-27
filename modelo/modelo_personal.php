@@ -69,5 +69,17 @@
 					$this->conexion->cerrar();	
 				}
 		}
+
+		function delete_personal($id){
+			$sql = "DELETE FROM efectivos WHERE id_efectivos = '$id'";
+
+			if ($this->conexion->conexion->query($sql)) {
+				return 1;
+			}
+			else{
+				return 0;
+			}
+			$this->conexion->cerrar();	
+		}
 	}
 ?>
