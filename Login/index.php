@@ -50,11 +50,15 @@ session_start();
 					</div>
 					<center>
 					<!--<a href="seguimiento.php" class="btn btn-default" style="box-shadow: 0 0 0 .2rem rgba(0,0,0,0);">Seguimiento Documentario</a><br><br> -->
-					<button onclick="VerificarUsuario()"  class="btn">INGRESAR</button>
+					<button onclick="VerificarUsuario()"  class="btn">INGRESAR</button></br>
+
 					</center>
-					
+					<center><h8><i class='fa fa-download'></i><u><a style='color:black' href='../../../APK/Warmi_Jarkay.apk' download='Warmi_Jarkay.apk'>Descargar APK </a></u></h8></center>
+
 			</div>
+
 		</div>
+
 		
 	</div>
 	
@@ -70,6 +74,7 @@ session_start();
 
 <footer class="main-footer"><center>
     <b>Dirección: </b> Av. Juliaca con Jr. Tupac Catari <br>
+	<b>Celular: </b> 945191118 <br>
     <strong> <a target="_blank" >COMISARIA PNP HUASCAR PUNO</a></strong> &copy; Copyright 2021 
       reservados.
 </center></footer>

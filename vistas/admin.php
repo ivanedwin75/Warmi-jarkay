@@ -252,6 +252,12 @@ session_start();
                   <span class="font-bold" translate="aside.nav.Mantenimiento">BUSCAR</span>
                   </a>
               </li>
+              <!--<li ui-sref-active="active"onclick="cargar_contenido('main-content','Estadistica/vista_datos_listar.php');">
+                  <a ui-sref="app.dashboard-v2">     
+                  <i class="fa fa-folder-open icon text-info-lter"></i>
+                  <span class="font-bold" translate="aside.nav.Mantenimiento">ESTADISTICAS</span>
+                  </a>
+              </li> -->
             
             
             <?php }
@@ -329,6 +335,7 @@ session_start();
     <div class="app-footer wrapper b-t">
       <span class="pull-bottom">
         <b>Dirección: </b> Av. Juliaca con Jr. Tupac Catari <br>
+        <b>Celular: </b> 945191118 <br>
         <strong>COMISARIA PNP HUASCAR PUNO</strong> &copy; Copyright 2021 
         reservados.
       </span>
@@ -348,7 +355,7 @@ session_start();
   <script src="_recursos/select2/dist/js/select2.full.min.js"></script>
   <script src="js/main.js"></script>
     <!-- Custom Theme Scripts -->
-    <script type="text/javascript">filtrar_DocumentosPendientes();</script>
+    <!-- <script type="text/javascript">filtrar_DocumentosPendientes();</script> -->
   <script type="text/javascript">
 
 
