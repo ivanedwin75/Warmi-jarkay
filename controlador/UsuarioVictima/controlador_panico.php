@@ -23,7 +23,7 @@ session_start();
 
     //$etiqueta = $_POST['etiqueta'];
 
-    $destino ="alex_stelman07@hotmail.com, martinjzc77@gmail.com, huascarcomisariapnp@gmail.com, calizaya1997c@gmail.com, LIZ_199625@HOTMAIL.COM, quispecalderonolgaesmeralda@gmail.com";
+    $destino ="alexstelmantorres@gmail.com, martinjzc77@gmail.com, huascarcomisariapnp@gmail.com, calizaya1997c@gmail.com, LIZ_199625@HOTMAIL.COM, quispecalderonolgaesmeralda@gmail.com";
     $asunto = "ALERTA COMISARIA";
     $cabeceras = "Content-type:text/html;charset=UTF-8";
 
